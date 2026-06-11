@@ -1,4 +1,4 @@
-﻿package data.missions.randombattle1;
+package data.missions.randombattle1;
 
 import java.util.ArrayList;
 import java.util.List;

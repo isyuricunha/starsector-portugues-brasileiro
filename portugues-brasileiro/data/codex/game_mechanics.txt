@@ -1,4 +1,4 @@
-﻿# arquivo não utilizado - comentado no text_codex_entries.csv
+# arquivo não utilizado - comentado no text_codex_entries.csv
 # mantido como exemplo da marcação possível etc
 
 # Comandos/formatação:

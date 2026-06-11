@@ -1,4 +1,4 @@
-﻿package data.hullmods;
+package data.hullmods;
 
 import java.util.HashMap;
 import java.util.Map;

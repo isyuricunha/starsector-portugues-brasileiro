@@ -1,4 +1,4 @@
-﻿package data.missions.direstraits;
+package data.missions.direstraits;
 
 import com.fs.starfarer.api.combat.BattleCreationContext;
 import com.fs.starfarer.api.fleet.FleetGoal;

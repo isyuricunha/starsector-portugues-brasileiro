@@ -1,4 +1,4 @@
-﻿{
+{
 	"defaultChannels":[
 		"news",
 		"hegemony_public",
@@ -35,7 +35,7 @@
 		"shortType":"Comms",
 	},
 	"player_intel_always":{
-		"name":"Análise & Projeções",
+		"name":"Analise e Projecoes",
 		"subChannelOf":"player_intel",
 		"logo":"graphics/icons/intel/player.png",
 		"icon":"graphics/icons/intel/player.png",
@@ -45,7 +45,7 @@
 		"shortType":"Intel",
 	},
 	"player_intel":{
-		"name":"Análise & Projeções",
+		"name":"Analise e Projecoes",
 		"logo":"graphics/icons/intel/player.png",
 		"icon":"graphics/icons/intel/player.png",
 		"image":"graphics/factions/player_flag.png",
@@ -54,7 +54,7 @@
 		"shortType":"Intel",
 	},
 	"player_comm_sniffer":{
-		"name":"Programa Farejador de Comunicações",
+		"name":"Programa de Interceptacao de Comunicacoes",
 		"logo":"graphics/icons/intel/player_comm_sniffer.png",
 		"icon":"graphics/icons/intel/player_comm_sniffer.png",
 		"image":"graphics/factions/player_flag.png",
@@ -72,7 +72,7 @@
 		"shortType":"News",
 	},
 	"hegemony_public":{
-		"name":"Serviço de Radiodifusão da Hegemonia",
+		"name":"Servico de Transmissao da Hegemonia",
 		"logo":"graphics/icons/intel/hegemony_public.png",
 		"icon":"graphics/icons/intel/hegemony_public.png",
 		"image":"graphics/factions/hegemony.png",
@@ -82,7 +82,7 @@
 		"shortType":"News",
 	},
 	"hegemony_internal":{
-		"name":"Inteligência da Hegemonia",
+		"name":"Inteligencia da Hegemonia",
 		"logo":"graphics/icons/intel/hegemony_intelligence.png",
 		"icon":"graphics/icons/intel/hegemony_intelligence.png",
 		"image":"graphics/factions/hegemony.png",
@@ -102,7 +102,7 @@
 		"shortType":"News",
 	},
 	"tritachyon_internal":{
-		"name":"Inteligência Tri-Tachyon",
+		"name":"Inteligencia Tri-Tachyon",
 		"logo":"graphics/icons/intel/tritachyon_internal.png",
 		"icon":"graphics/icons/intel/tritachyon_internal.png",
 		"image":"graphics/factions/tritachyon.png",
@@ -112,7 +112,7 @@
 		"shortType":"Intel",
 	},
 	"sindrian_diktat_internal":{
-		"name":"Segurança do Diktat Sindriano",
+		"name":"Seguranca do Diktat Sindriano",
 		"logo":"graphics/icons/intel/diktat_intelligence.png",
 		"icon":"graphics/icons/intel/diktat_intelligence.png",
 		"image":"graphics/factions/sindrian_diktat.png",

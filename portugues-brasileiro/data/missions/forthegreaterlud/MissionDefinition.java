@@ -1,4 +1,4 @@
-﻿package data.missions.forthegreaterlud;
+package data.missions.forthegreaterlud;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberType;

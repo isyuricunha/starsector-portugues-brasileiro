@@ -1,4 +1,4 @@
-﻿package data.missions.afistfulofcredits;
+package data.missions.afistfulofcredits;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberType;

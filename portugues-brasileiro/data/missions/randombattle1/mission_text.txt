@@ -1,4 +1,4 @@
-﻿Localização: Em algum lugar no Extenso Mediosolar
+Localização: Em algum lugar no Extenso Mediosolar
 Data: Desconhecida
 
 Comande uma nave capital nesta missão que coloca duas frotas geradas aleatoriamente e igualmente equilibradas uma contra a outra.

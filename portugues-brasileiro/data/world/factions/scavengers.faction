@@ -1,4 +1,4 @@
-﻿{
+{
 	# only used for fleet creation, not an actual faction
 	"id":"scavengers",
 	"displayName":"saqueadores",

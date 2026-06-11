@@ -1,4 +1,4 @@
-﻿//KumariKandam.javapackage data.scripts.world.systems;
+//KumariKandam.javapackage data.scripts.world.systems;
 package data.scripts.world.systems;
 
 import java.awt.Color;

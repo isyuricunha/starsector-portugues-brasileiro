@@ -1,4 +1,4 @@
-﻿package data.missions.nothingpersonal;
+package data.missions.nothingpersonal;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberType;

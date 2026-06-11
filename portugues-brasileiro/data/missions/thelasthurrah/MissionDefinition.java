@@ -1,4 +1,4 @@
-﻿package data.missions.thelasthurrah;
+package data.missions.thelasthurrah;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberType;

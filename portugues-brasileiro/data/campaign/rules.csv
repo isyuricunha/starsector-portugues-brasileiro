@@ -3454,7 +3454,7 @@ AddText ""A conexão de comunicação é cortada antes que você possa responder.""
 $entity.ignorePlayerCommRequests = true 0
 unset $entity.transponderOffConv
 #MakeHostileWhileTOff tOff true 7
-MakeOtherFleetHostile tOff true 7",,"#0:tOff_notFirstTimeCont:Continue
+MakeOtherFleetHostile tOff true 7",,"#0:tOff_notFirstTimeCont:Continuar
 cutCommLinkNoText:Continuar",
 scanTalkYourWayOut,DialogOptionSelected,$option == avoid_scan,"SetNearbyFleetsVariable 5000 $faction.id $patrolAllowTOff true 10
 $entity.patrolAllowTOff = true 10
@@ -4031,7 +4031,7 @@ lppHookCurateResponse1,LPPHookCurateIntroResponses,,,,"lpp_hookCurateThanks:""Ob
 lppHookCurateResponse2,LPPHookCurateIntroResponses,,,,"lpp_hookCurateCalled:""O que você quer dizer com 'chamado'?""",
 #lppHookCurateResponse3,LPPHookCurateIntroResponses,,,,"lpp_hookCurateWhyMe:""Why me?""",# redundant
 lppHookCurateResponse4,LPPHookCurateIntroResponses,$player.luddicAttitudeFaithful > 0,,,"lpp_hookCurateBlessing:""Que as bênçãos estejam com você, cura.""",
-lppHookCurateResponse5,LPPHookCurateIntroResponses,$player.luddicAttitudeCynical > 0,,,"lpp_hookCurateUseLine:"" Aposto que você usa essa cantada com todo mundo.""",
+lppHookCurateResponse5,LPPHookCurateIntroResponses,$player.luddicAttitudeCynical > 0,,,"lpp_hookCurateUseLine:""Aposto que você usa essa cantada com todo mundo.""",
 lppHookCurateResponse6,LPPHookCurateIntroResponses,,,,"lpp_hookCurateAdult:""É bom finalmente conversar com um adulto.""",
 #lppHookCurateResponse7,LPPHookCurateIntroResponses,,,,lpp_hookCurateNope:Make an excuse and leave,"# too bad, you're in now."
 lppHookCurateNope,DialogOptionSelected,$option == lpp_hookCurateNope,"EndConversation DO_NOT_FIRE
@@ -5700,7 +5700,7 @@ lppHesperusExcubitorDenied1,DialogOptionSelected,$option == lpp_hesperusExcubito
 ""Aqueles com histórico de atos excepcionais costumam testar a caridade da Providência ao assumir riscos excepcionais.""","lpp_hesperusExcubitorRisk:""Então preciso convencê-lo de que não sou um risco?""
 lpp_hesperusExcubitorCrime:""Está me acusando de intenções criminosas?""
 lpp_hesperusExcubitorBribe:""Basta me dizer quantos créditos preciso 'doar'.""
-#lpp_hesperusExcubitorForce:""With my fleet, how can you stop me?""",
+#lpp_hesperusExcubitorForce:""Com minha frota, como você vai me deter?""",
 lppHesperusExcubitorRisk,DialogOptionSelected,$option == lpp_hesperusExcubitorRisk,"$option = lpp_hesperusExcubitorJudge1 0
 FireBest DialogOptionSelected","Aquela ruga novamente, o menor sorriso do Setor.
 
@@ -6396,7 +6396,7 @@ OR
 ""Certamente eu nao saberia nada sobre isso,"" $heOrShe diz rapidamente.
 
 Uma nova ruga surge na testa de $hisOrHer, e $heOrShe acrescenta, mais baixo: ""Tal associacao poderia ser... perigosa.""","lke_chalcedonLookingRecOutB:""Não é minha intenção causar-lhe problemas, apenas estou procurando por um homem.""
-lke_chalcedonLookingRecOutA:"" Talvez uma doação ajude a refrescar sua memória?""",
+lke_chalcedonLookingRecOutA:""Talvez uma doação ajude a refrescar sua memória?""",
 lkeChalcedonLookingRecD2c,DialogOptionSelected,$option == lke_chalcedonLookingRecD2c,"AdjustRepActivePerson INHOSPITABLE -2
 $lke_ignorePlayer = true 30
 $market.lkeBuggedVIPs++","$PersonName cruza as maos de $hisOrHer, um sorriso tenso aparecendo no rosto de $hisOrHer.
@@ -7949,8 +7949,8 @@ LKEvirensKillSedgeBrute2B,DialogOptionSelected,$option == lke_virensKillSedgeBru
 
 Virens se inclina para frente. ""Um herói, mártir abençoado,"" ele sussurra. ""Covardemente baleado pelas costas por um simples tripulante. Sedge agora caminha ao lado de Ludd, e as crianças de Calcedônia seguirão seus passos.""
 
-Ele se recosta novamente. ""Pode ser que você tenha criado uma nova geração de saqueadores e assassinos, capitão.""","lke_virensKillSedgeBruteB-A:""I am not responsible for what others choose.""
-lke_virensKillSedgeBruteB-B:""And they will die too, if they choose murder and terrorism.""
+Ele se recosta novamente. ""Pode ser que você tenha criado uma nova geração de saqueadores e assassinos, capitão.""","lke_virensKillSedgeBruteB-A:""Não sou responsável pelas escolhas dos outros.""
+lke_virensKillSedgeBruteB-B:""E eles também morrerão, se escolherem o assassinato e o terrorismo.""
 lke_virensWhyKillSedgeOut:Fale de outras coisas",
 LKEvirensKillSedgeBrute2B-A,DialogOptionSelected,$option == lke_virensKillSedgeBruteB-A,FireAll LKEvirensConvOpts,"""Não. Mas eles escolhem,"" Virens diz.",,
 LKEvirensKillSedgeBrute2B-B,DialogOptionSelected,$option == lke_virensKillSedgeBruteB-B,FireAll LKEvirensConvOpts,"""Pois escolherão,"" Virens concorda.",,
@@ -13796,7 +13796,7 @@ RACA_cutComm,DialogOptionSelected,$option == RACA_cutComm,ShowPic ai_core_uninst
 RACA_ignore:Deixar o núcleo de IA no controle e deixar as coisas como estão",
 RACA_force,DialogOptionSelected,$option == RACA_force,,"Remover o núcleo de IA do controle direto permitirá que você nomeie outro administrador. No entanto, ainda terá o problema de uma IA descontrolada operando em algum lugar de $marketName, e fazer as pazes depois pode não ser uma opção.","RACA_confirm:Confirmar a ordem
 RACA_ignore:Deixar o núcleo de IA no controle e deixar as coisas como estão
-(dev)RACA_override:Remove the AI core [dev mode only]",
+(dev)RACA_override:Remover o núcleo de IA [somente modo desenvolvedor]",
 RACA_confirm,DialogOptionSelected,$option == RACA_confirm,DismissDialog confirm,,,
 RACA_ignore,DialogOptionSelected,$option == RACA_ignore,DismissDialog ignore,,,
 (dev)RACA_override,DialogOptionSelected,$option == (dev)RACA_override,DismissDialog override,,,
@@ -18059,7 +18059,7 @@ Então é suborno mesmo.","gaPZ_adminAstraia3a:""Claro. E essa taxa seria de...?""
 cutCommLink:Invente uma desculpa e encerre a comunicacao",
 gaPZ_adminAstraia3a,DialogOptionSelected,$option == gaPZ_adminAstraia3a,"Highlight $gaPZ_culannBribe
 DoCanAffordCheck $gaPZ_culannBribe gaPZ_adminAstraia4a false","""$gaPZ_culannBribe créditos. Adiantado, para minha conta via, ah, este UID,"" diz o administrador enquanto seu datapad emite um leve sinal sonoro para alertar sobre o recebimento das informações de pagamento. $personName sorri novamente com brilho e aguarda sua resposta.","gaPZ_adminAstraia4a:Pagar a propina
-gaPZ_adminAstraia4aNeg:Tudo bem considerado, você não acha... 
+gaPZ_adminAstraia4aNeg:Tudo bem considerado, você não acha...
 cutCommLink:Dar uma desculpa e fechar a comunicação",
 gaPZ_adminAstraia4aNeg,DialogOptionSelected,$option == gaPZ_adminAstraia4aNeg,,"$personName te interrompe antes que você possa sequer tentar negociar, ""Minha tabela de preços é bem generosa, capitão, e oferecida com nossa conexão profissional especial em mente."" O sorriso permanece, mas os olhos de $hisOrHer te dizem que você está chegando perto de um horizonte de eventos.","gaPZ_adminAstraia4a:Pagar o suborno
 cutCommLink:Dar uma desculpa e fechar a comunicação",
@@ -23002,7 +23002,7 @@ gaOpMissionReturnDestroyed,PickGreeting,"$gaOp_returnHere score:1000
 Call $global.gaOp_ref updateData
 $gaOp_destroyed
 FireBest ASEBMissionReturn",ShowPersonVisual,"""Ah, capitão."" Sebestyen parece excepcionalmente abatido. ""Fiquei sabendo do... que aconteceu. Sinto muito pelo Departamento $gaOp_department, tenho certeza de que estão devastados."" Ele olha para baixo, para o tablet à sua frente.","gaOp_giveAMoment:Dar-lhe um momento
-gaOp_clearThroat: pigarrear",
+gaOp_clearThroat:pigarrear",
 gaOpMissionReturnDestroyed1,DialogOptionSelected,$option == gaOp_giveAMoment,"$option = gaOp_clearThroat 0
 FireBest DialogOptionSelected",,gaOp_finish:Continuar,
 gaOpMissionReturnDestroyed2,DialogOptionSelected,$option == gaOp_clearThroat,"$global.gaOp_completed = true
@@ -24031,7 +24031,7 @@ soeHouseRao6,DialogOptionSelected,$option == soe_houseRao6,FireAll SOEBallEntran
 
 Agora você pode fazer o que veio fazer aqui.",,
 soeHouseRaoGoalSchmooze,SOEBallEntranceGoal,$player.soe_goalConnections,,,soa_houseRaoSchmooze:Apresentar-se a alguém importante,
-soeHouseRaoGoalParty,SOEBallEntranceGoal,$player.soe_goalGoodTime,,,soa_houseRaoParty:Colocar a festa para funcionar! Passo 1: encontrar uma bebida,
+soeHouseRaoGoalParty,SOEBallEntranceGoal,$player.soe_goalGoodTime,,,soa_houseRaoParty:Colocar a festa para funcionar! Passo 1 - encontrar uma bebida,
 soeHouseRaoGoalRevenge,SOEBallEntranceGoal,$player.soe_goalDisgraceSang,,,soa_houseRaoRevenge:Varar a multidão atrás daquele insuportável Caspian Sang,
 soeHouseRaoGoalUnsure,SOEBallEntranceGoal,$player.soe_goalOpenMind,,,soe_houseRaoUnsure:Analisar o ambiente antes de agir,
 soeHouseRaoSchmooze1,DialogOptionSelected,$option == soa_houseRaoSchmooze,,"Seus olhos percorrem a multidão, buscando o fluxo e o refluxo do poder. Você nota figuras de grande influência movendo-se pelo salão, atraindo satélites e perturbando órbitas. Ali, um marechal espacial da frota de reserva; acolá, o executor-chefe do governo planetário de Eventide. E mais além, o diretor de operações de um grande contratante militar.
@@ -29243,7 +29243,7 @@ OU
 kdDevSetKilledLoke1,PopulateOptions,"$market.id == kantas_den
 $global.isDevMode
 $menuState == main
-!$global.murderedCloneLoke",SetOptionColor kdDev_setKilledLoke gray,,210:kdDev_setKilledLoke:DEV definiu que o jogador matou Loke: verdadeiro,
+!$global.murderedCloneLoke",SetOptionColor kdDev_setKilledLoke gray,,210:kdDev_setKilledLoke:DEV definiu que o jogador matou Loke - verdadeiro,
 kdDevSetBluffedKanta1,PopulateOptions,"$market.id == kantas_den
 $global.isDevMode
 $menuState == main
@@ -31713,9 +31713,7 @@ sdtuRamSafehouse7,DialogOptionSelected,$option == sdtu_ramSafehouse7,Call $globa
 
 Sombras borradas irrompem, lasers de mira piscando, armas de fogo cobrindo você e Ram. Através da nuvem de poeira que se dissipa, avança um homem de casaco preto comprido sobre um uniforme preto impecável.
 
-Ram fica boquiaberto, mãos erguidas; enfim, sem palavras.","sdtu_ramSafehouse8:A pistola do homem dispara uma vez.
-
-Yannick Ram cai no chão, morto.",
+Ram fica boquiaberto, mãos erguidas; enfim, sem palavras.","sdtu_ramSafehouse8:A pistola do homem dispara uma vez. Yannick Ram cai no chão, morto.",
 sdtuRamSafehouse8,DialogOptionSelected,$option == sdtu_ramSafehouse8,"Call $global.sdtu_ref shootEm
 EndConversation DO_NOT_FIRE
 HideVisual",Continuar,sdtu_ramSafehouse9:Continuar,
@@ -33209,8 +33207,8 @@ Se Caden acredita que Macario tem o agente, e Macario acredita que Caden tem, co
 
 ""Não teste minha paciência, viajante!"" O grito de Caden interrompe seus pensamentos. Ele está ficando vermelho de novo.
 
-""Aqui, eu sozinho represento a vontade suprema e inquestionável do Executor Supremo! Se opor à minha ordem é o mesmo que atacar o Estado — terrorismo degenerado, sedição, traição, corrupção do corpus público!""","#sdtu_cadenAgentMacarioSecondLie:""But... Macario said only his authority was second to the Supreme Executor..."" (lie)
-#sdtu_cadenTooFar:""Treason it is, I guess. Death to Andrada! Death to all oppressors!""",
+""Aqui, eu sozinho represento a vontade suprema e inquestionável do Executor Supremo! Se opor à minha ordem é o mesmo que atacar o Estado — terrorismo degenerado, sedição, traição, corrupção do corpus público!""","#sdtu_cadenAgentMacarioSecondLie:""Mas... Macário disse que só a autoridade dele vinha depois da do Supremo Executor..."" (mentira)
+#sdtu_cadenTooFar:""Traição, então. Morte a Andrada! Morte a todos os opressores!""",
 sdtuCadenAgentMacario,DialogOptionSelected,$option == sdtu_cadenAgentMacario,FireAll SDTUCadenAgentDemand2Options,"Macario, é claro, não parece se importar muito com o destino desse agente. Mas sua excessão de autoridade poderia criar uma divisão entre ele e Caden, se você plantar essa ideia na cabeça de Caden.
 
 ""Não teste minha paciência, viajante!"" Caden está ficando ainda mais vermelho: ""Aqui, sou o representante da vontade suprema do Executor! Se opor à minha ordem é o mesmo que atacar o Estado — terrorismo degenerado, sedição e traição!""",,
@@ -34670,7 +34668,7 @@ SetEnabled kpZiggurat false
 
 ""NÃO."" A negação de Kanta abafa os elogios chorosos de Cydonia. ""Esse"", troveja ela, ""é um prêmio de tolo. Desejado além da razão por facções e outros; ele convida ao desastre vindo deste mundo e de outros desconhecidos.""
 
-Ela se senta com finalidade, e suas últimas palavras ecoam na câmara da corte, que ficou estranhamente silenciosa, exceto por um murmúrio de medo. Kanta não é muito conhecida por sua filosofia natural; seus cortesãos especulam sobre o que ela quis dizer.",#kpLeaveProt:Continue,
+Ela se senta com finalidade, e suas últimas palavras ecoam na câmara da corte, que ficou estranhamente silenciosa, exceto por um murmúrio de medo. Kanta não é muito conhecida por sua filosofia natural; seus cortesãos especulam sobre o que ela quis dizer.",#kpLeaveProt:Continuar,
 kpRemnantCap,KPFindGifts,"KantaCMD findRemnantCapital
 $player.numShips > 1
 $kpNumGifts < 5

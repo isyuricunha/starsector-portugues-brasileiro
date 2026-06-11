@@ -40,7 +40,7 @@ O arquivo `mod_info.json` faz o Starsector reconhecer a traducao no launcher. A 
 
 O pacote atual contem:
 
-- `18468` itens traduzidos
+- `18476` itens traduzidos
 - `605` arquivos de dados traduzidos
 - `0` itens pendentes
 - `0` itens manuais restantes
@@ -164,7 +164,7 @@ Evite compactar a pasta inteira do jogo ou qualquer conteudo de `Fractal Softwor
 
 Foram executadas checagens sobre a traducao gerada:
 
-- Todos os itens escaneaveis traduzidos: `18468 / 18468`
+- Todos os itens escaneaveis traduzidos: `18476 / 18476`
 - Itens manuais restantes: `0`
 - Falhas no checkpoint: `0`
 - Arquivos esperados no mod: `605`
@@ -172,8 +172,9 @@ Foram executadas checagens sobre a traducao gerada:
 - Erros estruturais em CSV: `0`
 - Erros estruturais em JSON-like: `0`
 - Erros estruturais em Java: `0`
-- Residuos obvios de ingles em textos traduzidos: `0`
-- Vazamento de termos internos no pacote publico: `0`
+- Arquivos com BOM UTF-8 no pacote: `0`
+- Separadores reservados de opcoes em `rules.csv` alterados: `0`
+- Colunas internas de CSV alteradas indevidamente: `0`
 - Arquivos originais em `starsector-core/data` modificados: `0`
 
 ## Compatibilidade
@@ -212,6 +213,10 @@ Confirme que o mod esta ativado no launcher. Tambem verifique se voce copiou a p
 ### O jogo mostra aviso de versao
 
 O pacote foi validado para `0.98a-RC8`. Se voce estiver usando outra versao do Starsector, o launcher pode avisar incompatibilidade. Usar em outra versao pode funcionar, mas nao e a versao validada.
+
+### O jogo fecha ao iniciar
+
+Confirme que voce instalou a versao mais recente do pacote e que a pasta antiga foi removida antes de copiar a nova. Se o erro mencionar `JSONObject` ou `rules.csv`, reinstale a pasta completa da traducao em vez de misturar arquivos novos com antigos.
 
 ### Outro mod sobrescreve textos
 

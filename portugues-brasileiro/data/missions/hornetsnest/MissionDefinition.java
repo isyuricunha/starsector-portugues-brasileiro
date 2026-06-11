@@ -1,4 +1,4 @@
-﻿package data.missions.hornetsnest;
+package data.missions.hornetsnest;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;

@@ -1,4 +1,4 @@
-﻿package data.scripts.plugins;
+package data.scripts.plugins;
 
 import java.awt.Color;
 import java.util.List;

@@ -1,4 +1,4 @@
-﻿{
+{
 	# Specifically for spawning high-quality mercenaries. Actual fleet faction will be set to "independent".
 	# Other mercs may also be spawned using another faction's fleet data/doctrine/etc, this is
 	# just for more elite-tier mercs and contains a mix of the better ships/weapons from all sources

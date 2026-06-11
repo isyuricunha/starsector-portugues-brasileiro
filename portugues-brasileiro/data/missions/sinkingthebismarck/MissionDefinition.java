@@ -1,4 +1,4 @@
-﻿package data.missions.sinkingthebismarck;
+package data.missions.sinkingthebismarck;
 
 import java.util.List;
 

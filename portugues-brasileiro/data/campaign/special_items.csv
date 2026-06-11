@@ -1,4 +1,4 @@
-﻿name,id,tags,tech/manufacturer,rarity,base price,stack size,cargo space,baseRaidDanger,icon,sound id,sound id drop,plugin,plugin params,desc,order
+name,id,tags,tech/manufacturer,rarity,base price,stack size,cargo space,baseRaidDanger,icon,sound id,sound id drop,plugin,plugin params,desc,order
 Especificação Base de Modificação,modspec,modspec,,,1,1000,1,,graphics/icons/cargo/modspec2.png,ui_chip_pickup,ui_modspec_drop,com.fs.starfarer.api.campaign.impl.items.ModSpecItemPlugin,,"Uma coleção de anotações, diretrizes e exemplos práticos que permitem adaptar e aplicar esta modificação a diversos cascos.",50
 ,,,,,,,,,,,,,,,
 # industry-slotted items,,,,,,,,,,,,,,,

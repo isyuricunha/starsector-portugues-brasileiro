@@ -1,4 +1,4 @@
-﻿package data.hullmods;
+package data.hullmods;
 
 import com.fs.starfarer.api.Global;
 import com.fs.starfarer.api.combat.BaseHullMod;

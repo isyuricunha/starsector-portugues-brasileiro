@@ -1,4 +1,4 @@
-﻿package data.hullmods;
+package data.hullmods;
 
 import java.awt.Color;
 import java.util.HashMap;

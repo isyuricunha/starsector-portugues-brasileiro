@@ -1,4 +1,4 @@
-﻿package data.missions.coralnebula;
+package data.missions.coralnebula;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberType;

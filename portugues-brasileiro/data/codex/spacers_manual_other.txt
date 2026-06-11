@@ -1,4 +1,4 @@
-﻿CATEGORIA gm_cat_other|genérico|Outros|mecânicas_do_jogo
+CATEGORIA gm_cat_other|genérico|Outros|mecânicas_do_jogo
 
 CATEGORIA_ATUAL gm_cat_other
 

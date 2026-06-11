@@ -1,4 +1,4 @@
-﻿id,name,faction,desc,script,icon,order
+id,name,faction,desc,script,icon,order
 open_market,"Mercado
 Aberto",,"O mercado aberto. Apenas mercadorias legais podem ser comercializadas aqui, e as transações estão sujeitas a tarifas. Mais produtos estão disponíveis quando a estabilidade é alta.
 

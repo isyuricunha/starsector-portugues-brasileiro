@@ -1,4 +1,4 @@
-﻿package data.missions.ambush;
+package data.missions.ambush;
 
 import java.util.List;
 

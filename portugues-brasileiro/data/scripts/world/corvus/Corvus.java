@@ -1,4 +1,4 @@
-﻿package data.scripts.world.corvus;
+package data.scripts.world.corvus;
 
 import java.awt.Color;
 

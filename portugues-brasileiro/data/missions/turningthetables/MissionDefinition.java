@@ -1,4 +1,4 @@
-﻿package data.missions.turningthetables;
+package data.missions.turningthetables;
 
 import com.fs.starfarer.api.fleet.FleetGoal;
 import com.fs.starfarer.api.fleet.FleetMemberAPI;

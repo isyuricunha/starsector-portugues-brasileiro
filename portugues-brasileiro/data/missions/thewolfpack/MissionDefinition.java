@@ -1,4 +1,4 @@
-﻿package data.missions.thewolfpack;
+package data.missions.thewolfpack;
 
 import com.fs.starfarer.api.combat.BattleCreationContext;
 import com.fs.starfarer.api.fleet.FleetGoal;

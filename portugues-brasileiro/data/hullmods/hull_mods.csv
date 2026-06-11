@@ -1,4 +1,4 @@
-﻿name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
+name,id,tier,rarity,tech/manufacturer,tags,uiTags,base value,unlocked,hidden,hiddenEverywhere,cost_frigate,cost_dest,cost_cruiser,cost_capital,script,desc,short,sModDesc,sprite
 Escudos Acelerados,advancedshieldemitter,0,,,"defensive, shields, merc, standard",Shields,3000,,,,3,6,9,15,data.hullmods.AcceleratedShieldEmitter,Aumenta a taxa de giro dos escudos da nave em %s e a velocidade com que os escudos são ativados em %s.,Increases shield turn rate and extension speed.,Increases the shield's turn rate and raise rate by an additional %s.,graphics/hullmods/accelerated_shields.png
 Bobinas de Fase Adaptativas,adaptive_coils,2,,,"phase, merc, standard",Phase,5000,,,,5,10,15,25,com.fs.starfarer.api.impl.hullmods.AdaptivePhaseCoils,"As bobinas de fase têm maior dificuldade em manter uma conexão com o espaço normal conforme os níveis de fluxo rígido da nave aumentam, resultando em uma velocidade máxima drasticamente reduzida à medida que as bobinas lutam para ganhar tração.
 

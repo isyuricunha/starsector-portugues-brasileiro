@@ -1,4 +1,4 @@
-﻿package data.missions.forlornhope;
+package data.missions.forlornhope;
 
 import java.util.List;
 

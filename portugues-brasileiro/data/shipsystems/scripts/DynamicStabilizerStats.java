@@ -1,4 +1,4 @@
-﻿package data.shipsystems.scripts;
+package data.shipsystems.scripts;
 
 import java.awt.Color;
 
