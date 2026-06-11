@@ -159,6 +159,7 @@
     "data/shipsystems/scripts/TravelDriveStats.java",
     "data/shipsystems/ship_systems.csv",
     "data/strings/descriptions.csv",
+    "data/strings/tips.json",
     "data/strings/tooltips.json",
     "data/variants/afflictor_Strike.variant",
     "data/variants/afflictor_d_pirates_Strike.variant",

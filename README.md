@@ -39,14 +39,17 @@ portugues-brasileiro/
   mod_info.json
   README.md
   data/
+  graphics/fonts/
 ```
 
 O arquivo `mod_info.json` faz o Starsector reconhecer a traducao no launcher. A pasta `data/` contem os arquivos traduzidos usando a mesma estrutura do jogo base.
+As fontes em `graphics/fonts/` adicionam glifos usados pelo portugues brasileiro em partes da interface que usam fontes menores do jogo.
 
 O pacote atual contem:
 
-- `18476` itens traduzidos
-- `605` arquivos de dados traduzidos
+- `18682` itens traduzidos
+- `606` arquivos de dados traduzidos
+- `16` arquivos de fonte para suporte a acentos
 - `0` itens pendentes
 - `0` itens manuais restantes
 - `0` falhas registradas
@@ -161,6 +164,7 @@ O arquivo compactado deve abrir diretamente em uma pasta que contenha:
 mod_info.json
 README.md
 data/
+graphics/
 ```
 
 Evite compactar a pasta inteira do jogo ou qualquer conteudo de `Fractal Softworks/`.
@@ -169,11 +173,13 @@ Evite compactar a pasta inteira do jogo ou qualquer conteudo de `Fractal Softwor
 
 Foram executadas checagens sobre a traducao gerada:
 
-- Todos os itens escaneaveis traduzidos: `18476 / 18476`
+- Todos os itens escaneaveis traduzidos: `18682 / 18682`
 - Itens manuais restantes: `0`
 - Falhas no checkpoint: `0`
-- Arquivos esperados no mod: `605`
-- Arquivos de dados no mod: `605`
+- Arquivos esperados no mod: `606`
+- Arquivos de dados no mod: `606`
+- Arquivos de fonte no mod: `16`
+- Fontes empacotadas sem glifos PT-BR: `0`
 - Erros estruturais em CSV: `0`
 - Erros estruturais em JSON-like: `0`
 - Erros estruturais em Java: `0`
@@ -215,6 +221,12 @@ Starsector\mods\Starsector Portugues Brasileiro\portugues-brasileiro\mod_info.js
 
 Confirme que o mod esta ativado no launcher. Tambem verifique se voce copiou a pasta para a instalacao correta do Starsector, caso tenha mais de uma copia do jogo.
 
+Alguns textos da tela inicial e do painel visual de criacao de personagem, como botoes principais do menu e certos rotulos da interface, ficam dentro de classes compiladas do jogo base e nao sao expostos nos arquivos de dados substituidos pelo mod. Os textos carregados de `data/`, incluindo dicas, dialogos, opcoes e tooltips, sao o escopo validado deste pacote.
+
+### Acentos aparecem como apostrofos ou caracteres quebrados
+
+Reinstale a pasta completa da traducao. A versao atual inclui arquivos em `graphics/fonts/` para cobrir glifos como `ç`, `ã`, `á`, `é` e `í` em fontes menores usadas por algumas telas. Nao misture a pasta nova com uma instalacao antiga.
+
 ### O jogo mostra aviso de versao
 
 O pacote foi validado para `0.98a-RC8`. Se voce estiver usando outra versao do Starsector, o launcher pode avisar incompatibilidade. Usar em outra versao pode funcionar, mas nao e a versao validada.
@@ -233,6 +245,7 @@ Se outro mod altera os mesmos arquivos do jogo base, pode haver conflito. Teste 
 portugues-brasileiro/                 Mod pronto para instalar
 portugues-brasileiro/mod_info.json    Metadados do mod
 portugues-brasileiro/data/            Arquivos traduzidos
+portugues-brasileiro/graphics/fonts/  Fontes com glifos PT-BR
 portugues-brasileiro/README.md        Instrucoes curtas dentro do pacote do mod
 ```
 

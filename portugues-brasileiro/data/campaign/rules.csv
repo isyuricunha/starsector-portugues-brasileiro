@@ -382,7 +382,7 @@ FireBest CheckPlayerHasNoSubstrate","Seu oficial de tecnologia e engenheiro-chef
 Substrato Encoberto disponível: $player.shroudedSubstrateAvailable unidade(s).","substrate_selectWeapons:Selecionar armas para montar
 defaultLeave:Sair",
 CheckPlayerHasNoSubstrate,CheckPlayerHasNoSubstrate,$player.shroudedSubstrateAvailable <= 0,"SetEnabled substrate_selectWeapons false
-SetTooltip substrate_selectWeapons ""No Shrouded Substrate available.""",,,
+SetTooltip substrate_selectWeapons ""Nenhum Substrato Sombreado disponível.""",,,
 ,,,,,,
 ,,,,,,
 # Shrouded Thunderhead/Mantle/Lens - analyzing to learn hullmods,,,,,,
@@ -1124,7 +1124,7 @@ Após chegar ao destino-alvo, você poderá ordenar o desdobramento do Portal para 
 gh_deployGate:Iniciar desdobramento do Portal
 defaultLeave:Sair",
 GHCheckCanDeploy,GHCheckCanDeploy,!GateHaulerCMD canDeploy,"SetEnabled gh_deployGate false
-SetTooltip gh_deployGate ""Requires a stable location in the system.""",,,
+SetTooltip gh_deployGate ""Requer uma localização estável no sistema.""",,,
 gateHaulerStart5,OpenInteractionDialog,"$gateHauler
 $explored
 $activated
@@ -1356,7 +1356,7 @@ $menuState == main
 $tradeMode == OPEN
 RepairAvailable
 RepairNeeded
-RepairEnoughSupplies","SetTooltip marketRepair ""Full repairs require $global.repairSupplyCost supplies. $player.supplies supplies are available.""
+RepairEnoughSupplies","SetTooltip marketRepair ""Reparos completos exigem $global.supplies suprimentos. Estão disponíveis $player.supplies suprimentos.""
 SetTooltipHighlightColors marketRepair buttonShortcut buttonShortcut
 SetTooltipHighlights marketRepair $global.repairSupplyCost $player.supplies
 SetShortcut marketRepair ""A"" true",,15:marketRepair:Consertar suas naves no estaleiro,
@@ -1364,7 +1364,7 @@ marketAddOptionRepair2,PopulateOptions,"$hasMarket
 $menuState == main
 $tradeMode == OPEN
 RepairAvailable
-!RepairNeeded","SetTooltip marketRepair ""Your $shipOrFleet does not require any repairs.""
+!RepairNeeded","SetTooltip marketRepair ""Sua $shipOrFleet não requer reparos.""
 SetShortcut marketRepair ""A"" true
 SetEnabled marketRepair false",,15:marketRepair:Consertar suas naves no estaleiro,
 marketAddOptionRepair3,PopulateOptions,"$hasMarket
@@ -1372,7 +1372,7 @@ $menuState == main
 $tradeMode == OPEN
 RepairAvailable
 RepairNeeded
-!RepairEnoughSupplies","SetTooltip marketRepair ""Full repairs require $repairSupplyCost supplies. Only $supplies supplies are available.""
+!RepairEnoughSupplies","SetTooltip marketRepair ""Reparos completos exigem $repairSupplyCost suprimentos. Apenas $supplies suprimentos estão disponíveis.""
 SetTooltipHighlightColors marketRepair buttonShortcut buttonShortcut
 SetTooltipHighlights marketRepair $global.repairSupplyCost $player.supplies
 SetShortcut marketRepair ""A"" true
@@ -1388,7 +1388,7 @@ marketOptionRefit,DialogOptionSelected,$option == marketRefit,OpenCoreTab REFIT 
 marketOptionRepairAll,DialogOptionSelected,$option == marketRepair,"RepairAll
 SetTextHighlights $global.repairSupplyCost
 SetEnabled marketRepair false
-SetTooltip marketRepair ""Your $shipOrFleet does not require any repairs.""","$shipOrFleet é totalmente reparado e restaurado à máxima prontidão de combate, ao custo de $global.repairSupplyCost suprimentos.",,
+SetTooltip marketRepair ""Sua $shipOrFleet não requer reparos.""","$shipOrFleet é totalmente reparado e restaurado à máxima prontidão de combate, ao custo de $global.repairSupplyCost suprimentos.",,
 marketOptionCommDir,DialogOptionSelected,$option == marketCommDir,OpenCommDirectory,Você acessa o diretório de comunicações local e navega pelas listas públicas e conhecidas.,,
 marketOptionLeave,DialogOptionSelected,$option == marketLeave,DismissDialog,,,
 ,,,,,,
@@ -2760,7 +2760,7 @@ $ignorePlayerCommRequests = false 0
 $customsInspectionStage = 0 4
 AddText ""Você está sendo contatado pela $faction $otherShipOrFleet."" $faction.baseColor",,,
 customsInspectionConvStart,OpenCommLink,"$entity.doingCustomsInspection score:100
-$entity.customsInspectionStage == 0","SetTooltip ciAgree ""The scan will compute the value of your fleets and the goods it's carrying, and a toll will be assessed.\n\nIf your $shipOrFleet is carrying illegal goods, there's a chance these will be detected. The chance is lower if you're also carrying legal goods, and if your relationship with the faction is positive. If contraband is detected, it will be confiscated, and a fine will be assessed.""","$PersonRank $personName ergue os olhos da $hisOrHer console por um instante. ""Aguarde enquanto escaneamos sua carga. Continuaremos esta conversa assim que a varredura estiver concluída.""","0:ciAgree:Permitir que a varredura prossiga
+$entity.customsInspectionStage == 0","SetTooltip ciAgree ""A varredura calculará o valor de suas frotas e dos bens que carrega, e uma taxa será cobrada.\n\nSe sua $shipOrFleet estiver carregando bens ilegais, há uma chance de que sejam detectados. A chance é menor se você também estiver carregando bens legais e se seu relacionamento com a facção for positivo. Se o contrabando for detectado, será confiscado e uma multa será aplicada.""","$PersonRank $personName ergue os olhos da $hisOrHer console por um instante. ""Aguarde enquanto escaneamos sua carga. Continuaremos esta conversa assim que a varredura estiver concluída.""","0:ciAgree:Permitir que a varredura prossiga
 1:ciDisagree:""Acho que não.""",
 customsInspectionAgree,DialogOptionSelected,"$entity.doingCustomsInspection score:100
 $option == ciAgree score:100","EndConversation DO_NOT_FIRE
@@ -2861,12 +2861,12 @@ FireAll InitNewGameChoices",,,
 initNewGameChoicesDev,AddNewGameChoices,$global.isDevMode,,,100:ngcDevStart:>>(dev) início rápido,
 initNewGameChoicesDev2,AddNewGameChoices,$global.isDevMode,,,101:ngcDevStart2:>>(dev) início rápido personalizado sem avanço de tempo,
 initNewGameChoices,InitNewGameChoices,,FireAll AddNewGameChoices,Sua ocupação mais recente foi como...,,
-ngcWolfStart,AddNewGameChoices,,"SetTooltip ngcWolf ""The Wolf-class is a sleek and deadly combat frigate with middling logistical stats.\n\nBest used near civilization, or with the support of other ships with better capacity for carrying fuel and supplies.""",,"0:ngcWolf:Um caçador de recompensas, comandando uma fragata da classe Wolf",
-ngcWayfarerStart,AddNewGameChoices,,"SetTooltip ngcWayfarer ""The Wayfarer is an ungainly vessel with an excellent capacity for carrying cargo, fuel, and crew.\n\nIts combat ability is limited, but not to be discounted - designed to operate on the fringes of civilization, this freighter is quite capable of defending itself.""",,"1:ngcWayfarer:Um catador, comandando um cargueiro de combate da classe Wayfarer",
-ngcExplorerStart,AddNewGameChoices,,"SetTooltip ngcExplorer ""A group of ships capable of performing salvage operations on the fringes of the Sector, and defending itself against most of the threats found there.\n\nIncludes a tanker for increased fuel capacity and exploration range, and sufficient cargo capacity to carry the salvage back to the Core Worlds.""",,"2:ngcExplorer:Um explorador, liderando uma expedição de salvamento a bordo de um cruzador da classe Apogee (início mais rápido)",
-ngcMercStart,AddNewGameChoices,,"SetTooltip ngcMerc ""A small but highly combat-capable task force geared towards bounty-hunting.\n\nIncludes a small tanker to extend its operating range somewhat.""",,"3:ngcMerc:Um mercenário, liderando uma pequena força a bordo de um destruidor da classe Hammerhead (início mais rápido)",
-ngcRandomStart,AddNewGameChoices,,"SetTooltip ngcRandom ""A randomized collection of ships, slightly weaker overall than either of the \""faster start\"" options, but roughly in the same category.""",,"4:ngcRandom:Um freelancer, fazendo qualquer trabalho que conseguir arranjar (início aleatório)",
-ngcSpacerStart,AddNewGameChoices,CheckSetting enableSpacerStart,"SetTooltip ngcSpacer ""A non-combat shuttle, a general lack of resources, and a debt that must be paid. Very difficult start, only intended as a challenge for the starfarer that's seen it all.""",,"5:ngcSpacer:""Um viajante espacial. Um cargueiro quebrado. Uma dívida de uma vida inteira."" (muito difícil)",
+ngcWolfStart,AddNewGameChoices,,"SetTooltip ngcWolf ""A classe Wolf é uma fragata de combate elegante e letal, com estatísticas logísticas medianas.\n\nMelhor usada próximo à civilização ou com o apoio de outras naves com maior capacidade de carregar combustível e suprimentos.""",,"0:ngcWolf:Um caçador de recompensas, comandando uma fragata da classe Wolf",
+ngcWayfarerStart,AddNewGameChoices,,"SetTooltip ngcWayfarer ""A Wayfarer é uma nave desajeitada com excelente capacidade de carregar carga, combustível e tripulação.\n\nSua capacidade de combate é limitada, mas não deve ser subestimada — projetada para operar nas franjas da civilização, este cargueiro é bastante capaz de se defender.""",,"1:ngcWayfarer:Um catador, comandando um cargueiro de combate da classe Wayfarer",
+ngcExplorerStart,AddNewGameChoices,,"SetTooltip ngcExplorer ""Um grupo de naves capazes de realizar operações de salvamento nas franjas do Setor e de se defender contra a maioria das ameaças encontradas lá.\n\nInclui um petroleiro para aumentar a capacidade de combustível e o alcance de exploração, além de capacidade de carga suficiente para transportar o salvamento de volta aos Mundos Centrais.""",,"2:ngcExplorer:Um explorador, liderando uma expedição de salvamento a bordo de um cruzador da classe Apogee (início mais rápido)",
+ngcMercStart,AddNewGameChoices,,"SetTooltip ngcMerc ""Uma pequena força-tarefa altamente capaz em combate, voltada para caça de recompensas.\n\nInclui um pequeno petroleiro para estender ligeiramente seu alcance operacional.""",,"3:ngcMerc:Um mercenário, liderando uma pequena força a bordo de um destruidor da classe Hammerhead (início mais rápido)",
+ngcRandomStart,AddNewGameChoices,,"SetTooltip ngcRandom ""Uma coleção aleatória de naves, ligeiramente mais fracas no geral do que qualquer uma das opções de \""início rápido\"", mas aproximadamente no mesmo nível.""",,"4:ngcRandom:Um freelancer, fazendo qualquer trabalho que conseguir arranjar (início aleatório)",
+ngcSpacerStart,AddNewGameChoices,CheckSetting enableSpacerStart,"SetTooltip ngcSpacer ""Um transporte não-combatente, falta geral de recursos e uma dívida que deve ser paga. Início muito difícil, destinado apenas como um desafio para o viajante estelar que já viu de tudo.""",,"5:ngcSpacer:""Um viajante espacial. Um cargueiro quebrado. Uma dívida de uma vida inteira."" (muito difícil)",
 ,,,,,,
 #ngcDisableSpacerOption,NGCDisableSpacerOption,!NGCCanSkipTutorial,"SetEnabled ngcSpacer false
 SetTooltip ngcSpacer ""Need to start at least one game with the tutorial in order to be able to select this starting option.""",,,
@@ -2906,8 +2906,8 @@ NGCAddCharacterPoints 1
 NGCSetStartingLocation Corvus -2500 3000
 NGCAddStandardStartingScript
 NGCDone",,,
-ngcPickSecondShip,NGCSecondShipOptions,,"SetTooltip ngcKite ""The Kite-class is a light and nimble ship with limited armament.\n\nNot capable of doing much damage itself, it is however capable of being a persistent distraction, especially in the hands of an officer with the right set of defensive skills.""
-SetTooltip ngcShepherd ""The Shepherd is not a combat ship, being both slow and fragile, although its drones are capable of providing decent support to another ship.\n\nIts true value, however, lies in a generous cargo hold and numerous salvaging-and-surveying-oriented hull features.\n\nIts cargo of heavy machinery is also useful in running salvage and surveying operations.""","Além disso, sua frota inclui...","0:ngcKite:Um transporte da classe Kite, sob o comando de um subordinado experiente
+ngcPickSecondShip,NGCSecondShipOptions,,"SetTooltip ngcKite ""A classe Kite é uma nave leve e ágil com armamento limitado.\n\nNão é capaz de causar muito dano sozinha, mas pode ser uma distração persistente, especialmente nas mãos de um oficial com o conjunto certo de habilidades defensivas.""
+SetTooltip ngcShepherd ""O Shepherd não é uma nave de combate, sendo lenta e frágil, embora seus drones sejam capazes de fornecer apoio decente a outra nave.\n\nSeu verdadeiro valor, no entanto, está em um porão de carga generoso e inúmeras características de casco voltadas para salvamento e levantamento.\n\nSua carga de maquinário pesado também é útil para realizar operações de salvamento e levantamento.""","Além disso, sua frota inclui...","0:ngcKite:Um transporte da classe Kite, sob o comando de um subordinado experiente
 1:ngcShepherd:Um tender de drones da classe Shepherd, com uma carga de maquinário pesado",
 ngcKitePicked,NewGameOptionSelected,$option == ngcKite,"NGCAddShip kite_Starting
 AddTextSmall ""Oficial de nível 1 adquirido"" good
@@ -2917,18 +2917,18 @@ FireAll NGCDifficultyOptions",,,
 ngcShepherdPicked,NewGameOptionSelected,$option == ngcShepherd,"NGCAddShip shepherd_Starting
 NGCAddCargo RESOURCES heavy_machinery 20
 FireAll NGCDifficultyOptions",,,
-ngcDifficulty,NGCDifficultyOptions,,"SetTooltip ngcEasy ""- Your ships take 25% less damage\n- Sensor range increased by 500 units\n- Salvage increased by 50%""
+ngcDifficulty,NGCDifficultyOptions,,"SetTooltip ngcEasy ""- Suas naves sofrem 25% menos dano\n- Alcance dos sensores aumentado em 500 unidades\n- Salvamento aumentado em 50%""
 SetTooltipHighlightColors ngcEasy hColor hColor hColor
 SetTooltipHighlights ngcEasy ""25%"" ""500"" ""50%""
-SetTooltip ngcNormal ""Default settings balanced for a challenging experience.""","Selecione o nível de dificuldade da campanha. ""Fácil"" é recomendado para jogadores pela primeira vez.","0:ngcNormal:Normal
+SetTooltip ngcNormal ""Configurações padrão equilibradas para uma experiência desafiadora.""","Selecione o nível de dificuldade da campanha. ""Fácil"" é recomendado para jogadores pela primeira vez.","0:ngcNormal:Normal
 1:ngcEasy:Fácil",
 ngcEasyPicked,NewGameOptionSelected,$option == ngcEasy,"NGCSetDifficulty easy
 FireAll NGCTutorialOptions",,,
 ngcNormalPicked,NewGameOptionSelected,$option == ngcNormal,"NGCSetDifficulty normal
 FireAll NGCTutorialOptions",,,
-ngcWithTutorial,NGCTutorialOptions,,"SetTooltip ngcTutorial ""Start with a tutorial mission that introduces the high-level campaign mechanics and active abilities.""",,0:ngcTutorial:Começar com o tutorial!,
-ngcSkipTutorial,NGCTutorialOptions,NGCCanSkipTutorial,"SetTooltip ngcSkip ""Skip the tutorial. Will give you roughly the same starting conditions as finishing the tutorial normally would.""",,1:ngcSkip:Pular,
-ngcSkipTutorialNoSkip,NGCTutorialOptions,!NGCCanSkipTutorial,"SetTooltip ngcSkip ""Need to start at least one game with the tutorial in order to be able to skip it.""
+ngcWithTutorial,NGCTutorialOptions,,"SetTooltip ngcTutorial ""Inicia com uma missão tutorial que apresenta as mecânicas de campanha de alto nível e habilidades ativas.""",,0:ngcTutorial:Começar com o tutorial!,
+ngcSkipTutorial,NGCTutorialOptions,NGCCanSkipTutorial,"SetTooltip ngcSkip ""Pular o tutorial. Fornecerá condições de início aproximadamente iguais às de terminar o tutorial normalmente.""",,1:ngcSkip:Pular,
+ngcSkipTutorialNoSkip,NGCTutorialOptions,!NGCCanSkipTutorial,"SetTooltip ngcSkip ""É necessário iniciar pelo menos um jogo com o tutorial para poder pulá-lo.""
 SetEnabled ngcSkip false",,1:ngcSkip:Pular,
 ngcTutorialPicked,NewGameOptionSelected,$option == ngcTutorial,"NGCSetStartingLocation Galatia 1000 -15000
 NGCAddStandardStartingScript
@@ -3863,13 +3863,13 @@ pods_open,CargoPodsOptions,!$locked,,,0:podsOpen:Examinar conteúdo da cápsula,
 pods_leave,CargoPodsOptions,,SetShortcut defaultLeave ESCAPE,,100:defaultLeave:Sair,
 pods_stabilize,CargoPodsOptions,,,,1:podsStabilize:Colocar as cápsulas em órbita estável,
 pods_stabilizeDisable,CargoPodsOptionsUpdate,$inHyperspace,"SetEnabled podsStabilize false
-SetTooltip podsStabilize ""Can not be done in hyperspace.""",,,
+SetTooltip podsStabilize ""Não pode ser feito no hiperespaço.""",,,
 pods_stabilizeDisableDidAlready,CargoPodsOptionsUpdate,"!$inHyperspace
 $stabilized
 $daysLeft > 300","SetEnabled podsStabilize false
-SetTooltip podsStabilize ""The pods are already in a fairly stable orbit and further efforts will not yield meaningful results.""",,,
+SetTooltip podsStabilize ""As cápsulas já estão em uma órbita razoavelmente estável e novos esforços não trarão resultados significativos.""",,,
 pods_stabilizeTempLoc,CargoPodsOptionsUpdate,$player.locTag:temporary_location score:100,"SetEnabled podsStabilize false
-SetTooltip podsStabilize ""You're unlikely to be able to find the current area of space in the future, and stabilizing the cargo pods makes little sense.""",,,
+SetTooltip podsStabilize ""É improvável que você consiga encontrar a mesma região do espaço no futuro, e estabilizar as cápsulas de carga não faz muito sentido.""",,,
 pods_break,CargoPodsOptions,"$locked
 !$canUnlock",,,0:podsBreak:Destruir os cadeados,
 pods_unlock,CargoPodsOptions,"$locked
@@ -5591,7 +5591,7 @@ $player.transponderOn
 $global.lpp_visitedShrineHesperus",FireBest lppHesperusShrineOptionCheck,,3:lpp_hesperusVisitStart:Pegar uma nave para visitar o santuário luddico,
 lppHesperusShrineOptionCheck,lppHesperusShrineOptionCheck,"$faction.isHostile
 $market.ind:heavybatteries","SetEnabled lpp_hesperusVisitStart false
-SetTooltip lpp_hesperusVisitStart ""You have been declared unwelcome by the Knights of Ludd. The heavy batteries of Hesperus track your $shipOrFleet, discouraging casual visitation.""",,,
+SetTooltip lpp_hesperusVisitStart ""Você foi declarado persona non grata pelos Cavaleiros de Ludd. As baterias pesadas de Hesperus rastreiam sua $shipOrFleet, desencorajando visitas casuais.""",,,
 lppHesperusShrineVisitSneak,PopulateOptions,"$market.id == hesperus
 $market.tag:luddic_shrine
 $menuState == main
@@ -5714,7 +5714,7 @@ FireBest DialogOptionSelected","Aquela ruga novamente, o menor sorriso do Setor.
 
 ""Hoje estou mais preocupado com seu espírito.""",,
 lppHesperusExcubitorThreatCheck,LPPCheckCanThreatenExcubitor,$player.maxCombatHullSize < 4,"SetEnabled lpp_hesperusExcubitorForce false
-SetTooltip lpp_hesperusExcubitorForce ""Requires a non-civilian capital ship in your fleet.""",,,
+SetTooltip lpp_hesperusExcubitorForce ""Requer uma nave capital não civil em sua frota.""",,,
 lppHesperusExcubitorBribe,DialogOptionSelected,$option == lpp_hesperusExcubitorBribe,"$option = lpp_hesperusExcubitorJudge1 0
 FireBest DialogOptionSelected
 AdjustRepActivePerson SUSPICIOUS -5
@@ -6235,9 +6235,9 @@ LKEchalVIPdemandRecruiter,DialogOptionSelected,$option == lke_chalVIPdemandRecru
 $demandedRecruiter = true 0
 FireAll LKEChalcedonVIPoptionsHostile","""Para quê,"" $heOrShe cospe, ""para assassinar? Não entregaremos um dos nossos a você.""",,
 lkeChalcedonCheckThreat,LKEChalcedonCheckThreat,$player.maxCombatHullSize < 4,"SetEnabled lke_chalcedonVIPoptHostileD false
-SetTooltip lke_chalcedonVIPoptHostileD ""Requires a non-civilian capital ship in your fleet.""",,,
+SetTooltip lke_chalcedonVIPoptHostileD ""Requer uma nave capital não civil em sua frota.""",,,
 lkeChalcedonCheckThreatRaid,LKEChalcedonCheckThreatRaid,$player.marines < 250,"SetEnabled lke_chalcedonVIPoptHostileC false
-SetTooltip lke_chalcedonVIPoptHostileC ""Requires over 250 marines.""",,,
+SetTooltip lke_chalcedonVIPoptHostileC ""Requer mais de 250 fuzileiros.""",,,
 lkeChalcedonVIPoptHostileSP1a,DialogOptionSelected,"$option == lke_chalcedonVIPoptHostileSP
 $global.jangalaProtestIncident",,"Você explica que, embora estivesse mesmo no protesto na Estação Jangala naquele dia fatídico, não é tudo como parece.
 
@@ -8071,9 +8071,9 @@ FireBest DialogOptionSelected",Ele lhe lança um olhar que não contém nem um traç
 LKEvirensIntentionsCjobResp,DialogOptionSelected,$option == lke_virensIntentionsCjob,"$option = lke_virensEndingA1 0
 FireBest DialogOptionSelected","Ele lhe lança um olhar. Parece mais distante de você, de alguma forma.",,
 lkeMazalotVirensCheckThreat,LKEvirensThreatCheck,$player.maxCombatHullSize < 4,"SetEnabled lke_virensThreatenWithFleet false
-SetTooltip lke_virensThreatenWithFleet ""Requires a non-civilian capital ship in your fleet.""",,,
+SetTooltip lke_virensThreatenWithFleet ""Requer uma nave capital não civil em sua frota.""",,,
 lkeMazalotVirensCheckThreatRaid,LKEvirensThreatCheck,$player.marines < 400,"SetEnabled lke_virensThreatenWithMarines false
-SetTooltip lke_virensThreatenWithMarines ""Requires over 400 marines.""",,,
+SetTooltip lke_virensThreatenWithMarines ""Requer mais de 400 fuzileiros.""",,,
 LKEvirensThreatenWithFleet,DialogOptionSelected,$option == lke_virensThreatenWithFleet,"$option = lke_virensThreatenWithMarines 0
 FireBest DialogOptionSelected",,,
 LKEvirensThreatenWithMarines,DialogOptionSelected,$option == lke_virensThreatenWithMarines,"AdjustRepActivePerson INHOSPITABLE -10
@@ -8183,7 +8183,7 @@ $market.lke_contactVirens
 $menuState == main
 #Call $lke_ref updateData",FireBest LKEvirensRaidCheckHostilesNearby,,2:lke_virensRaidStart:Preparar um ataque aos complexos de Virens para resgatar Jethro Bornanew,
 lkeDisableVirensRaidIfNeeded,LKEvirensRaidCheckHostilesNearby,HostileFleetNearbyAndAware,"SetEnabled lkeVirensRaidStart false
-SetTooltip lkeVirensRaidStart ""A nearby hostile fleet is tracking your movements, making a raid absolutely inadvisable.""",,,
+SetTooltip lkeVirensRaidStart ""Uma frota hostil próxima está rastreando seus movimentos, tornando um ataque absolutamente desaconselhável.""",,,
 lkeVirensRaidStart,DialogOptionSelected,$option == lke_virensRaidStart,"$raidDifficulty = 250 0
 $raidGoBackTrigger = PopulateOptions 0
 $raidContinueTrigger = LKEVirensRaidFinishedB 0
@@ -8435,7 +8435,7 @@ lke_bornanewVisitScan:Ordene uma varredura das coordenadas de Bornanew
 lke_prepMarines:Leve um esquadrão de fuzileiros como reforço
 lke_bornanewAbort:Cancele o lançamento e considere suas opções",
 LKEbornanewbort,DialogOptionSelected,$option == lke_bornanewAbort,FireAll PopulateOptions,,,
-LKEbornanewPrepMarinesOff,LKEbornanewMarineCheck,$player.marines < 6,"SetTooltip lke_prepMarines ""Requires at least 6 marines.""
+LKEbornanewPrepMarinesOff,LKEbornanewMarineCheck,$player.marines < 6,"SetTooltip lke_prepMarines ""Requer pelo menos 6 fuzileiros.""
 SetTooltipHighlights lke_prepMarines 6
 SetEnabled lke_prepMarines false",,,
 LKEbornanewPrepMarines,DialogOptionSelected,$option == lke_prepMarines,"$market.lke_didMarines = true 1
@@ -9584,18 +9584,18 @@ BFFImmBornBuyerOptHubA,BFFImmBornBuyerOptHub,!$mmBornBuyerSaidChurch,,,"bffi_mmB
 BFFImmBornBuyerOptHubB,BFFImmBornBuyerOptHub,"!$saidBuyerPoor
 $player.credits < 500000",,,"bffi_mmBornBuyerPoor:""No momento, não estou exatamente cheio de créditos.""",
 BFFImmBornBuyerOptHubB2,BFFImmBornBuyerOptHub,"!$saidBuyerPoor
-$player.credits > 499999","SetTooltip bffi_mmBornBuyerPoor ""It's a waste of money, $global.jethroName.""",,"bffi_mmBornBuyerDestroy:""Posso ser rico, mas você pretende destruir a luva, certo?""",
+$player.credits > 499999","SetTooltip bffi_mmBornBuyerPoor ""É um desperdício de dinheiro, $global.""",,"bffi_mmBornBuyerDestroy:""Posso ser rico, mas você pretende destruir a luva, certo?""",
 BFFImmBornBuyerOptHubBalt,BFFImmBornBuyerOptHub,$saidBuyerPoor,,,"bffi_mmBornStealOpt:""Parece que deveríamos simplesmente roubar a luva.""",
-BFFImmBornBuyerOptHubC,BFFImmBornBuyerOptHub,!$saidBuyerColony,"SetTooltip bffi_mmBornBuyerColony ""Owning a colony would demonstrate capital investment that might be leveraged in business dealings."" ",,"bffi_mmBornBuyerColony:""Não tenho créditos, mas opero uma colônia independente...""",
+BFFImmBornBuyerOptHubC,BFFImmBornBuyerOptHub,!$saidBuyerColony,"SetTooltip bffi_mmBornBuyerColony ""Possuir uma colônia demonstraria investimento de capital que poderia ser usado em negociações comerciais."" ",,"bffi_mmBornBuyerColony:""Não tenho créditos, mas opero uma colônia independente...""",
 BFFImmBornBuyerOptHubCno,BFFImmBornBuyerOptHub,$player.numColonies == 0,SetEnabled bffi_mmBornBuyerColony false,,,
-BFFImmBornBuyerOptHubD,BFFImmBornBuyerOptHub,!$saidBuyerDemarch,"SetTooltip bffi_mmBornBuyerLeague ""Menes Yaribay is more likely to trust the word - and credit - of someone who is technically a fellow demarch of the Persean League."" ",,"bffi_mmBornBuyerLeague:""Não tenho créditos, mas sou membro da Liga Perseana...""","# handled later, but bring up the possibility now..."
+BFFImmBornBuyerOptHubD,BFFImmBornBuyerOptHub,!$saidBuyerDemarch,"SetTooltip bffi_mmBornBuyerLeague ""Menes Yaribay é mais propenso a confiar na palavra — e no crédito — de alguém que é tecnicamente um colega demarca da Liga Perseana."" ",,"bffi_mmBornBuyerLeague:""Não tenho créditos, mas sou membro da Liga Perseana...""","# handled later, but bring up the possibility now..."
 BFFImmBornBuyerOptHubDno,BFFImmBornBuyerOptHub,!$player.isLeagueMember,SetEnabled bffi_mmBornBuyerLeague false,,,
 BFFImmBornBuyerOptHubE,BFFImmBornBuyerOptHub,"!$saidArroyo
 $global.metArroyo",,,"bffi_mmBornArroyo:""Por acaso conheço alguém extremamente rico. Rayan Arroyo.""",# :D 
 BFFImmBornBuyerOptHubF2,BFFImmBornBuyerOptHub,,,,"bffi_mmBornDoBuyer:""Vamos fazer isso. Vou fingir que quero comprar uma relíquia 'autêntica'.""",
 BFFImmBornBuyerOptHubFno,BFFImmBornBuyerOptHub,"$player.credits < 500000
 !$instalmentPlanProposed","SetEnabled bffi_mmBornDoBuyer false
-SetTooltip bffi_mmBornBuyerColony ""Requires at least 500,000 credits or an alternate means of establishing your legitimacy.""
+SetTooltip bffi_mmBornBuyerColony ""Requer pelo menos 500.000 créditos ou outro meio de estabelecer sua legitimidade.""
 SetTooltipHighlights ""500,000 credits"" ""alternate means""",,,
 BFFImmBornBuyerOptHubG,BFFImmBornBuyerOptHub,,,,"bffi_mmBornOptsBack:""Vamos discutir outras opções primeiro.""",
 BFFImmBornArroyo,DialogOptionSelected,$option == bffi_mmBornArroyo,$saidArroyo = true 0,"Bornanew olha para cima. ""Você acha que ele nos ajudaria nisso?""","bffi_mmBornArroyoA:""Improvável.""
@@ -9804,10 +9804,10 @@ Call $global.bffi_ref updateData
 $bffi_stage == ATTEND_A_PARTY",FireAll BFFIapStartOptionRaidCheck,,3:bffi_attendPartyIntro1:Aceitar o convite de Menes Yaribay e ir de transporte para o complexo dele,
 BFFIapStartOptionRaidCheck1,BFFIapStartOptionRaidCheck,"$global.bffi_intendToRaid
 $player.transponderOn","SetEnabled bffi_attendPartyIntro1 false
-SetTooltip bffi_attendPartyIntro1 ""You must approach Olinadu with your transponder off in order to sneak marines into position.""",,,
+SetTooltip bffi_attendPartyIntro1 ""Você deve se aproximar de Olinadu com o transponder desligado para infiltrar fuzileiros em posição.""",,,
 BFFIapStartOptionRaidCheck2,BFFIapStartOptionRaidCheck,"$global.bffi_intendToRaid
 $player.marines < 100","SetEnabled bffi_attendPartyIntro1 false
-SetTooltip bffi_attendPartyIntro1 ""You need at least 100 marines in order to execute the raid on Menes Yaribay's compound.""
+SetTooltip bffi_attendPartyIntro1 ""Você precisa de pelo menos 100 fuzileiros para executar o ataque ao complexo de Menes Yaribay.""
 SetTooltipHighlights 100",,,
 BFFIattendPartyIntro1,DialogOptionSelected,$option == bffi_attendPartyIntro1,ShowLargePlanet,"O convite do Menes fornece uma rota de voo e códigos de sobreposição de controle de tráfego de nível Demarch.
 
@@ -10122,7 +10122,7 @@ $global.metArroyo","SetStoryOption bffi_mpBuyerConArroyo 1 bffi_conArroyo ui_cha
 BFFImpBuyerHub3OptG,BFFImpBuyerHub3Opts,"!$madeArgChurch
 $buyerArgsMade == 2",,,"bffi_mpBuyerConChurch:""Na verdade, a Igreja está apoiando minha compra."" (mentira)",
 BFFImpBuyerHub3OptGagain,BFFImpBuyerHub3Opts,"$madeArgChurch 
-$buyerArgsMade == 2","SetTooltip bffi_mpBuyerConChurchA ""You can see Bornanew watching you as you consider your next words. He doesn't look pleased.""",,"bffi_mpBuyerConChurchA:""Desculpe, mais que piada de marinheiro. A Igreja realmente está apoiando minha candidatura."" (confirmar)",
+$buyerArgsMade == 2","SetTooltip bffi_mpBuyerConChurchA ""Você pode ver Bornanew observando você enquanto considera suas próximas palavras. Ele não parece satisfeito.""",,"bffi_mpBuyerConChurchA:""Desculpe, mais que piada de marinheiro. A Igreja realmente está apoiando minha candidatura."" (confirmar)",
 #BFFImpBuyerHub3OptRaid,BFFImpBuyerHub3Opts,"$buyerArgsMade == 2
 $player.marines > 99",,,bffi_mpBuyerCallRaid:Call in the prepared marines instead,"# Removed because it's awkward. 1. player will almost certainly have transponder on, which makes them go hostile with PL, 2. player doesn't learn about the marines requirement beforehand, etc etc. -dgb"
 BFFImpBuyerConChurch1,DialogOptionSelected,$option == bffi_mpBuyerConChurch,,"Ele não vê o choque no rosto de Bornanew. ""É mesmo?"" Menes pergunta, parecendo satisfeito.
@@ -10811,9 +10811,9 @@ BFFItalkToEngineer12optA,BFFItalkToEngineer12opts,!$saidUh,,,"bffi_talkToEnginee
 BFFItalkToEngineer12optB,BFFItalkToEngineer12opts,,DoCanAffordCheck 10000 bffi_talkToEngineer13b false,,bffi_talkToEngineer13b:Claro.,
 BFFItalkToEngineer12optD,BFFItalkToEngineer12opts,,FireAll BFFItalkToEngineer12optsCheck,,"bffi_talkToEngineer13corruption:""Você serve a Igreja. Isso não é corrupção, $jethroName?""",
 BFFItalkToEngineer12optCheck1,BFFItalkToEngineer12optsCheck,$player.ethosCynical > 1,"SetEnabled bffi_talkToEngineer13corruption false
-SetTooltip bffi_talkToEngineer13corruption ""It may be cynical, but she's got a clever hustle and it'd be a shame to spoil it.""",,,
+SetTooltip bffi_talkToEngineer13corruption ""Pode ser cínico, mas ela tem um esquema inteligente e seria uma pena estragar isso.""",,,
 BFFItalkToEngineer12optCheck2,BFFItalkToEngineer12optsCheck,$player.ethosMercenary > 1,"SetEnabled bffi_talkToEngineer13corruption false
-SetTooltip bffi_talkToEngineer13corruption ""You can easily understand that she's just trying to make some extra money. You're a mercenary too, as it serves you, and it'd be a shame to spoil a good hustle.""",,,
+SetTooltip bffi_talkToEngineer13corruption ""É fácil entender que ela só está tentando ganhar um dinheiro extra. Você também é um mercenário, afinal, e seria uma pena estragar um bom esquema.""",,,
 BFFItalkToEngineer13a,DialogOptionSelected,$option == bffi_talkToEngineer13a,"$saidUh = true 0
 FireAll BFFItalkToEngineer12opts","Ela olha entre você e Bornanew.
 
@@ -10938,8 +10938,8 @@ BFFIulmusPrestart2,DialogOptionSelected,$option == bffi_ulmusPrestart2,,"Bornane
 
 Um sorriso amargo surge. ""Como eu uma vez fiz.""","bffi_ulmusPrestart3:""Tático, prepare um ônibus. Vamos ter uma conversa com Ulmus Pond.""",
 BFFIulmusPrestart3,DialogOptionSelected,$option == bffi_ulmusPrestart3,"ShowLargePlanet
-SetTooltip bffi_ulmusPondYouBad ""Due to his criminal background, $global.jethroName must be familiar with the art of intimidation. He would perform the role well.""
-SetTooltip bffi_ulmusPondMeBad ""In consideration of his criminal background, you don't want to put $global.jethroName back into playing a role he's worked so hard to leave behind.""","Bornanew tem seu caderno e seu velho datapad barato empacotados em uma bolsa feita do que parece couro. Você já ouviu falar do processo primitivo que os ludditas supostamente usam para produzir o material: a pele de um animal é retirada e, de alguma forma, cozida com seus próprios dejetos. Soava insuportavelmente primitivo quando descrito. Talvez desinformação anti-Luddica, pois você não detecta cheiro de fezes.
+SetTooltip bffi_ulmusPondYouBad ""Devido ao seu passado criminoso, $global.jethroName deve estar familiarizado com a arte da intimidação. Ele desempenharia bem esse papel.""
+SetTooltip bffi_ulmusPondMeBad ""Levando em consideração seu passado criminoso, você não quer devolver $global.jethroName a um papel do qual ele se esforçou tanto para sair.""","Bornanew tem seu caderno e seu velho datapad barato empacotados em uma bolsa feita do que parece couro. Você já ouviu falar do processo primitivo que os ludditas supostamente usam para produzir o material: a pele de um animal é retirada e, de alguma forma, cozida com seus próprios dejetos. Soava insuportavelmente primitivo quando descrito. Talvez desinformação anti-Luddica, pois você não detecta cheiro de fezes.
 
 ""Como devemos abordar isso?"" Bornanew pergunta. ""Como nos dramas da MuniSec — um de nós é amigável com o alvo, o outro hostil?""","bffi_ulmusPondMeBad:""Eu serei o mau.""
 bffi_ulmusPondYouBad:""Você será o mau.""",
@@ -11830,7 +11830,7 @@ BFFIpsRuseNiceOption,BFFIpsRuseNiceOpts,$reasons >= 3,"SetStoryOption bffi_stati
 BFFIpsRuseNiceFopt,BFFIpsRuseNiceOpts,"!$didAgreement
 $reasons < 3",,,"bffi_psRuseNiceF:""Dei ao Caminho um grande presente, e esse acordo se manteve.""",
 BFFIpsRuseNiceFoptCheck,BFFIpsRuseNiceOpts,!$player.patherAgreementPermanent,"SetEnabled bffi_psRuseNiceF false
-SetTooltip bffi_psRuseNiceF ""Requires you to have made a certain longstanding arrangement with the Luddic Path.""",,,
+SetTooltip bffi_psRuseNiceF ""Exige que você tenha feito um acordo de longa data com o Caminho Luddico.""",,,
 BFFIpsRuseNiceF,DialogOptionSelected,$option == bffi_psRuseNiceF,"$didAgreement = true
 $reasons++
 $reasons++
@@ -11840,7 +11840,7 @@ O Pather olha para cima e para longe por um momento. ""Este é um Caminho estranh
 BFFIpsRuseNiceAopt,BFFIpsRuseNiceOpts,"!$didBribe
 $reasons < 3",,,"bffi_psRuseNiceA:""Vamos facilitar as coisas. Vou te dar 50.000 créditos para ajudar na sua realocação.""",
 BFFIpsRuseNiceAoptCheck,BFFIpsRuseNiceOpts,$player.credits < 50000,"SetEnabled bffi_psRuseNiceA false
-SetTooltip bffi_psRuseNiceA ""Requires 50,000 credits.""
+SetTooltip bffi_psRuseNiceA ""Exige 50.000 créditos.""
 SetTooltipHighlights bffi_psRuseNiceA 50,000",,,
 BFFIpsRuseNiceA,DialogOptionSelected,$option == bffi_psRuseNiceA,"$didBribe = true
 $reasons++
@@ -11851,14 +11851,14 @@ AddTextSmall ""Prometeu pagar 50.000 créditos se o Pather aceitar seus termos.""
 BFFIpsRuseNiceBopt,BFFIpsRuseNiceOpts,"!$didLuddicFaithful
 $reasons < 3",,,"bffi_psRuseNiceB:""Já percorri o Caminho do Peregrino. Talvez não concordemos em tudo, mas sou um companheiro de jornada.""",
 BFFIpsRuseNiceBoptCheck,BFFIpsRuseNiceOpts,!$player.mostLuddicEthosFaithful,"SetEnabled bffi_psRuseNiceB false
-SetTooltip bffi_psRuseNiceB ""Requires that you've demonstrated a dedication to the faith of the Luddic Church.""",,,
+SetTooltip bffi_psRuseNiceB ""Exige que você tenha demonstrado dedicação à fé da Igreja Luddica.""",,,
 BFFIpsRuseNiceB,DialogOptionSelected,$option == bffi_psRuseNiceB,"$didLuddicFaithful = true
 $reasons++
 FireAll BFFIpsRuseNiceOpts","$HeOrShe acena com a cabeça, franzindo a testa. ""Seja como for, a semente corrupta da heresia está em seu coração. Não é algo simples de se remover. Seu caminho passará por sangue e dor antes que possa ser purificado.""",,
 BFFIpsRuseNiceCopt,BFFIpsRuseNiceOpts,"!$didLuddicPather
 $reasons < 3",,,"bffi_psRuseNiceC:""Já percorri o Caminho. Apoio sua causa, no fim das contas, mesmo que você não acredite nisso.""",
 BFFIpsRuseNiceCoptCheck,BFFIpsRuseNiceOpts,!$player.mostLuddicEthosPather,"SetEnabled bffi_psRuseNiceC false
-SetTooltip bffi_psRuseNiceC ""Requires a proven dedication to the Luddic Path.""",,,
+SetTooltip bffi_psRuseNiceC ""Exige uma dedicação comprovada ao Caminho Luddico.""",,,
 BFFIpsRuseNiceC,DialogOptionSelected,$option == bffi_psRuseNiceC,"$didLuddicPather = true
 $reasons++
 FireAll BFFIpsRuseNiceOpts","""Pois é,"" $heOrShe diz com um suspiro. ""Você... me confunde. Sua cooperação com um capanga dos Cavaleiros, um brutamontes e torturador de uma luz falsa... Tento ver algum Plano maior nisso, mas não consigo.""",,
@@ -11866,7 +11866,7 @@ BFFIpsRuseNiceDopt,BFFIpsRuseNiceOpts,"!$didMercy
 $reasons < 3",,,"bffi_psRuseNiceD:""Tenho sido misericordioso em minhas ações, não importa o que pense de minhas crenças.""",
 BFFIpsRuseNiceDoptCheck,BFFIpsRuseNiceOpts,"!$didHumanitarian
 $player.ethosHumanitarian < 3","SetEnabled bffi_psRuseNiceD false
-SetTooltip bffi_psRuseNiceD ""Requires a history of merciful acts.""",,,
+SetTooltip bffi_psRuseNiceD ""Exige um histórico de atos de misericórdia.""",,,
 BFFIpsRuseNiceD,DialogOptionSelected,$option == bffi_psRuseNiceD,"$didMercy = true
 $reasons++
 FireAll BFFIpsRuseNiceOpts","""Seu caminho é de sangue, mas há quem diga que sua alma não está perdida para a Perdição.""
@@ -11878,7 +11878,7 @@ BFFIpsRuseNiceEopt,BFFIpsRuseNiceOpts,"!$didHumanitarian
 $reasons < 3",,,"bffi_psRuseNiceE:""Certamente minha reputação humanitária me precede.""",
 BFFIpsRuseNiceEoptCheck,BFFIpsRuseNiceOpts,"!$didHumanitarian
 $player.ethosHumanitarian < 3","SetEnabled bffi_psRuseNiceE false
-SetTooltip bffi_psRuseNiceE ""Requires a humanitarian reputation.""",,,
+SetTooltip bffi_psRuseNiceE ""Exige uma reputação humanitária.""",,,
 BFFIpsRuseNiceE,DialogOptionSelected,$option == bffi_psRuseNiceE,"$didHumanitarian = true
 $reasons++
 FireAll BFFIpsRuseNiceOpts","""Como você está perdido, e quão longe da luz."" $HeOrShe balança $hisOrHer cabeça. ""Se os rumores forem verdadeiros, então talvez uma parte de você ouça um sussurro da Palavra. Essa pode ser a única explicação.""",,
@@ -11899,7 +11899,7 @@ BFFIpsRuseMeanOption,BFFIpsRuseMeanOpts,$reasons == 3,"SetStoryOption bffi_stati
 BFFIpsRuseMeanAopt,BFFIpsRuseMeanOpts,"!$didFleetThreat
 $reasons < 3",FireAll BFFIpsRuseMeanAoptCheck,,"bffi_psRuseMeanA:""Minhas naves capitâneas despedaçarão sua estação. Você não tem chance alguma de vitória.""",
 BFFIpsRuseMeanAoptCheck,BFFIpsRuseMeanAoptCheck,$player.maxCombatHullSize < 4,"SetEnabled bffi_psRuseMeanA false
-SetTooltip bffi_psRuseMeanA ""This threat requires a non-civilian capital ship in your fleet.""",,,
+SetTooltip bffi_psRuseMeanA ""Essa ameaça exige que sua frota inclua uma nave capital não-civil.""",,,
 BFFIpsRuseMeanA,DialogOptionSelected,$option == bffi_psRuseMeanA,"$didFleetThreat = true
 $reasons++
 FireAll BFFIpsRuseMeanOpts","""Sua brutalidade só provará quão longe você está da Palavra! Nossa... nossa morte será como a de mártires.""
@@ -11909,7 +11909,7 @@ BFFIpsRuseMeanBopt,BFFIpsRuseMeanOpts,"!$didSedgeKill
 $reasons < 3",,,"bffi_psRuseMeanB:""Matei Wrestling Sedge, e mataria você sem remorso. A escolha é sua.""",
 BFFIpsRuseMeanBoptCheck,BFFIpsRuseMeanOpts,"!$didSedgeKill
 !$player.killedSedge","SetEnabled bffi_psRuseMeanB false
-SetTooltip bffi_psRuseMeanB ""The conviction of a truly cold-blooded killer might have the right effect...""",,,
+SetTooltip bffi_psRuseMeanB ""A convicção de um assassino verdadeiramente frio poderia ter o efeito certo...""",,,
 BFFIpsRuseMeanBsaidKilled,DialogOptionSelected,"$option == bffi_psRuseMeanB
 $saidKilledSedge","$didSedgeKill = true
 $reasons++
@@ -11925,7 +11925,7 @@ BFFIpsRuseMeanCopt,BFFIpsRuseMeanOpts,"!$didRuthless
 $reasons < 3",,,"bffi_psRuseMeanC:""Você me conhece. Minha reputação de impiedoso me precede.""",
 BFFIpsRuseMeanCoptCheck,BFFIpsRuseMeanOpts,"!$didRuthless
 $player.ethosRuthless < 3","SetEnabled bffi_psRuseMeanC false
-SetTooltip bffi_psRuseMeanC ""Requires a reputation for ruthless acts.""",,,
+SetTooltip bffi_psRuseMeanC ""Exige uma reputação por atos impiedosos.""",,,
 BFFIpsRuseMeanC,DialogOptionSelected,$option == bffi_psRuseMeanC,"$didRuthless = true
 $reasons++
 FireAll BFFIpsRuseMeanOpts","""É verdade"", $heOrShe diz com amargura. ""Seu nome é uma maldição sobre o Setor. Um presságio de sofrimento.""",,
@@ -11933,7 +11933,7 @@ BFFIpsRuseMeanDopt,BFFIpsRuseMeanOpts,"!$didEnemy
 $reasons < 3",,,"bffi_psRuseMeanD:""Sou um grande inimigo conhecido por todos os Pathers. Como você poderia duvidar da minha ameaça?""",
 BFFIpsRuseMeanDoptCheck,BFFIpsRuseMeanOpts,"!$didEnemy
 $faction.rel != VENGEFUL","SetEnabled bffi_psRuseMeanD false
-SetTooltip bffi_psRuseMeanD ""You'll only be believed if you've acted as a tireless enemy of the Luddic Path.""",,,
+SetTooltip bffi_psRuseMeanD ""Só será acreditado se tiver agido como um inimigo incansável do Caminho Luddico.""",,,
 BFFIpsRuseMeanD,DialogOptionSelected,$option == bffi_psRuseMeanD,"$didEnemy = true
 $reasons++
 FireAll BFFIpsRuseMeanOpts","""Então é você,"" $heOrShe diz, com a testa franzida. ""Eu havia pensado... certamente não... por que, diga-me, a Providência lançaria tal mal sobre meu Caminho?""
@@ -11944,7 +11944,7 @@ $reasons < 3
 !$didMerc",,,"bffi_psRuseMeanE:""Confie que sou mercenário. Estou evitando uma luta para poupar créditos.""",
 BFFIpsRuseMeanEoptCheck,BFFIpsRuseMeanOpts,"!$didMercy
 $player.ethosMercenary < 2","SetEnabled bffi_psRuseMeanE false
-SetTooltip bffi_psRuseMeanE ""Requires a history of exceptionally mercenary choices.""",,,
+SetTooltip bffi_psRuseMeanE ""Exige um histórico de escolhas excepcionalmente mercenárias.""",,,
 BFFIpsRuseMeanE,DialogOptionSelected,$option == bffi_psRuseMeanE,"$didMerc = true
 $reasons++
 FireAll BFFIpsRuseMeanOpts","E, apesar da sua temível reputação, você vai deixá-los entrar em um pequeno segredo: é mais barato, você explica, cumprir seus parâmetros de missão sem uma luta. Assim, os créditos que você ganha, essa fortuna mamonita, são sempre maiores do que antes.
@@ -11992,7 +11992,7 @@ $menuState == main
 Call $global.bffi_ref updateData
 $bffi_stage == INVESTIGATE_PATHER_STATION",FireBest BFFIpatherStationRaidCheckHostilesNearby,,2:bffi_stationRaidStart:Reúna seus oficiais para planejar um ataque para capturar a nanoforja,
 BFFIdisableStationRaidOption,BFFIpatherStationRaidCheckHostilesNearby,HostileFleetNearbyAndAware,"SetEnabled bffi_stationRaidStart false
-SetTooltip bffi_stationRaidStart ""A nearby hostile fleet is tracking your movements, making a raid impossible.""",,,
+SetTooltip bffi_stationRaidStart ""Uma frota hostil próxima está rastreando seus movimentos, tornando um ataque impossível.""",,,
 BFFIpatherStationRaidStart,DialogOptionSelected,$option == bffi_stationRaidStart,"$raidDifficulty = 200 0
 $raidGoBackTrigger = PopulateOptions 0
 $raidRestrictToTrigger =  BFFIpatherStationRaidFinished 0
@@ -13357,7 +13357,7 @@ Cuidado com seus passos.",,
 # turning AI cores in,,,,,,
 aiCores_turnInOption,PopulateOptions,"$isPerson
 AICores personCanAcceptCores",FireBest DisableTurnInCoresOptionIfNeeded,,"10:aiCores_startTurnIn:""Gostaria de entregar estes Núcleos de IA que adquiri...""",
-aiCores_disableTurnInOption,DisableTurnInCoresOptionIfNeeded,!AICores playerHasCores,"SetTooltip aiCores_startTurnIn ""You do not have any AI cores in your possession.""
+aiCores_disableTurnInOption,DisableTurnInCoresOptionIfNeeded,!AICores playerHasCores,"SetTooltip aiCores_startTurnIn ""Você não possui nenhum núcleo de IA em sua posse.""
 SetEnabled aiCores_startTurnIn false",,,
 aiCores_turnInOptionSelGeneric,DialogOptionSelected,$option == aiCores_startTurnIn,FireAll PopulateCoresTurnInOptions,"Uma oferta fascinante. Ora, se uma das principais facções o pegasse com esses núcleos, eles poderiam confiscá-los na hora. Vou fazer um favor a você e dar um bom preço.",,
 aiCores_turnInOptionSelLuddic,DialogOptionSelected,"$option == aiCores_startTurnIn
@@ -13427,7 +13427,7 @@ dstrGive:""Não há necessidade de pagamento — não sou do tipo que se aproveita de
 dstrCrew:""Que tal eu levar parte da sua tripulação?""
 dstrDeny:""Desculpe, não temos o suficiente para ceder no momento.""",
 dstr_showEnoughFuel,DistressShowAvailableFuel,$player.fuel >= $entity.distressFuel,SetTextHighlights $player.fuel,Você tem $player.fuel de combustível disponível.,,
-dstr_updateCrewOption,UpdateDstrCrewOption,$player.crewRoom < 1,"SetTooltip dstrCrew ""Your $shipOrFleet does not have room to take on any more crew.""
+dstr_updateCrewOption,UpdateDstrCrewOption,$player.crewRoom < 1,"SetTooltip dstrCrew ""Sua $shipOrFleet não tem espaço para contratar mais tripulantes.""
 SetEnabled dstrCrew false",,,
 dstr_showNotEnoughFuel,DistressShowAvailableFuel,$player.fuel < $entity.distressFuel,"SetTextHighlightColors bad
 SetTextHighlights $player.fuel
@@ -13581,7 +13581,7 @@ SetTextHighlights $player.creditsStrC
 FireBest DCallPaymentOptionsUpdate",,"0:dcallPay:Oferecer pagar [$distressPaymentC]
 1:dcallThank:Agradecer $himOrHer profusamente, mas não oferecer pagamento",
 dcall_paymentOptionsUpdate,DCallPaymentOptionsUpdate,!$distressCanAfford,"SetEnabled dcallPay false
-SetTooltip dcallPay ""Not enough credits to offer to pay a reasonable, non-insulting amount.""",,,
+SetTooltip dcallPay ""Créditos insuficientes para oferecer um valor razoável e não ofensivo.""",,,
 dcall_paySel,DialogOptionSelected,$option == dcallPay,"DistressResponse pay
 FireAll PopulateOptions","""Obrigado, muito apreciado. Isso vai ajudar muito a cobrir nossos custos.""",,
 dcall_thankSel,DialogOptionSelected,$option == dcallThank,"DistressResponse thank
@@ -13857,7 +13857,7 @@ cob_neutrinoBurstOpt,COB_AddOptions,"$tag:sensor_array
 cob_neutrinoBurstOptDisable,COB_AddOptions,"$tag:sensor_array
 !$objectiveNonFunctional
 $cob_didBurst","SetEnabled COB_burst false
-SetTooltip COB_burst ""This sensor array has been overloaded recently, and it will take its self-repair nanomechs some time until this operation can be attempted.""",,,
+SetTooltip COB_burst ""Esta matriz de sensores foi sobrecarregada recentemente e seus nanorrobôs autorreparadores levarão algum tempo até que essa operação possa ser tentada novamente.""",,,
 cob_resetOpt,COB_AddOptions,"$faction.id != player
 $tag:sensor_array
 !$objectiveNonFunctional",,,15:COB_reset:Introduzir leituras falsas no fluxo de dados,
@@ -14092,7 +14092,7 @@ ttli_extendLoanOpt,PopulateTTLIOptions,!$ttli_loanWasExtended,,,10:ttli_extendLo
 ttli_notPayingOpt,PopulateTTLIOptions,,,,20:ttli_notPaying:Dizer a $himOrHer que não vai pagar os créditos que deve,
 ttli_neverMindOpt,PopulateTTLIOptions,,,,"100:ttli_neverMind:""Desculpe, contato errado. Voltarei em breve.""",
 ttli_disablePayOpt,AdjustTTLIOptions,!CallEvent $ttli_eventRef canPay,"SetEnabled ttli_payLoan false
-SetTooltip ttli_payLoan ""You don't have enough credits to pay back the loan.""",,,
+SetTooltip ttli_payLoan ""Você não tem créditos suficientes para pagar o empréstimo.""",,,
 ttli_payLoan,DialogOptionSelected,$option == ttli_payLoan,"CallEvent $ttli_eventRef payLoan
 FireBest TTLIPayLoanResponse",,0:ttli_continue:Continuar,
 ttli_payLoanResp,TTLIPayLoanResponse,,,"""Prazer fazer negócios com você,"" $heOrShe diz com um sorriso dentuço e encerra a ligação sem mais conversa fiada. Você interrompe a conexão no logo giratório da Tri-Tachyon.",,
@@ -18351,7 +18351,7 @@ FireBest CheckHamatsuIsOnlyShip","Ibrahim parece animada enquanto sua imagem se 
 ""Vou te pagar os $gaRH_reward créditos agora mesmo e consideramos o assunto encerrado. Nem precisa levar a nave para um estaleiro de reparos, eu mesma cuido de tudo. Já tenho o hiperpropulsor de reposição no meu armazém e alguns excelentes engenheiros à disposição.""","gaRH_yes:Transferir a Hamatsu para o controle de Ibrahim
 gaRH_no:""Desculpe, pretendo manter a nave.""",
 gaRH_checkHamatsuIsOnlyShip,CheckHamatsuIsOnlyShip,$player.numShips == 1,"SetEnabled gaRH_yes false
-SetTooltip gaRH_yes ""Can not give away the only ship in your fleet.""",,,
+SetTooltip gaRH_yes ""Não é possível doar a única nave de sua frota.""",,,
 gaRH_yes,DialogOptionSelected,$option == gaRH_yes,#AdjustRepActivePerson COOPERATIVE 25,"Ibrahim sorri. ""Obrigado novamente, capitão. Agora, se me permite, tenho muito o que fazer.""
 
 Ela estende a mão para o botão de desconexão, mas faz uma pausa. ""Se precisar de algum trabalho algum dia, me chame. Novos serviços aparecem o tempo todo e um capitão capaz vale seu peso em créditos.""",gaRH_yes2:Continuar,
@@ -20082,7 +20082,7 @@ FireBest GAATGluddicScanSupplyCheck","$HeOrShe acena com a cabeça enquanto você 
 Você acena piedosamente. Esses caminhantes de um, talvez, caminho um pouco herege, no entanto, te veem como próximo a um dos seus. Afinal, você já fez peregrinação aos santuários, assim como muitos deles. Eles confiam em você muito mais do que no típico viajante quando se trata de um assunto delicado de religião.""","gaATG_luddicScan32:Fornecer 50 suprimentos e prosseguir com a varredura
 gaATG_luddicScanHubReturn:Discutir outras opções",
 gaATGluddicScanSupplyCheck,GAATGluddicScanSupplyCheck,$player.supplies < 50,"SetEnabled gaATG_luddicScan32 false
-SetTooltip gaATG_luddicScan32  ""You do not have enough supplies.""",,,
+SetTooltip gaATG_luddicScan32  ""Você não tem suprimentos suficientes.""",,,
 gaATGluddicScan32,DialogOptionSelected,$option == gaATG_luddicScan32,"Call $global.gaATG_ref luddicGateFleetMoveAway
 AdjustRep $personFaction.id COOPERATIVE 5
 AddRemoveCommodity supplies -50 true
@@ -20718,7 +20718,7 @@ $global.gaATG_gotKantaToken
 Call $global.gaATG_ref updateData
 $menuState == main",FireBest GAATGkantaRaidCheckHostilesNearby,,2:gaATG_kantasDenRaidStart:Prepare uma incursão para resgatar Elissa Zal,
 gaATGdisableKantaRaidIfNeeded,GAATGkantaRaidCheckHostilesNearby,HostileFleetNearbyAndAware,"SetEnabled gaATG_kantasDenRaidStart false
-SetTooltip gaATG_kantasDenRaidStart ""A nearby hostile fleet is tracking your movements, making a station assault impossible.""",,,
+SetTooltip gaATG_kantasDenRaidStart ""Uma frota hostil próxima está rastreando seus movimentos, impossibilitando um ataque à estação.""",,,
 gaATGkantasDenRaidStart,DialogOptionSelected,$option == gaATG_kantasDenRaidStart,"$raidDifficulty = $gaATG_kantaRaidDifficulty 0
 $raidGoBackTrigger = PopulateOptions 0
 $raidContinueTrigger = GAATGkantaRaidFinishedB 0
@@ -20844,7 +20844,7 @@ Seu comunicador pessoal começa a zumbir; defesas planetárias dispersas estão com
 gaATGcottonRaidFinishedEnd,DialogOptionSelected,$option == gaATG_cottonRaidFinished3,"EndConversation DO_NOT_FIRE
 DismissDialog",,,
 gaATGdisableCottonRaidIfNeeded,GAATGcottonRaidCheckHostilesNearby,HostileFleetNearbyAndAware,"SetEnabled gaATG_cottonRaidStart false
-SetTooltip gaATG_cottonRaidStart ""A nearby hostile fleet is tracking your movements, making a viable ground assault impossible.""",,,
+SetTooltip gaATG_cottonRaidStart ""Uma frota hostil próxima está rastreando seus movimentos, impossibilitando um ataque terrestre viável.""",,,
 ,,,,,,
 "# talk to important people on Epiphany, ask for Brother Cotton in various ways",,,,,,
 gaATGEpiphantAskVIP,PopulateOptions,"$market.id == epiphany
@@ -21633,13 +21633,13 @@ aseb_scholarship200k:""Dobre para 200.000 créditos.""
 aseb_scholarship500k:""Consegue fazer 500.000 créditos?""
 aseb_scholarshipBack:""Ah, interessante. Talvez outra hora?""",
 asebScholarshipCredCheck1,ASEBscholarshipCredCheck,$player.credits < 100000,"SetEnabled aseb_scholarship100k false
-SetTooltip bffi_mmBornBuyerColony ""Requires at least 100,000 credits.""
+SetTooltip bffi_mmBornBuyerColony ""Requer pelo menos 100.000 créditos.""
 SetTooltipHighlights ""100,000""",,,
 asebScholarshipCredCheck2,ASEBscholarshipCredCheck,$player.credits < 200000,"SetEnabled aseb_scholarship200k false
-SetTooltip bffi_mmBornBuyerColony ""Requires at least 200,000 credits.""
+SetTooltip bffi_mmBornBuyerColony ""Requer pelo menos 200.000 créditos.""
 SetTooltipHighlights ""200,000 credits""",,,
 asebScholarshipCredCheck3,ASEBscholarshipCredCheck,$player.credits < 500000,"SetEnabled aseb_scholarship500k false
-SetTooltip bffi_mmBornBuyerColony ""Requires at least 500,000 credits.""
+SetTooltip bffi_mmBornBuyerColony ""Requer pelo menos 500.000 créditos.""
 SetTooltipHighlights ""500,000 credits""",,,
 asebScholarship100k,DialogOptionSelected,$option == aseb_scholarship100k,"AddCredits -100000
 AdjustRepActivePerson COOPERATIVE 10
@@ -21810,7 +21810,7 @@ FireBest GADataPlanetInteraction",,,
 gaDataPrintHostilesText,GADataAdjustOptions,HostileFleetNearbyAndAware,"SetEnabled mktRaidNonMarket false
 SetEnabled gaData_get false","Uma frota hostil próxima está rastreando seus movimentos, impossibilitando uma operação terrestre.",,
 gaDataNotEnoughSuppliesForDistraction,GADataAdjustOptions,$player.supplies < 10,"SetEnabled gaData_getAvoidCombat false
-SetTooltip gaData_getAvoidCombat ""Requires 10 supplies. You have $player.supplies supplies.""
+SetTooltip gaData_getAvoidCombat ""Requer 10 suprimentos. Você tem $player.supplies suprimentos.""
 SetTooltipHighlights gaData_getAvoidCombat 10 $player.supplies
 SetTooltipHighlightColors gaData_getAvoidCombat highlight bad",,,
 gaDataStandardPlanetInteraction,GADataPlanetInteraction,,"SetShortcut defaultLeave ""ESCAPE""
@@ -22893,7 +22893,7 @@ FireBest GAOpUpdateRaidOption",,"gaOp_confront:Enfrentar a IA via comunicação (n
 gaOp_strike:Realizar um ataque orbital para destruir a IA, mesmo que isso custe vidas humanas
 gaOp_raid:Carregar a shuttle preparada com fuzileiros para verificar a situação e, então, capturar ou destruir a IA
 gaOp_leave:Ir embora. Isso não fazia parte do seu contrato.",
-gaOpPlanetRogueAICanNotRaid,GAOpUpdateRaidOption,$player.marines < 5,"SetTooltip gaOp_raid ""Requires at least 5 marines.""
+gaOpPlanetRogueAICanNotRaid,GAOpUpdateRaidOption,$player.marines < 5,"SetTooltip gaOp_raid ""Requer pelo menos 5 fuzileiros.""
 SetTooltipHighlights gaOp_raid 5
 SetEnabled gaOp_raid false",,,
 gaOpPlanetRogueAILeave,DialogOptionSelected,$option == gaOp_leave,"$global.gaOp_needToReturn = true
@@ -23093,7 +23093,7 @@ gaBA_bluffPather:Blefar para pagar um valor menor
 gaBA_preRaid:Mantenha $himOrHer falando enquanto envia um ataque de fuzileiros
 cutCommLink:Corte a comunicação",
 gaBADisableRaidIfNeeded,GABACheckHostilesNearby,HostileFleetNearbyAndAware,"SetEnabled gaBA_preRaid false
-SetTooltip gaBA_preRaid ""A nearby hostile fleet is tracking your movements, making a ground operation impossible.""",,,
+SetTooltip gaBA_preRaid ""Uma frota hostil próxima está rastreando seus movimentos, impossibilitando uma operação terrestre.""",,,
 gaBAPatherPreRaid,DialogOptionSelected,$option == gaBA_preRaid,,"Você barganha, discute e atrasa, quiblando sobre pagamento e detalhes de entrega. Enquanto fala, você dá o sinal de pronto via bloco de dados ao seu oficial tático, que foi instruído para o uso de fuzileiros em uma operação de extração.
 
 Você considera que, não importa a criminalidade do seu contato, pode haver sérias consequências de reputação com as autoridades locais por iniciar um tiroteio dentro desta polity.",mktRaidNonMarket:Continuar,
@@ -23123,7 +23123,7 @@ cutCommLinkNoText:Recusar e cortar a comunicacao
 gaBA_preRaid:Recusar, mas rastrear as comunicacoes para um alvo de incursao de fuzileiros
 gaBA_threatenPather:""Ou rastreio suas comunicacoes e reduzo sua base a cinzas do espaco."" (ameacar)",
 GABACheckCanThreaten,GABACheckCanThreaten,$player.maxCombatHullSize < 4,"SetEnabled gaBA_threatenPather false
-SetTooltip gaBA_threatenPather ""Requires a non-civilian capital ship in your fleet.""",,,
+SetTooltip gaBA_threatenPather ""Requer uma nave capital não-civil em sua frota.""",,,
 gaBAPatherThreaten,DialogOptionSelected,$option == gaBA_threatenPather,"Highlight $gaBA_costVeryLow
 $gaBA_cost = $gaBA_costVeryLow 0
 DoCanAffordCheck $gaBA_cost gaBA_acceptPather2 false","O Pathers recebe sua ameaça por um momento, então responde cansado: ""Então você poderia ser capitão, e eu não passaria de poeira devolvida às estrelas.""
@@ -23187,7 +23187,7 @@ gaBA_bluffPirate:Negociar um valor menor
 gaBA_preRaidPirate:Manter $himOrHer falando enquanto envia um ataque de fuzileiros
 cutCommLink:Cortar a comunicação",
 gaBADisableRaidIfNeededPirate,GABACheckHostilesNearbyPirate,HostileFleetNearbyAndAware,"SetEnabled gaBA_preRaidPirate false
-SetTooltip gaBA_preRaidPirate ""A nearby hostile fleet is tracking your movements, making a ground operation impossible.""",,,
+SetTooltip gaBA_preRaidPirate ""Uma frota hostil próxima está rastreando seus movimentos, impossibilitando uma operação terrestre.""",,,
 gaBAPiratePreRaid,DialogOptionSelected,$option == gaBA_preRaidPirate,,"Você barganha, discute e enrola, quiblando sobre pagamento e detalhes de entrega. Enquanto fala, você envia o sinal de pronto via seu datapad ao seu oficial tático. Eles já foram instruídos para o uso de fuzileiros em uma operação de extração.
 
 Independentemente dos crimes do seu contato, é provável que haja sérias consequências de reputação com as autoridades locais por iniciar um tiroteio dentro desta polity.",mktRaidNonMarket:Continuar,
@@ -23219,7 +23219,7 @@ cutCommLinkNoText:Recusar e cortar a comunicação
 gaBA_preRaidPirate:Recusar, mas rastrear as comunicações para um alvo de incursão de fuzileiros
 gaBA_threatenPirate:""Ou rastreio suas comunicações e reduzo sua base a escória."" (ameaçar)",
 GABACheckCanThreatenPirate,GABACheckCanThreatenPirate,$player.maxCombatHullSize < 4,"SetEnabled gaBA_threatenPirate false
-SetTooltip gaBA_threatenPirate ""Requires a non-civilian capital ship in your fleet.""",,,
+SetTooltip gaBA_threatenPirate ""Requer uma nave capital não-civil em sua frota.""",,,
 gaBAPirateThreaten,DialogOptionSelected,$option == gaBA_threatenPirate,"Highlight $gaBA_costVeryLow
 $gaBA_cost = $gaBA_costVeryLow 0
 DoCanAffordCheck $gaBA_cost gaBA_acceptPirate2 false","O rosto do pirata congela em um sorriso um tanto forçado, você acha, enquanto $heOrShe olha para alguém fora da tela e balança a cabeça levemente.
@@ -23522,7 +23522,7 @@ gaRR_bluffPirate:Negociar um valor menor
 gaRR_preRaidPirate:Manter $himOrHer falando enquanto envia um ataque de fuzileiros
 cutCommLink:Cortar a comunicação",
 gaRRDisableRaidIfNeededPirate,GARRCheckHostilesNearbyPirate,HostileFleetNearbyAndAware,"SetEnabled gaRR_preRaidPirate false
-SetTooltip gaRR_preRaidPirate ""A nearby hostile fleet is tracking your movements, making a ground operation impossible.""",,,
+SetTooltip gaRR_preRaidPirate ""Uma frota hostil próxima está rastreando seus movimentos, impossibilitando uma operação terrestre.""",,,
 gaRRPiratePreRaid,DialogOptionSelected,$option == gaRR_preRaidPirate,,"Você barganha, discute e atrasa a negociação com discussões sobre pagamento e detalhes de entrega. Enquanto fala, você envia o sinal de pronto via seu datapad ao seu oficial tático. Eles já foram briefados para uma operação de extração.
 
 Independentemente dos crimes específicos do seu contato, provavelmente haverá sérias consequências de reputação com as autoridades locais por iniciar um tiroteio dentro desta polity.",mktRaidNonMarket:Continuar,
@@ -23554,7 +23554,7 @@ cutCommLinkNoText:Recusar e cortar a comunicação
 gaRR_preRaidPirate:Recusar, mas rastrear a comunicação para um alvo de incursão de fuzileiros
 gaRR_threatenPirate:""Ou rastreio sua comunicação e reduzo seu complexo a escória derretida."" (ameaçar)",
 GARRCheckCanThreatenPirate,GARRCheckCanThreatenPirate,$player.maxCombatHullSize < 4,"SetEnabled gaRR_threatenPirate false
-SetTooltip gaRR_threatenPirate ""Requires a non-civilian capital ship in your fleet.""",,,
+SetTooltip gaRR_threatenPirate ""Requer uma nave capital não-civil em sua frota.""",,,
 gaRRPirateThreaten,DialogOptionSelected,$option == gaRR_threatenPirate,"Highlight $gaRR_costVeryLow
 $gaRR_cost = $gaRR_costVeryLow 0
 DoCanAffordCheck $gaRR_cost gaRR_acceptPirate2 false","Os olhos do pirata se arregalam. $HeOrShe olha rapidamente para alguém fora da tela e balança a cabeça levemente, antes de voltar $hisOrHer atenção para você.
@@ -25906,15 +25906,15 @@ LOCRMhubOptBreakingUp,LOCRMhubOptions,!$saidIonStorm,,,"locrm_leaveLie:""Hã. Tem
 LOCRMhubOptBreakingUpAgain,LOCRMhubOptions,$saidIonStorm,,,"locrm_leaveLie:""É outro temporal de íons! Comunicações... se interrompendo...""",
 LOCRMhubOptNoCanDo,LOCRMhubOptions,,"SetShortcut cutCommLink ""ESCAPE""",,"cutCommLink:""Desculpe, tenho assuntos urgentes para resolver.""",
 LOCRMofferTransportCrewCheck,LOCRMhubOptions,$player.crewRoom < 136,"SetEnabled locrm_myColony false
-SetTooltip locrm_myColony ""You don't have enough crew accomodations to transport the miners. ($player.crewRoomStr of 136 required)""
+SetTooltip locrm_myColony ""Você não tem acomodações de tripulação suficientes para transportar os mineiros. ($player.crewRoomStr de 136 necessários)""
 SetTooltipHighlights locrm_myColony $player.crewRoomStr 136
 SetTooltipHighlightColors locrm_myColony highlight bad
 SetEnabled locrm_offerTransport false
-SetTooltip locrm_offerTransport ""You don't have enough crew accomodations to transport the miners. ($player.crewRoomStr of 136 required)""
+SetTooltip locrm_offerTransport ""Você não tem acomodações de tripulação suficientes para transportar os mineiros. ($player.crewRoomStr de 136 necessários)""
 SetTooltipHighlights locrm_offerTransport $player.crewRoomStr 136
 SetTooltipHighlightColors locrm_offerTransport highlight bad",,,
 LOCRMofferTransportColonyCheck,LOCRMhubOptions,$player.numColonies == 0,"SetEnabled locrm_myColony false
-SetTooltip locrm_myColony ""Requires that you have at least one colony.""",,,
+SetTooltip locrm_myColony ""Requer que você tenha pelo menos uma colônia.""",,,
 LOCRMleaveLie,DialogOptionSelected,$option == locrm_leaveLie,"$saidIonStorm = true
 EndConversation NO_CONTINUE","""Que estranho,"" $heOrShe diz. ""Não detectamos...""
 
@@ -26180,7 +26180,7 @@ LOCRPofferToPrison2,DialogOptionSelected,$option == locrp_offerToPrison2,FireAll
 ""É? Você e que exército?""","locrp_raidStart:""Este."" (preparar um ataque)
 locrp_raidCancel:""Cuide do tom. Quem tem naves de guerra em órbita sou eu.""",
 LOCRPraidCheck,LOCRPraidMarineCheck,$player.marines < 3,"SetEnabled locrp_raidStart false
-SetTooltip locrp_raidStart ""You don't have enough marines to take on the pirates. ($player.marines of 3 required)""
+SetTooltip locrp_raidStart ""Você não tem fuzileiros suficientes para enfrentar os piratas. ($player.marines de 3 necessários)""
 SetTooltipHighlights locrp_raidStart ""$player.marines of 3""
 SetTooltipHighlightColors locrp_raidStart highlight bad",,,
 LOCRPofferToPrisonRaidCancel,DialogOptionSelected,$option == locrp_raidCancel,FireAll LOCRPhubOptions,"$HeOrShe ergue $hisOrHer mãos, ""Não estou ameaçando, capitão. Somos só gente honesta atrás de um jeito de voltar pra casa.""",,
@@ -26227,12 +26227,12 @@ LOCRPtransportHubShuttles,LOCRPtransportHub,!$player.liedToStrandedPirates,,,"lo
 LOCRPtransportHubNoRoom,LOCRPtransportHub,!$player.liedToStrandedPirates,,,"locrp_transportNoRoom:""Infelizmente, não tenho espaço suficiente.""",
 LOCRPtransportHubReconsider,LOCRPtransportHub,,,,"locrp_transportReconsider:""Estou reconsiderando minhas opções.""",
 LOCRPofferTransportCheckA,LOCRPtransportHub,$player.crewRoom < 54,"SetEnabled locrp_transportShuttle false
-SetTooltip locrp_transportShuttle ""You don't have enough crew accomodations to transport the miners. ($player.crewRoomStr of 54 required)""
+SetTooltip locrp_transportShuttle ""Você não tem acomodações de tripulação suficientes para transportar os mineiros. ($player.crewRoomStr de 54 necessários)""
 SetTooltipHighlights locrp_transportShuttle $player.crewRoomStr 54
 SetTooltipHighlightColors locrp_transportShuttle highlight bad
 SetEnabled locrp_transportNoRoom true",,,
 LOCRPofferTransportCheckB,LOCRPtransportHub,$player.crewRoom > 53,SetEnabled locrp_transportNoRoom false,,,
-LOCRPofferTransportCheckC,LOCRPtransportHub,,"SetTooltip locrm_transportLie ""By packing the pirates into the brig, makeshift or otherwise, they won't take up valuable crew berths.""",,,
+LOCRPofferTransportCheckC,LOCRPtransportHub,,"SetTooltip locrm_transportLie ""Ao trancafiar os piratas no porão improvisado, eles não ocuparão preciosos leitos de tripulação.""",,,
 LOCRPtransportLie,DialogOptionSelected,$option == locrp_transportLie,"AddTextSmall ""Tripulação de piratas abandonados feita prisioneira""
 $player.ethosOrder++
 $player.ethosLiar++
@@ -26482,19 +26482,19 @@ LOCRLFmissionBringNews,LOCRLhub,"$saidLookingFor
 !$player.mostLuddicEthosPather",,,"locrlf_bringNews:""Levarei notícias suas ao meu contato, à Igreja.""",
 LOCRLFmissionBringNewsMaybe,LOCRLhub,"$saidLookingFor
 !$saidBringNewsMission
-$player.mostLuddicEthosPather","SetTooltip locrlf_bringNewsPath ""Why should the Church claim new recruits ripe for the light of the Luddic Path?""
+$player.mostLuddicEthosPather","SetTooltip locrlf_bringNewsPath ""Por que a Igreja deveria reivindicar novos recrutas prontos para a luz do Caminho Luddico?""
 SetTooltipHighlights locrlf_bringNewsPath ""Luddic Path""
 SetTooltipHighlightColors locrlf_bringNewsPath luddic_path",,"locrlf_bringNewsPath:""Poderia levar notícias suas ao meu contato, à Igreja...""",
 LOCRLaskWhatDoingOpt,LOCRLhub,"!$global.locrlf_inProgress
 !$askedWhatDoing",,,"locrl_askWhatDoing:""O que está fazendo na fronteira?""",
 LOCRLsayLuddicOpt,LOCRLhub,"$askedWhatDoing
 !$committedToPathTransport 
-$player.mostLuddicEthosPather","SetTooltip locrl_sayPather ""Perhaps these heretics' faith may be turned to a truer path; the Luddic Path""
+$player.mostLuddicEthosPather","SetTooltip locrl_sayPather ""Talvez a fé desses hereges possa ser conduzida a um caminho mais verdadeiro: o Caminho Luddico.""
 SetTooltipHighlights locrl_sayPather ""Luddic Path""
 SetTooltipHighlightColors locrl_sayPather luddic_path",,"locrl_sayPather:""Como pode rastejar de volta à Igreja quando há um Caminho mais justo?""",
 LOCRLsayChurchOpt,LOCRLhub,"$askedWhatDoing
 !$saidStrayedFromChurch
-$player.luddicFaithfulOrChurchCom","SetTooltip locrl_sayChurch ""Perhaps these souls can be saved by returning them to the embrace of the Church of Galactic Redemption""
+$player.luddicFaithfulOrChurchCom","SetTooltip locrl_sayChurch ""Talvez essas almas possam ser salvas ao retornarem ao abraço da Igreja da Redenção Galáctica.""
 SetTooltipHighlights locrl_sayChurch ""Church of Galactic Redemption""
 SetTooltipHighlightColors locrl_sayChurch luddic_church",,"locrl_sayChurch:""Você se desviou muito, $brotherOrSister, mas a Igreja é rica em misericórdia""",
 #LOCRLsayKnightsOpt,LOCRLhub,"$askedWhatDoing
@@ -26520,23 +26520,23 @@ $committedToPathTransport",,,"locrl_offerTransportPath:Transportá-los para o Cam
 $player.luddicAttitudeFaithfulOrPather
 $player.numColonies > 0",,,locrl_offerTransportColony:Offer to transport them to your own colony,# maybe -dgb
 LOCRLhubOfferTransportCheckOpt,LOCRLhub,$player.crewRoom < 198,"SetEnabled locrl_offerTransport false
-SetTooltip locrl_offerTransport ""You do not have room for an additional 198 crew.""
+SetTooltip locrl_offerTransport ""Você não tem espaço para mais 198 tripulantes.""
 SetTooltipHighlights locrl_offerTransport 198
 SetTooltipHighlightColors locrl_offerTransport highlight bad
 SetEnabled locrl_offerTransportChurch false
-SetTooltip locrl_offerTransportChurch ""You do not have room for an additional 198 crew.""
+SetTooltip locrl_offerTransportChurch ""Você não tem espaço para mais 198 tripulantes.""
 SetTooltipHighlights locrl_offerTransportChurch 198
 SetTooltipHighlightColors locrl_offerTransportChurch highlight bad
 SetEnabled locrl_offerTransportKnights false
-SetTooltip locrl_offerTransportKnights ""You do not have room for an additional 198 crew.""
+SetTooltip locrl_offerTransportKnights ""Você não tem espaço para mais 198 tripulantes.""
 SetTooltipHighlights locrl_offerTransportKnights 198
 SetTooltipHighlightColors locrl_offerTransportKnights highlight bad
 SetEnabled locrl_offerTransportPath false
-SetTooltip locrl_offerTransportPath ""You do not have room for an additional 198 crew.""
+SetTooltip locrl_offerTransportPath ""Você não tem espaço para mais 198 tripulantes.""
 SetTooltipHighlights locrl_offerTransportPath 198
 SetTooltipHighlightColors locrl_offerTransportPath highlight bad
 SetEnabled locrl_offerTransportColony false
-SetTooltip locrl_offerTransportColony ""You do not have room for an additional 198 crew.""
+SetTooltip locrl_offerTransportColony ""Você não tem espaço para mais 198 tripulantes.""
 SetTooltipHighlights locrl_offerTransportColony 198
 SetTooltipHighlightColors locrl_offerTransportColony highlight bad",,,
 LOCRLFhubLeaveThemMission,LOCRLhub,$saidBringNewsMission,"SetShortcut locrlf_justLeave ""ESCAPE""",,cutCommLinkNoText:Deixe isso para a Igreja resolver.,
@@ -26566,13 +26566,13 @@ LOCRLjudgeOptionC,LOCRLjudgerOptions,$player.mostLuddicEthosCynical,,,"locrl_jud
 LOCRLjudgeOptionD,LOCRLjudgerOptions,$player.mostLuddicEthosPather,,,"locrl_judgeOptD:""Vocês estão longe do Verdadeiro Caminho. Agradeçam a Ludd por aquilo que precisava ser feito ter sido feito.""",
 LOCRLjudgeOptionE,LOCRLjudgerOptions,$player.mostLuddicEthosAtheistic,,,"locrl_judgeOptE:""Não tenho prazer em observar que sua fé o cegou.""",
 LOCRLjudgeOptionF,LOCRLjudgerOptions,#$player.ethosRuthless > 0,,,"locrl_judgeOptF:""Que bom que alguém finalmente teve coragem e matou aqueles canalhas, não é?""",
-LOCRLjudgeOptionLast,LOCRLjudgeAddTooltips,,"SetTooltip locrl_judgeOptB ""Judge, or forgive. What would Ludd do?""
-SetTooltip locrl_judgeOptC ""Typical Luddie fools. No common sense at all.""
-SetTooltip locrl_judgeOptD ""The true Luddic Path would never have allowed them to stray.""
+LOCRLjudgeOptionLast,LOCRLjudgeAddTooltips,,"SetTooltip locrl_judgeOptB ""Julgue, ou perdoe. O que Ludd faria?""
+SetTooltip locrl_judgeOptC ""Típicos tolos ludditas. Sem nenhum senso comum.""
+SetTooltip locrl_judgeOptD ""O verdadeiro Caminho Luddico jamais os teria deixado se desviar.""
 SetTooltipHighlights locrl_judgeOptD ""Luddic Path""
 SetTooltipHighlightColors locrl_judgeOptD luddic_path
-SetTooltip locrl_judgeOptE ""Maybe a little pleasure. It feels good to be right. $HeOrShe doesn't need to know that.""
-SetTooltip locrl_judgeOptF ""It always comes down to relying on someone willing to pull a trigger, doesn't it.""",,,
+SetTooltip locrl_judgeOptE ""Talvez um pouco de prazer. Faz bem estar certo. $HeOrShe não precisa saber disso.""
+SetTooltip locrl_judgeOptF ""Sempre acaba dependendo de alguém disposto a puxar o gatilho, não é?""",,,
 LOCRLjudgeResponseA,DialogOptionSelected,$option == locrl_judgeOptA,FireAll LOCRLhub,"$PersonRank $personLastName faz uma leve reverência, com as mãos unidas. ""Sim. Nossa má sorte é o castigo por nossa tolice e falta de fé.""",,
 LOCRLjudgeResponseB,DialogOptionSelected,$option == locrl_judgeOptB,"$player.luddicAttitudeFaithful++
 FireAll LOCRLhub","$PersonRank $personLastName parece ainda mais derrotado com suas palavras.
@@ -26833,7 +26833,7 @@ locrlfBlurbBar,locrlf_blurbBar,,,Um $locrlf_manOrWoman parece estar examinando c
 locrlfOfferOptionBar,locrlf_optionBar,,,,locrlf_startBar:Perguntar se o $locrlf_manOrWoman que está tentando fazer anotações secretas precisa de ajuda,
 locrlfOfferTextBarAgain,DialogOptionSelected,"$option == locrlf_startBar
 $player.locrlf_gotBarBlurb","Highlight $locrlf_rewardAmount
-SetTooltip locrlf_offerBarCynicalRewardAsk ""You're cynical enough to see through the performance of piety these so-called 'Faithful' put on. In the end, all that matters are credits and power.""
+SetTooltip locrlf_offerBarCynicalRewardAsk ""Você é cínico o suficiente para enxergar através da performance de piedade que esses supostos 'Fiéis' encenam. No fim, só importam créditos e poder.""
 FireBest LOCRLFOfferTextBarRemoveCynical
 Call $locrlf_ref showMap ""Target: $locrlf_marketName""","""Oh!"" $locrlf_HeOrShe se sobressalta um pouco ao falares. ""Tu de novo. reconsideraste?""
 
@@ -26858,7 +26858,7 @@ $player.locrlf_gotBarBlurb = true","""Ah!"" $locrlf_HeOrShe pula um pouco ao ouv
 
 $locrlf_HisOrHer olhos estão arregalados de alarme. ""Claro que imaginei que isso fosse assunto dos Cavaleiros, e ficaria feliz em deixar seus inquisidores lidarem com hereges como é seu costume. Mas... bem, não cabe a mim especular.""",locrlf_startBar2:Continuar,
 locrlfOfferTextBar2,DialogOptionSelected,$option == locrlf_startBar2,"Highlight $locrlf_rewardAmount
-SetTooltip locrlf_offerBarCynicalRewardAsk ""You're cynical enough to see through the piety of the 'Faithful'. It's always about credits in the end.""
+SetTooltip locrlf_offerBarCynicalRewardAsk ""Você é cínico o suficiente para enxergar através da piedade dos 'Fiéis'. No fim, sempre se trata de créditos.""
 FireBest LOCRLFOfferTextBarRemoveCynical
 Call $locrlf_ref showMap ""Target: $locrlf_systemName""","Esses hereges juntaram dinheiro e compraram um velho cargueiro, depois partiram para algum sistema periférico para 'começar de novo'. Talvez todos já estejam mortos. Perdoe-me; com Ludd, não sei de mais nada. De qualquer forma, um catador descrente foi a última pessoa a avistá-los, aparentemente rumando para... um sistema específico.
 
@@ -26887,7 +26887,7 @@ locrlfOfferTextContact,DialogOptionSelected,$option == locrlf_start,$missionId =
 
 ""Eu sei"", $heOrShe suspira. ""Eu também imaginaria que isso é assunto dos Cavaleiros de Ludd, e ficaria feliz em deixar que seus inquisidores tratem dos hereges como é seu costume. Mas, por algum motivo, a Igreja quer lidar com isso por conta própria e não cabe a mim especular o porquê.""",locrlf_startContact2:Continuar,
 locrlfOfferTextContact2,DialogOptionSelected,$option == locrlf_startContact2,"Highlight $locrlf_rewardAmount
-SetTooltip locrlf_offerCynicalRewardAsk ""You're cynical enough to see through the performance of piety these so-called 'Faithful' put on. In the end, all that matters are credits and power.""
+SetTooltip locrlf_offerCynicalRewardAsk ""Você é cínico o suficiente para enxergar através da performance de piedade que esses supostos 'Fiéis' encenam. No fim, só importam créditos e poder.""
 FireBest LOCRLFOfferTextRemoveCynical
 Call $locrlf_ref showMap ""Target: $locrlf_systemName""","""Esses falsos crentes, hereges, juntaram dinheiro e compraram uma nave de transporte velha, depois partiram para algum sistema periférico para 'começar de novo', seja lá o que isso signifique. Talvez todos estejam mortos — perdoe-me — ou com Ludd, tanto faz. De qualquer forma, um catador descrente foi a última pessoa a vê-los rumando para um sistema em particular.""
 
@@ -27126,7 +27126,7 @@ Depois que alguns dos mercenários sobem para pedir uma rodada de 'Bombardeios Or
 motr_declineDrink:Recuse a proposta, mas fique para um 'Bombardeio Orbital' para amenizar o baque
 contact_declineBarNoContinue:Recusar",
 MOTRcrewCheck,MOTRcrewCheck,$player.crewRoom < $motr_numberOfMarines,"SetEnabled motr_accept false
-SetTooltip motr_accept ""Requires at least $motr_numberOfMarines free crew berths.""",,,
+SetTooltip motr_accept ""Requer pelo menos $motr_numberOfMarines vagas livres de tripulantes.""",,,
 MOTRaccept,DialogOptionSelected,$option == motr_accept,"$option = contact_acceptBar 0
 FireBest DialogOptionSelected","Um engenhoso dispositivo fornecido pelos mercenários convence os scanners automáticos da autoridade portuária de que dois contêineres de carga específicos estão meio cheios de cascalho de silicato levemente radioativo e nada mais.
 
@@ -27265,7 +27265,7 @@ FireBest rdsmplanetInteraction",,,
 rdsmPrintHostilesText,RDSMadjustOptions,HostileFleetNearbyAndAware,"SetEnabled mktRaidNonMarket false
 SetEnabled rdsm_get false","Uma frota hostil próxima está rastreando seus movimentos, impossibilitando uma operação terrestre.",,
 rdsmNotEnoughSuppliesForDistraction,RDSMadjustOptions,$player.supplies < 10,"SetEnabled rdsm_getAvoidCombat false
-SetTooltip rdsm_getAvoidCombat ""Requires 10 supplies. You have $player.supplies supplies.""
+SetTooltip rdsm_getAvoidCombat ""Requer 10 suprimentos. Você tem $player suprimentos.""
 SetTooltipHighlights rdsm_getAvoidCombat 10 $player.supplies
 SetTooltipHighlightColors rdsm_getAvoidCombat highlight bad",,,
 rdsmStandardPlanetInteraction,rdsmplanetInteraction,,"SetShortcut defaultLeave ""ESCAPE""
@@ -28309,11 +28309,11 @@ FireAll PopulateOptions","A conexão demora um pouco para ser estabelecida, e a t
 
 ""Olha quem veio parar em terras turbulentas,"" ela diz. ""Como um servo da Providência pode ajudá-lo hoje?""",,
 standfastResponseOfferArms,PopulateOptions,$id == standfast score:1000,"SetEnabled standfastMakeOffering false
-SetTooltip standfastMakeOffering ""You do not have 10 units of heavy armaments for a covert shipment.""
+SetTooltip standfastMakeOffering ""Você não tem 10 unidades de armamentos pesados para um carregamento sigiloso.""
 FireBest StandfastOfferingOptionCheck",,0:standfastMakeOffering:Oferecer armamentos pesados para a insurgência,
 #standfastResponseCutComms,PopulateOptions,$id == standfast score:1000,,,1:cutCommLinkPolite:Cut the comm link,
 standfastOfferingOptionCheck,StandfastOfferingOptionCheck,PlayerHasCargo hand_weapons 10,"SetEnabled standfastMakeOffering true
-SetTooltip standfastMakeOffering ""Offer 10 units of heavy armaments to the Volturn insurgency.""",,,
+SetTooltip standfastMakeOffering ""Ofereça 10 unidades de armamentos pesados à insurgência de Volturn.""",,,
 standfastOfferingAlreadyMade,DialogOptionSelected,"$option == standfastMakeOffering
 $offeringMade score:100",,"""O santuário agradece sua devoção,"" a curata diz, ""Mas devemos esperar um pouco mais antes de sua próxima... contribuição. Uma demonstração tão orgulhosa tão cedo poderia ser vista como intemperante por certas autoridades superiores.""
 
@@ -28793,7 +28793,7 @@ $global.sdtuHintedRaoInvolvement
 !$offeredContact",,,"rao_askDiktatMerc2:""Um merc nas fronteiras de Askonia me disse para visitar Ragnar. Presumo que seja você.""",
 raoAskDiktatMerc2,DialogOptionSelected,$option == rao_askDiktatMerc2,"FireAll MostLuddicEthosRefresh
 $askedAboutDiktatMerc = true","— É mesmo? — ele diz, indiferente. — Gostaria de saber por que teriam dito isso.","rao_askDiktatMerc3:""Acho que eles estavam trabalhando para você. E sob ordens para não revelar.""","# btw to get this the player has, or had, a Heg commission"
-raoAskDiktatMerc3,DialogOptionSelected,$option == rao_askDiktatMerc3,"SetTooltip rao_askDiktatMerc4c ""It's all about the money.""","Ele ergue uma sobrancelha, ainda com a mesma postura casual.
+raoAskDiktatMerc3,DialogOptionSelected,$option == rao_askDiktatMerc3,"SetTooltip rao_askDiktatMerc4c ""Tudo se resume ao dinheiro.""","Ele ergue uma sobrancelha, ainda com a mesma postura casual.
 
 — Se eu tivesse contratado esse mercenário, imagino que estaria bem irritado com a facilidade com que ele revelou a identidade do empregador. Que bom que a Hegemonia tem uma política oficial proibindo o uso de mercenários.","rao_askDiktatMerc4a:""O quê? A Hegemonia contrata mercenários regularmente.""
 rao_askDiktatMerc4b:""Se for uma luta contra o Diktat, quero fazer parte.""
@@ -30077,7 +30077,7 @@ $global.foundOneslaught
 !$global.gaveZGRoneslaughtAccess 
 $offeredToSellOneslaught
 !PlayerFleetHasShipWithBaseHull onslaught_mk1","SetEnabled ZGR_OMKIscanOfferRedux false
-SetTooltip ZGR_OMKIscanOfferRedux ""Requires that the Onslaught Mk.I is in your fleet.""",,,
+SetTooltip ZGR_OMKIscanOfferRedux ""Exige que a Onslaught Mk.I esteja em sua frota.""",,,
 ZGRomkiScanOfferRedux,DialogOptionSelected,$option == ZGR_omkiScanOfferRedux,,"Seus olhos piscam de forma estranha.
 
 ""Você reconsiderou sua posição?""","zgr_omkiScanOfferReduxMil:""Minha posição é de um milhão de créditos.""
@@ -30210,7 +30210,7 @@ ZGRtechReturnAgain,PopulateOptions,"$id == glamor_rotanev score
 $player.returnedToZGRpostWeird
 $saidTechReturn",FireBest ZGRdisableTurnInTech,,"zgr_techReturn:""Tenho mais espécimes 'interessantes' para você...""",
 ZGRtechReturnDisable,ZGRdisableTurnInTech,!ZGRTurnIn playerHasSellableItems,"SetEnabled zgr_techReturn false
-SetTooltip zgr_techReturn ""You do not have any 'interesting' specimens in your possession.""",,,
+SetTooltip zgr_techReturn ""Você não possui nenhum exemplar 'interessante' em sua posse.""",,,
 ,,,,,,
 ZGRtechPlayerOMKIreturn,DialogOptionSelected,"$option == zgr_makePitch9OMKIbuy4later 
 $doingTechReturn","unset $doingTechReturn
@@ -30244,11 +30244,11 @@ $global.foundOneslaught
 ZGRtechPlayerHasOption,PopulateZGRturnInOpts,,,,0:zgr_techSelectCargo:Selecione as amostras para entregar,
 ZGRtechNeverMindOption,PopulateZGRturnInOpts,,,,"100:zgr_techNeverMind:""Não tenho nada para você agora.""",
 ZGRtechPlayerHasOptionCheck,PopulateZGRturnInOpts,!ZGRTurnIn playerHasSellableItems,"SetEnabled zgr_techSelectCargo false
-SetTooltip zgr_techSelectCargo ""You do not have any 'interesting' specimens in your possession.""",,,
+SetTooltip zgr_techSelectCargo ""Você não possui nenhum exemplar 'interessante' em sua posse.""",,,
 ZGRtechPlayerHasOptionOMKIcheck,ZGRtechPlayerHasOptionOMKIcheck,!PlayerFleetHasShipWithBaseHull onslaught_mk1,"SetEnabled zgr_makePitch9OMKIbuy false
-SetTooltip zgr_makePitch9OMKIbuy ""You do not have the Onslaught Mk.I with you.""
+SetTooltip zgr_makePitch9OMKIbuy ""Você não tem a Onslaught Mk.I com você.""
 SetEnabled zgr_makePitch9OMKIbuy4mil false
-SetTooltip zgr_makePitch9OMKIbuy4mil ""You do not have the Onslaught Mk.I with you.""",,,
+SetTooltip zgr_makePitch9OMKIbuy4mil ""Você não tem a Onslaught Mk.I com você.""",,,
 ZGRtechNeverMindOptionSelected,DialogOptionSelected,$option == zgr_techSelectCargo,ZGRTurnIn selectSellableItems,,,
 ZGRtechTurnInOptionSelected,DialogOptionSelected,$option == zgr_techNeverMind,FireAll PopulateOptions,Glamor-Rotanev lhe lança um olhar gélido.,,
 ZGRtechTurnInResponseFirst,ZGRItemsTurnedIn,,"$didFirstSale = true
@@ -30390,7 +30390,7 @@ $global.firstGlamorRotanevVisitInvite
 !$player.didZGRfirstMeeting",FireBest ZGRfirstVisitOptionCheck,,"2:ZGR_visitOptDirect:Tomar um transporte para visitar a Diretora de Aquisições Especiais, Glamor-Rotanev",
 ZGRfirstVisitOptionCheck,ZGRfirstVisitOptionCheck,"$faction.isHostile
 $player.transponderOn","SetEnabled ZGR_visitOptDirect false
-SetTooltip ZGR_visitOptDirect ""You have been flagged as a hostile by Tri-Tachyon automated defenses and would be gunned down upon approach.""",,,
+SetTooltip ZGR_visitOptDirect ""Você foi marcado como hostil pelas defesas automáticas da Tri-Tachyon e seria abatido ao se aproximar.""",,,
 ZGRfirstVisitStart,DialogOptionSelected,$option == ZGR_visitOptDirect,ShowLargePlanet,"Sua nave desce pela jovem atmosfera de Eochu Bres, através de muralhas imensas de nuvens. Um borrifo de chuva escurece seu visor por um momento antes de ser limpo pelo calor e velocidade da descida.
 
 A rota de voo desvia imediatamente do corredor de aproximação geral, que já havia começado a cobrar taxas menores de uso controladas pela Tri-Tachyon: taxa de acesso ao volume geral, tarifa de faixa de voo prioritário, taxa de serviço, seguro de satisfação do cliente, taxa de bypass de anúncios.
@@ -30791,7 +30791,7 @@ ZGRmakePitch9OMKIbuy4mil,DialogOptionSelected,$option == zgr_makePitch9OMKIbuy4m
 ""Você pede muito, capitão.""","zgr_makePitch9OMKIbuy4mil2:""A Diretora de Aquisições Especiais da Tri-Tachyon pode pagar meros um milhão de créditos. Aceito.""
 zgr_makePitch9OMKIbuy4later:""Vamos discutir isso depois.""",
 ZGRmakePitch9OMKIbuy4milCheck,ZGRmakePitch9OMKIbuy4milCheck,!PlayerFleetHasShipWithBaseHull onslaught_mk1,"SetEnabled zgr_makePitch9OMKIbuy4mil2 false
-SetTooltip zgr_makePitch9OMKIbuy4mil2 ""You don't have the Onslaught Mk.I in your fleet.""",,,
+SetTooltip zgr_makePitch9OMKIbuy4mil2 ""Você não tem a Onslaught Mk.I em sua frota.""",,,
 ZGRmakePitch9OMKIbuy4mil2,DialogOptionSelected,$option == zgr_makePitch9OMKIbuy4mil2,"AddCredits 1000000
 $global.gaveZGRoneslaughtAccess = true
 $didAsale = true 0","— Pronto — ela diz, a voz tão vazia quanto o Abismo.
@@ -31121,7 +31121,7 @@ $isContact
 $global.ttBriberyContactSet
 $ttBriberyContact ",FireAll TTContactBribeRepCheck,,"10:ttContact_bribeRep:""Preciso consertar minha reputação com a Tri-Tachyon.""",
 ttContactBribeRepCheck,TTContactBribeRepCheck,RepGTE tritachyon INHOSPITABLE,"SetEnabled ttContact_bribeRep false
-SetTooltip ttContact_bribeRep ""Only available if relations with Tri-Tachyon are hostile or worse.""",,,
+SetTooltip ttContact_bribeRep ""Disponível apenas se as relações com a Tri-Tachyon forem hostis ou piores.""",,,
 ttContactBribeRepIntroButWar,DialogOptionSelected,"$option == ttContact_bribeRep
 Commission hasOtherCommission
 Commission commissionFactionIsAtWarWith tritachyon",FireAll PopulateOptions,"$HeOrShe te lança um olhar cético, então fala: ""Aqui está o problema, campeão. Você tem uma comissão com $theOtherCommissionFaction. E eles estão em guerra com a Tri-Tachyon Corporation.""
@@ -31548,7 +31548,7 @@ sdtuRamPrepWeapon,SDTURamPrepOptions,!$player.sdtu_gotWeapon,,,sdtu_prepWeapon:P
 sdtuRamPrepWire,SDTURamPrepOptions,!$player.sdtu_gotWire,,,sdtu_prepWire:Equipar um aparelho de holo-gravação secreto,
 sdtuRamPrepMarines,SDTURamPrepOptions,!$player.sdtu_gotMarines,FireAll SDTURamMarineCheck,,sdtu_prepMarines:Levar um esquadrão de fuzileiros como reforço,
 sdtuRamPrepAbort,SDTURamPrepOptions,,,,"sdtu_abortSafehouse:Pensando melhor, cancele o voo por enquanto",
-sdtuRamPrepMarinesOff,SDTURamMarineCheck,$player.marines < 6,"SetTooltip sdtu_prepMarines ""Requires at least 6 marines.""
+sdtuRamPrepMarinesOff,SDTURamMarineCheck,$player.marines < 6,"SetTooltip sdtu_prepMarines ""Exige pelo menos 6 fuzileiros.""
 SetTooltipHighlights sdtu_prepMarines 6
 SetEnabled sdtu_prepMarines false",,,
 sdtuRamPrepWeaponSel,DialogOptionSelected,$option == sdtu_prepWeapon,"$player.sdtu_gotWeapon = true
@@ -32001,9 +32001,9 @@ sdtuPatrolOptionWarrant,SDTUPatrolOptions,!$sentWarrant,,,sdtu_traitorPatrolWarr
 sdtuPatrolOptionSurrenderAsk,SDTUPatrolOptions,$sentWarrant,,,"sdtu_patrolAskSurrender:""Faça a coisa certa e se renda sem resistência.""",
 sdtuPatrolOptionSurrenderDemand,SDTUPatrolOptions,$sentWarrant,,,"sdtu_patrolDemandSurrender:""Renda-se agora, ou atacarei.""",
 sdtuPatrolOptionMutiny,SDTUPatrolOptions,$sentWarrant,"SetStoryOption sdtu_patrolConvinceMutiny general ""Convenceu a patrulha 'traidora' do Diktat Sindriano a se amotinar e entregar seu comandante""
-SetTooltip sdtu_patrolConvinceMutiny ""Appeal to the patriotism - and fear - of the crew to capture this officer without a fight.""",,sdtu_patrolConvinceMutiny:Convencer a tripulação de $hisOrHer a entregar $himOrHer sem luta,
+SetTooltip sdtu_patrolConvinceMutiny ""Apelar ao patriotismo — e ao medo — da tripulação para capturar este oficial sem combate.""",,sdtu_patrolConvinceMutiny:Convencer a tripulação de $hisOrHer a entregar $himOrHer sem luta,
 sdtuPatrolOptionHelpYou,SDTUPatrolOptions,$sentWarrant,"SetStoryOption sdtu_patrolForAPrice general ""Convenci o comandante 'traidor' da patrulha do Diktat Sindriano a pagar para que você o ajude a escapar de Macario""
-SetTooltip sdtu_patrolForAPrice ""Convince $PersonName to pay you 10,000 credits. You will drop $himOrHer off at a neutral system and report that $heOrShe was killed in combat.""
+SetTooltip sdtu_patrolForAPrice ""Convencer $PersonName a pagar 10.000 créditos. Você deixará $himOrHer em um sistema neutro e relatará que $heOrShe foi morto em combate.""
 SetTooltipHighlights ""10,000 credits""",,"sdtu_patrolForAPrice:""Posso te ajudar a sair dessa... por um preço.""",
 sdtuPatrolOptionOops,SDTUPatrolOptions,,,,"cutCommLink:""Ops, ID de comunicação errado. Preciso ir agora.""",# cutCommLinkNoText
 sdtuTraitorPatrolWarrantReaction,DialogOptionSelected,$option == sdtu_traitorPatrolWarrantReaction,"$sentWarrant = true
@@ -32800,7 +32800,7 @@ $menuState == main
 Call $global.sdtu_ref updateData
 $sdtu_stage == EXTRACT_AGENT",FireBest SDTUUmbraRaidCheckHostilesNearby,,2:sdtu_umbraRaidStart:Preparar uma incursão para extrair o agente de Caden,
 sdtuDisableUmbraRaidOption,SDTUUmbraRaidCheckHostilesNearby,HostileFleetNearbyAndAware,"SetEnabled sdtu_umbraRaidStart false
-SetTooltip sdtu_umbraRaidStart ""A nearby hostile fleet is tracking your movements, making a raid impossible.""",,,
+SetTooltip sdtu_umbraRaidStart ""Uma frota hostil próxima está rastreando seus movimentos, tornando um ataque impossível.""",,,
 sdtuUmbraRaidStart,DialogOptionSelected,$option == sdtu_umbraRaidStart,"$raidDifficulty = $sdtu_extractAgentRaidDifficulty 0
 $raidGoBackTrigger = PopulateOptions 0
 $raidContinueTrigger = SDTUUmbraRaidFinishedB 0
@@ -32870,14 +32870,14 @@ sdtuUmbraImoinuWarning,SDTUUmbraVIPwarnCheck,"$market.imoinuDidWarn
 !$market.imoinuWillWarn
 $postId != supplyOfficer","SetEnabled sdtu_umbraAskAgent false
 SetEnabled sdtu_umbraTrickVIP false
-SetTooltip sdtu_umbraAskAgent ""Imoinu Kato has almost certainly warned $himOrHer about you.""
-SetTooltip sdtu_umbraTrickVIP ""Imoinu Kato has almost certainly warned $himOrHer about you.""",,,
+SetTooltip sdtu_umbraAskAgent ""Imoinu Kato quase certamente alertou $himOrHer sobre você.""
+SetTooltip sdtu_umbraTrickVIP ""Imoinu Kato quase certamente alertou $himOrHer sobre você.""",,,
 sdtuUmbraImoinuWarningHerself,SDTUUmbraVIPwarnCheck,"$market.imoinuDidWarn
 !$market.imoinuWillWarn
 $postId == supplyOfficer","SetEnabled sdtu_umbraAskAgent false
 SetEnabled sdtu_umbraTrickVIP false
-SetTooltip sdtu_umbraAskAgent ""Imoinu is unlikely to respond well to this subject.""
-SetTooltip sdtu_umbraTrickVIP ""Imoinu is unlikely to respond well to this subject.""",,,
+SetTooltip sdtu_umbraAskAgent ""Imoinu provavelmente não reagirá bem a este assunto.""
+SetTooltip sdtu_umbraTrickVIP ""Imoinu provavelmente não reagirá bem a este assunto.""",,,
 #sdtuUmbraVIPOptionsC,SDTUUmbraVIPOptions,,FireAll SDTUCheckCanThreatenUmbra,,sdtu_umbraThreatFleet:Threaten to unleash hell upon Umbra if they don't hand over Caden's agent,# seems boring
 sdtuUmbraAskAgent,DialogOptionSelected,$option == sdtu_umbraAskAgent,"$askedAboutAgent = true 1
 RemoveOption sdtu_umbraAskAgent","""Um agente?"" $HeOrShe fica desconfiado. ""Se você souber algo sobre um espião sindie em Umbra, fale agora e eu o terei diante de um tribunal revolucionário antes do fim do dia.""",,
@@ -32906,8 +32906,8 @@ Será arriscado, mas deve ser possível que esse agente escape de uma sentença de 
 
 Imoinu fica em silêncio, com uma expressão de grave preocupação, enquanto você explica.","sdtu_umbraImoinuAgent3:""Eles estão queimados, Imoinu. Dessa forma, ainda conseguimos uma vitória para o ARC e a Frente Unida.""",
 sdtuUmbraAskAgentQM4,DialogOptionSelected,$option == sdtu_umbraImoinuAgent3,"$global.sdtu_umbraAgentCoop = true
-SetTooltip  sdtu_umbraImoinuAgent4 ""Maybe you can ensure the agent lives through this...""
-SetTooltip sdtu_umbraImoinuAgent4lie ""Why risk the mission for one double agent?""","Ela baixa os olhos e suspira. Leva um momento para processar.
+SetTooltip  sdtu_umbraImoinuAgent4 ""Talvez você possa garantir que o agente sobreviva a isso...""
+SetTooltip sdtu_umbraImoinuAgent4lie ""Por que arriscar a missão por um único agente duplo?""","Ela baixa os olhos e suspira. Leva um momento para processar.
 
 Depois, olha para cima. Sua expressão é resoluta.
 
@@ -34208,7 +34208,7 @@ ImoinuKatoUmbraSupportedCheck,PopulateOptions,"$id == imoinu_kato score:1000
 $expressedSupport
 $explainedSupportDelay
 $gaveSupportRecently","SetEnabled imoinuUmbra_offerHelp false
-SetTooltip imoinuUmbra_offerHelp ""Can only donate to the ARC every 30 days.""",,,
+SetTooltip imoinuUmbra_offerHelp ""Só é possível doar para o ARC a cada 30 dias.""",,,
 ImoinuKatoUmbraAskWhat,PopulateOptions,"$id == imoinu_kato score:1000
 !$saidGensKato",,,"imoinuKato_askWhatUmbra:""Não é você, Gens Kato? O que está fazendo em Umbra?""",
 ImoinuKatoUmbraSayAndrada,PopulateOptions,"$id == imoinu_kato score:1000
@@ -34424,7 +34424,7 @@ ShowDefaultVisual","""Tanto faz."" Ela faz careta. ""Pelo menos eu escolhi fazer
 
 ""Não preciso das suas lições."" Ela desliga na cara.",,
 ImoinuUmbraGoOptA,ImoinuUmbraGoOpts,"$player.metCavin
-!$player.offeredImoinuCavinConnection","SetTooltip imoinuUmbra_goCavin ""Cavin Pharoh seems like the sort of person who would want to help Imoinu Kato.""",,"imoinuUmbra_goCavin:""Eu conheço alguém em Westernesse que pode te ajudar. Cavin Pharoh.""",
+!$player.offeredImoinuCavinConnection","SetTooltip imoinuUmbra_goCavin ""Cavin Pharoh parece ser o tipo de pessoa que gostaria de ajudar Imoinu Kato.""",,"imoinuUmbra_goCavin:""Eu conheço alguém em Westernesse que pode te ajudar. Cavin Pharoh.""",
 #ImoinuUmbraGoOptB,ImoinuUmbraGoOpts,"$player.metGargoyle
 #$global.gaKA_completed
 !$player.offeredImoinuGargoyleConnection","SetTooltip imoinuUmbra_goGargoyle ""Gargoyle can't possibly like the Diktat. If Imoinu can stand the hacker, they might work well together...""",,"imoinuUmbra_goGargoyle:""I know a hacker, Gargoyle, who might help. They're at the Galatia Academy right now.""",# need to hook up the other side of this if it's going to be a thing TODO
@@ -34437,7 +34437,7 @@ $global.anh_completed
 $global.anh_deliveredKid",,,"imoinuUmbra_goVolturnKid:""Eu transportei uma criança e o robô dela para Volturn, acho que eles queriam se juntar à sua resistência...""",
 ImoinuUmbraGoOptF,ImoinuUmbraGoOpts,,,,"imoinuUmbra_offerHelp:""Precisa de armamentos? Suprimentos? Créditos?""",
 ImoinuUmbraGoOptG,ImoinuUmbraGoOpts,,,,"imoinuUmbra_goBack:""É só o que consigo pensar por enquanto.""",
-ImoinuUmbraGoOptH,ImoinuUmbraGoOpts,,"SetTooltip imoinuUmbra_goStay ""You don't have time to deal with this sniveling gens-baby's personal crusade.""",,"imoinuUmbra_goStay:""Então fique aqui e congele! Não posso resolver todos os seus problemas.""",
+ImoinuUmbraGoOptH,ImoinuUmbraGoOpts,,"SetTooltip imoinuUmbra_goStay ""Você não tem tempo para lidar com a cruzada pessoal desse fedelho de gens-baby.""",,"imoinuUmbra_goStay:""Então fique aqui e congele! Não posso resolver todos os seus problemas.""",
 ImoinuUmbraGoOptNotHelpful,ImoinuUmbraGoOpts,$notHelpful >= 2,"$option = imoinuUmbra_notHelpful 0
 FireBest DialogOptionSelected",,,
 imoinuUmbraGoCavin,DialogOptionSelected,$option == imoinuUmbra_goCavin,"$player.offeredImoinuCavinConnection = true
@@ -34515,13 +34515,13 @@ Ela faz uma pausa, hesitante. Então explica, a frustração clara em sua expressão
 ""O problema é que, se estocarmos muitos materiais, créditos, suprimentos... eles começam a 'sumir'. Trabalhamos com um grande número de indivíduos que não são... tão ideologicamente comprometidos com o ARC, com a revolta, como deveriam ser.""",,
 imoinuUmbraOfferHelp,DialogOptionSelected,$option == imoinuUmbra_offerHelp,"$player.offeredHelpUmbraARC = true
 SetEnabled imoinuUmbra_offerHelpWeapons false
-SetTooltip imoinuUmbra_offerHelpWeapons ""Requires 10 units of heavy armaments.""
+SetTooltip imoinuUmbra_offerHelpWeapons ""Requer 10 unidades de armamentos pesados.""
 SetTooltipHighlights imoinuUmbra_offerHelpWeapons 10
 SetEnabled imoinuUmbra_offerHelpCredits false
-SetTooltip imoinuUmbra_offerHelpCredits ""Requires 20,000 credits.""
+SetTooltip imoinuUmbra_offerHelpCredits ""Requer 20.000 créditos.""
 SetTooltipHighlights imoinuUmbra_offerHelpCredits 20,000
 SetEnabled imoinuUmbra_offerHelpSupplies false
-SetTooltip imoinuUmbra_offerHelpSupplies ""Requires 100 units of supplies.""
+SetTooltip imoinuUmbra_offerHelpSupplies ""Requer 100 unidades de suprimentos.""
 SetTooltipHighlights imoinuUmbra_offerHelpSupplies 100
 FireAll ImoinuKatoOfferCheck","Ela se anima. ""Sim. Com certeza.""
 OU
@@ -34530,13 +34530,13 @@ imoinuUmbra_offerHelpCredits:Doar 25.000 créditos
 imoinuUmbra_offerHelpSupplies:Doar 100 unidades de suprimentos
 imoinuUmbra_offerHelpBack:""Talvez outra hora.""",
 imoinuUmbraOfferHelpCheckArms,ImoinuKatoOfferCheck,PlayerHasCargo hand_weapons 10,"SetEnabled imoinuUmbra_offerHelpWeapons true
-SetTooltip imoinuUmbra_offerHelpWeapons ""Requires 10 units of heavy armaments.""
+SetTooltip imoinuUmbra_offerHelpWeapons ""Requer 10 unidades de armamentos pesados.""
 SetTooltipHighlights imoinuUmbra_offerHelpWeapons 10",,,
 imoinuUmbraOfferHelpCheckCredits,ImoinuKatoOfferCheck,$player.credits >= 20000,"SetEnabled imoinuUmbra_offerHelpCredits true
-SetTooltip imoinuUmbra_offerHelpCredits ""Requires 25,000 credits.""
+SetTooltip imoinuUmbra_offerHelpCredits ""Requer 25.000 créditos.""
 SetTooltipHighlights imoinuUmbra_offerHelpCredits 25,000",,,
 imoinuUmbraOfferHelpCheckSup,ImoinuKatoOfferCheck,PlayerHasCargo supplies 100,"SetEnabled imoinuUmbra_offerHelpSupplies true
-SetTooltip imoinuUmbra_offerHelpSupplies ""Requires 100 units of supplies.""
+SetTooltip imoinuUmbra_offerHelpSupplies ""Requer 100 unidades de suprimentos.""
 SetTooltipHighlights imoinuUmbra_offerHelpSupplies 100 ",,,
 #imoinuUmbraOfferHelpCheckArms2,ImoinuKatoOfferCheck,"$global.suppliedARCweapons
 $global.suppliedARC","SetEnabled imoinuUmbra_offerHelpWeapons false
@@ -34944,7 +34944,7 @@ pirateStationKingBizOptA,PirateStationKingBizOptions,,,,psk_decline:Recusar a of
 pirateStationKingBizOptB,PirateStationKingBizOptions,!$saidReasonable,,,"psk_businessTooMuchReasonable:""10% é demais. Seja razoável.""",
 pirateStationKingBizOptC,PirateStationKingBizOptions,!$saidFleet,,,"psk_businessTooMuchFleet:""Uma exigência absurda! Você pode ver o poder da minha $shipOrFleet daqui mesmo.""",
 pirateStationKingBizOptCcheck,PirateStationKingBizOptions,$player.maxCombatHullSize < 4,"SetEnabled psk_businessTooMuchFleet false
-SetTooltip psk_businessTooMuchFleet ""Requires a non-civilian capital ship in your fleet.""",,,
+SetTooltip psk_businessTooMuchFleet ""Requer uma nave capital não-civil em sua frota.""",,,
 pirateStationKingBizOptD,PirateStationKingBizOptions,,,,psk_accept:Aceitar a proposta,
 pirateSKtooMuchReasonable,DialogOptionSelected,$option == psk_businessTooMuchReasonable,$saidReasonable = true 0,"""Temo que meus compatriotas não aceitarão menos. Em minha posição, devo... fornecer. Um rei que não fornece...""
 
@@ -35843,7 +35843,7 @@ HA_CMD isTTRaidingPlayerCommerce
 $faction.id == tritachyon
 !$faction.ttProblemsAsked
 $id != arroyo
-$id != sun","SetTooltip ttTriTachProblems ""Discuss possible solutions to Tri-Tachyon sending mercenaries to harass your colonies and fleets.""",,"ttTriTachProblems:""Gostaria de registrar uma reclamação sobre interferência da Tri-Tachyon em minhas operações.""",
+$id != sun","SetTooltip ttTriTachProblems ""Discuta possíveis soluções para a Tri-Tachyon enviar mercenários para assediar suas colônias e frotas.""",,"ttTriTachProblems:""Gostaria de registrar uma reclamação sobre interferência da Tri-Tachyon em minhas operações.""",
 ttVIPCounterRaidingSel0,DialogOptionSelected,$option == ttTriTachProblems,$faction.ttProblemsAsked = true 90,"$HeOrShe sorri automaticamente.
 
 ""A Tri-Tachyon mantém a filosofia de que engajar-se em competição saudável — até vigorosa — no campo do comércio interestelar é do melhor interesse tanto de nossos clientes quanto de nossos investidores. Pedimos desculpas por qualquer inconveniente que possa ter sofrido.""
@@ -35862,7 +35862,7 @@ $id == arroyo
 !$player.brokeTriTachDeal
 !HA_CMD isTTCRInProgress
 HA_CMD isTTRaidingPlayerCommerce
-!$ttProblemsAsked","SetTooltip ttTriTachProblems ""Discuss possible solutions to Tri-Tachyon sending mercenaries to harass your colonies and fleets.""",,"ttTriTachProblems:""Então, atraí a... 'atenção' da Tri-Tachyon.""",
+!$ttProblemsAsked","SetTooltip ttTriTachProblems ""Discuta possíveis soluções para a Tri-Tachyon enviar mercenários para assediar suas colônias e frotas.""",,"ttTriTachProblems:""Então, atraí a... 'atenção' da Tri-Tachyon.""",
 ttArroyoProblemsSel0,DialogOptionSelected,"$option == ttTriTachProblems
 $id == arroyo",$ttProblemsAsked = true 90,"""Eu deveria cobrar por isso,"" Arroyo diz. ""Conselho especializado; taxa de consultoria, nível executivo. Hm,"" ele pondera por um momento.
 
@@ -35984,7 +35984,7 @@ FireAll MostLuddicEthosRefresh
 
 ""Roguemos que vossa $shipOrFleet, poderosa como é, afaste aqueles que perturbariam e assalariam os indefesos Fiéis.""",cutCommLinkNoText:Cortar a comunicação,
 lcSacredProtectorsChurchCom,LCProtectorOptions,"$player.fcm_faction == luddic_church
-!$saidHaveCom","SetTooltip LCP_butHaveCom ""Have you not given enough, and will you not give again - and more?""",,"LCP_butHaveCom:""Mas $brotherOrSister, certamente sabeis que trago uma missão da Igreja...""",
+!$saidHaveCom","SetTooltip LCP_butHaveCom ""Você não tem dado o suficiente? Não dará mais — e mais ainda?""",,"LCP_butHaveCom:""Mas $brotherOrSister, certamente sabeis que trago uma missão da Igreja...""",
 lcSacredProtectorsChurchCom2,LCProtectorOptions,"$player.fcm_faction == luddic_church
 $saidHaveCom",,,"LCP_buHaveCom2:""Já servi e continuarei a servir. Dizei-me, não é o suficiente?""",
 lcSacredProtectorsGiveSupplies,LCProtectorOptions,"$player.supplies >= $SP_supplies
@@ -35992,7 +35992,7 @@ $demandingSupplies
 !$player.luddicFaithfulOrChurchCom",,,LCP_comply:Entregar $SP_supplies unidades de suprimentos,
 lcSacredProtectorsGiveSuppliesFaith,LCProtectorOptions,"$player.luddicFaithfulOrChurchCom
 $player.supplies >= $SP_supplies
-$demandingSupplies","SetTooltip LCP_comply ""Hand over $SP_supplies units of supplies.""
+$demandingSupplies","SetTooltip LCP_comply ""Entregue $SP_supplies unidades de suprimentos.""
 SetTooltipHighlights LCP_comply ""$SP_supplies units""",,"LCP_comply:""Meu abençoado $brotherOrSister na Fé, claro que darei!""",
 lcSacredProtectorsGoAway,LCProtectorOptions,"!$failedToRefuse
 $demandingSupplies
@@ -36092,7 +36092,7 @@ lcMakeDealSelAgain,DialogOptionSelected,"$option == lcMakeDeal
 $player.wasOfferedChurchImmigrationDeal",,"""Ah."" $HeOrShe junta $hisOrHer mãos, demasiado sereno. ""Sim, lembro que já tivemos contato sobre este mesmo assunto com você, infelizmente sem resolução naquela ocasião anterior.""
 
 ""Rezo para que, neste dia abençoado, possamos chegar a um acordo construtivo que garanta a segurança física e espiritual de todas as partes.""",lcMakeDealReview:Continuar,
-lcMakeDealSelAgainReview,DialogOptionSelected,$option == lcMakeDealReview,"SetTooltip lcDealConfirm ""The Knights of Ludd will stop their interference. Removes benefits of Luddic Majority for your colonies. Luddic Majority may be lost upon colony growth.""
+lcMakeDealSelAgainReview,DialogOptionSelected,$option == lcMakeDealReview,"SetTooltip lcDealConfirm ""Os Cavaleiros de Ludd cessarão suas interferências. Remove os benefícios da Maioria Luddica em suas colônias. A Maioria Luddica pode ser perdida com o crescimento da colônia.""
 SetTooltipHighlights lcDealConfirm ""Knights of Ludd"" ""Luddic Majority"" ""Luddic Majority""
 SetTooltipHighlightColors lcDealConfirm  luddic_church
 AddTextSmall ""Remove os benefícios da Maioria Luddica em suas colônias"" highlight","""Nossa proposta é a seguinte: a Igreja da Redenção Galáctica e sua organização colaboram para impor controles de imigração, limitando o fluxo de Fiéis para suas colônias. A Igreja cuidará de seu rebanho, e os Cavaleiros de Ludd cessarão suas intervenções em seus assuntos.""
@@ -36179,7 +36179,7 @@ lcMakeDealProposal1faithful,DialogOptionSelected,"$option == lcMakeDealProposalR
 $player.luddicAttitudeFaithfulOrPather","$option = lcMakeDealProposal2 0
 FireBest DialogOptionSelected","Você entende que só tem uma visão superficial das correntes do Conselho do Arqui-Curato, mas é claro que há uma tendência de direcionar a inquisição dos Cavaleiros para dentro, e não para fora. Você é apenas um eixo sobre o qual a política oficial pode ser virada.",,
 lcMakeDealProposal2,DialogOptionSelected,$option == lcMakeDealProposal2,"$player.wasOfferedChurchImmigrationDeal = true
-SetTooltip lcDealConfirm ""The Knights of Ludd will stop their interference. Removes benefits of Luddic Majority for your colonies. Luddic Majority may be lost upon colony growth.""
+SetTooltip lcDealConfirm ""Os Cavaleiros de Ludd cessarão suas interferências. Remove os benefícios da Maioria Luddica em suas colônias. A Maioria Luddica pode ser perdida com o crescimento da colônia.""
 SetTooltipHighlights lcDealConfirm ""Knights of Ludd"" ""Luddic Majority"" ""Luddic Majority""
 SetTooltipHighlightColors lcDealConfirm  luddic_church
 AddTextSmall ""Remove os benefícios da Maioria Luddica em suas colônias"" highlight","""Tudo será resolvido assim que você confirmar o concordato, é claro,"" $heOrShe acrescenta de forma agradável.","lcDealConfirm:Confirmar o concordato
@@ -37057,7 +37057,7 @@ Não é uma coisa simples invadir essa rede auto-evoluída para solicitar uma infor
 pk_hackStory:Abrir um enlace de comunicação na rede
 pk_commGoBack:Voltar",
 PKRelayCheckTTCommission,PKRelayCheckTTCommission,$player.commissionFactionId != tritachyon,"SetEnabled pk_hack false
-SetTooltip pk_hack ""Requires a Tri-Tachyon commission.""",,,
+SetTooltip pk_hack ""Requer uma comissão da Tri-Tachyon.""",,,
 PKHackSel,DialogOptionSelected,$option == pk_hack,"$global.pk_nexusDataGained = true
 Call $global.pk_ref updateStage","Como um corsário comissionado da Corporação Tri-Tachyon, você recebeu um conjunto padrão de códigos de acesso. Estes são protocolos antigos, e embora tenham se afastado dos padrões da empresa ao longo do tempo (devido, provavelmente, às interferências de IAs ociosas), seus oficiais técnicos têm a habilidade de se adaptar às mudanças incomuns.
 
@@ -37969,7 +37969,7 @@ pkSentinelHubLeaveCrew,PKSentinelHubOptions,"$showedHegCommission
 pkSentinelHubLeaveCrewCheck,PKSentinelHubOptions,"$showedHegCommission
 !$global.leftCrewOnSentinel
 $player.crew < 200","SetEnabled pk_sentinelLeaveCrew false
-SetTooltip pk_sentinelLeaveCrew ""Requires that your $shipOrFleet have more than 200 crew.""",,,
+SetTooltip pk_sentinelLeaveCrew ""Requer que sua $shipOrFleet tenha mais de 200 tripulantes.""",,,
 pkSentinelHubLeave,PKSentinelHubOptions,,,,pk_sentinelLeave:Ir embora,
 pkSentinelRemoveQuestions,PKSentinelHubOptions,"$saidDanger
 $askedProtocols
@@ -38311,7 +38311,7 @@ $showedHegCommission
 FireAll PKSentinelOutSequenceIntCrewCheck","Enquanto você caminha de volta pelo assentamento, sob os olhares sutis das equipes de trabalho de Skiron, você nota como alguns técnicos com equipamentos leves poderiam facilmente modernizar as comunicações e infraestrutura para o mínimo necessário de uma civilização capaz de viagens espaciais.","pk_sentinelLeave:Continuar andando.
 pk_sentinelLeaveCrewAlt:""Eu poderia deixar 100 tripulantes aqui; especialistas para ajudar sua colônia a sobreviver.""",
 PKSentinelOutSequenceIntCrewCheck,PKSentinelOutSequenceIntCrewCheck,$player.crew < 200,"SetEnabled pk_sentinelLeaveCrewAlt false
-SetTooltip pk_sentinelLeaveCrewAlt ""Requires that your $shipOrFleet have more than 200 crew.""",,,
+SetTooltip pk_sentinelLeaveCrewAlt ""Requer que sua $shipOrFleet tenha mais de 200 tripulantes.""",,,
 PKSentinelCrewSelAlt,DialogOptionSelected,$option == pk_sentinelLeaveCrewAlt,"AddCommodity crew -100
 AdjustRepPerson skiron FRIENDLY 5
 $global.leftCrewOnSentinel = true
@@ -38989,15 +38989,15 @@ Você ouve seu nome ser chamado como uma praga, e um míssil improvisado se espati
 Seus seguranças formam uma barreira humana para abrir caminho até a saída. Tropeçando para fora, você ouve o toque dos sinos de alarme, que anunciam a rápida aproximação da equipe local de Segurança Municipal liderada por um Cavaleiro de Ludd. Não haverá negócios tranquilos neste bar pelo resto do turno, isso está claro.",barLREend:Sair,
 BarLREend,DialogOptionSelected,$option == barLREend,"BarCMD leaveBar
 SetEnabled marketVisitBar false
-SetTooltip marketVisitBar ""Local nets report that the administrator has ordered the spacer bars closed for the next shift due to a minor riot.""",,,
+SetTooltip marketVisitBar ""Relatórios locais indicam que o administrador ordenou o fechamento das barras de spacers para o próximo turno devido a um pequeno tumulto.""",,,
 BarLREendPirate,DialogOptionSelected,"$option == barLREend
 $faction.id == pirates","BarCMD leaveBar
 SetEnabled marketVisitBar false
-SetTooltip marketVisitBar ""Comms chatter indicates that the portboss has ordered bars closed to outsiders for the next shift due to a minor riot. The form of public punishment which instigators will endure is a topic of much speculation.""",,,
+SetTooltip marketVisitBar ""Comunicados indicam que o chefe do porto ordenou o fechamento das barras para estranhos no próximo turno devido a um pequeno tumulto. O tipo de punição pública que os instigadores enfrentarão é tema de muita especulação.""",,,
 BarLREendPather,DialogOptionSelected,"$option == barLREend
 $faction.id == luddic_path","BarCMD leaveBar
 SetEnabled marketVisitBar false
-SetTooltip marketVisitBar ""Comms chatter indicates that the local Pather militants have closed all bars catering to spacers for the next shift in response to a minor riot.""",,,
+SetTooltip marketVisitBar ""Comunicados indicam que militantes locais do Caminho Luddico fecharam todas as barras que atendem spacers para o próximo turno em resposta a um pequeno tumulto.""",,,
 "# Bar on own colony, barOOC",,,,,,
 BarOwnColFreeDrinkStart,DialogOptionSelected,"$option == marketVisitBar
 !$player.gotFreeDrinkFromOwnColony 
@@ -39296,11 +39296,11 @@ $player.everAskedForFreeSupplies",FireAll BQFSaskForSuppliesOptCheck,,"bqfs_askF
 bqfsAskForSuppliesOptAgainCheck,BQFSaskForSuppliesOptCheck,"Commission recalcFreeSupplyDaysRemaining
 $faction.playerReceivedCommissionResupply
 $player.fcm_faction == $personFaction.id","SetEnabled bqfs_askForSupplies false
-SetTooltip bqfs_askForSupplies ""You must wait another $daysLeft days before you may be allocated emergency supplies due to your $faction commission.""
+SetTooltip bqfs_askForSupplies ""Você deve esperar mais $daysLeft dias antes que possa ser alocado suprimentos de emergência devido à sua comissão de $faction.""
 SetTooltipHighlights bqfs_askForSupplies ""$daysLeft days"" ""$faction""
 SetTooltipHighlightColors bqfs_askForSupplies hColor $faction.id",,,
 bqfsAskForSuppliesOptAgainCheck2,BQFSaskForSuppliesOptCheck,$player.fcm_faction != $personFaction.id,"SetEnabled bqfs_askForSupplies false
-SetTooltip bqfs_askForSupplies ""The $post will only provide supplies to a $shipOrFleet in need and bearing a $faction commission.""
+SetTooltip bqfs_askForSupplies ""O $post só fornecerá suprimentos a um $shipOrFleet necessitando e portando uma comissão de $faction.""
 SetTooltipHighlights bqfs_askForSupplies ""$faction""
 SetTooltipHighlightColors bqfs_askForSupplies $faction.id",,,
 bqfsAskedForSuppliesFirstNo,DialogOptionSelected,"$option == bqfs_askForSupplies
@@ -39631,7 +39631,7 @@ salOHOGstory3,DialogOptionSelected,$option == salOHOG_story3,FireAll salOHOGstor
 Um pequeno jardim cresce selvagemente dentro deste túmulo celestial. Algum tipo de bateria de backup fissil sobreviveu, convertendo o decaimento de elementos pesados em calor e luz para uma minúscula bolha de vida. A umidade se condensa em uma lente turva de lama no vidro voltado para o centro do habitat, então cai lentamente em grandes gotas através da micro-gravidade da rotação do habitat, passando pelas placas de iluminação, em direção aos musgos, mofo e pequenas flores que crescem nos montes quentes de detritos e cascas de roedores.
 
 Em um mundo terráqueo propício à vida, isso não passaria de um poço fétido. Aqui, é um milagre.",,
-salOHOGstory3resp1,salOHOGstoryChoice,$player.luddicAttitudeFaithfulOrPather,"SetTooltip salOHOG_story3luddic ""'... and all that is good can be found there.' - Sacred Texts of Ludd""",,"salOHOG_story3luddic:""'Onde há vida, aí está o trono de Deus...'""",
+salOHOGstory3resp1,salOHOGstoryChoice,$player.luddicAttitudeFaithfulOrPather,"SetTooltip salOHOG_story3luddic ""'... e tudo que é bom pode ser encontrado lá.' - Textos Sagrados de Ludd""",,"salOHOG_story3luddic:""'Onde há vida, aí está o trono de Deus...'""",
 salOHOGstory3resp2,salOHOGstoryChoice,,,,salOHOG_story3secular:Continuar,
 salOHOGstory3secular,DialogOptionSelected,$option == salOHOG_story3secular,$player.luddicAttitudeSecular++,"""$PlayerSirOrMadam."" Seu Chefe de Operações reconhece sua ordem e começa a coordenar a dança de levantamento, inventário, extração e transporte.",salOHOG_out:Continuar,
 salOHOGstory3luddic,DialogOptionSelected,$option == salOHOG_story3luddic,,"""$PlayerSirOrMadam,"" responde seu Chefe de Operações, com um tom que mal esconde uma pergunta.","salOHOG_story3luddic2:""Deixaremos este lugar como está. Sem salvamento.""
@@ -40255,9 +40255,9 @@ FireAll gaDHOendingStartOpts","""Saudações, Capitão $PlayerName."" O Acadêmico E
 ""Confio que sua expedição foi um sucesso. Por favor, faça-me o favor de resumir suas descobertas enquanto transmite os dados que coletou.""
 
 Ele mexe em algo, e seu comunicador emite um leve sinal para notificá-lo de que Elek abriu um fluxo de dados para você. Ele olha para você com expectativa.",,
-gaDHOendingStartOptsA,gaDHOendingStartOpts,,"SetTooltip gaDHO_endingFoundFirst ""Emphasizing the danger of your discovery will impress him - and impress upon him the importance of hazard pay.""",,"gaDHO_endingFoundFirst:""Primeiro, quero falar sobre o que encontrei. Foi... perigoso.""",
-gaDHOendingStartOptsB,gaDHOendingStartOpts,,"SetTooltip gaDHO_endingDataFirst ""Knowledge comes first. Elek will appreciate that, surely.""",,"gaDHO_endingDataFirst:""Transmitindo dados agora..."" ",
-gaDHOendingStartOptsC,gaDHOendingStartOpts,!$noHazard ,"SetTooltip gaDHO_endingRewardFirst ""Elek has a way of forgetting the importance of credits.""",,"gaDHO_endingRewardFirst:""Vamos falar primeiro sobre pagamento. Depois, dos dados.""",
+gaDHOendingStartOptsA,gaDHOendingStartOpts,,"SetTooltip gaDHO_endingFoundFirst ""Enfatizar o perigo da sua descoberta impressionará ele — e o convencerá da importância do adicional de risco.""",,"gaDHO_endingFoundFirst:""Primeiro, quero falar sobre o que encontrei. Foi... perigoso.""",
+gaDHOendingStartOptsB,gaDHOendingStartOpts,,"SetTooltip gaDHO_endingDataFirst ""O conhecimento vem em primeiro lugar. Elek certamente apreciará isso.""",,"gaDHO_endingDataFirst:""Transmitindo dados agora..."" ",
+gaDHOendingStartOptsC,gaDHOendingStartOpts,!$noHazard ,"SetTooltip gaDHO_endingRewardFirst ""Elek tem um jeito de esquecer a importância dos créditos.""",,"gaDHO_endingRewardFirst:""Vamos falar primeiro sobre pagamento. Depois, dos dados.""",
 gaDHOendingRewardFirstB,DialogOptionSelected,"$option == gaDHO_endingRewardFirst
 $global.gaDHO_gotReward","AdjustRepActivePerson SUSPICIOUS -1
 $player.ethosMercenary++
@@ -40648,10 +40648,10 @@ gaDHOabyssEndElekIntro1askedPay,DialogOptionSelected,"$option == gaDHO_abyssEndE
 $gaDHO_askedForPay",FireAll gaDHOabyssEndStartOpts,"""Você... foi até lá? As coordenadas do escaneamento?"" Seus olhos estão arregalados.
 
 ""Era um planetoide errante, certo? O que você encontrou? Coletou dados? Preciso deles. E sim, sim, pagarei por isso. Mas preciso saber que os dados são bons.""",,
-gaDHOabyssEndStartOptsA,gaDHOabyssEndStartOpts,,"SetTooltip gaDHO_abyssEndFoundFirst ""Emphasizing the danger of your discovery will impress him - and impress upon him the importance of hazard pay.""",,"gaDHO_abyssEndFoundFirst:""Primeiro, quero falar sobre o que encontrei. Foi... perigoso.""",
-gaDHOabyssEndStartOptsB,gaDHOabyssEndStartOpts,!$gaDHO_askedForPay,"SetTooltip gaDHO_endingDataFirst ""Knowledge comes first. Elek will appreciate that, surely.""",,"gaDHO_endingDataFirst:""Transmitindo dados agora..."" ",
-gaDHOabyssEndStartOptsB2,gaDHOabyssEndStartOpts,$gaDHO_askedForPay,"SetTooltip gaDHO_endingDataFirst ""The hard evidence is sure to make an impression on Elek.""",,"gaDHO_endingDataFirst:""Transmitindo dados agora..."" ",
-gaDHOabyssEndStartOptsC,gaDHOabyssEndStartOpts,!$gaDHO_askedForPay,"SetTooltip gaDHO_abyssEndRewardFirst ""Make sure you get paid first, for all your bother.""",,"gaDHO_endingRewardFirst:""Vamos falar primeiro sobre pagamento. Depois, sobre os dados.""",
+gaDHOabyssEndStartOptsA,gaDHOabyssEndStartOpts,,"SetTooltip gaDHO_abyssEndFoundFirst ""Enfatizar o perigo da sua descoberta impressionará ele — e o convencerá da importância do adicional de risco.""",,"gaDHO_abyssEndFoundFirst:""Primeiro, quero falar sobre o que encontrei. Foi... perigoso.""",
+gaDHOabyssEndStartOptsB,gaDHOabyssEndStartOpts,!$gaDHO_askedForPay,"SetTooltip gaDHO_endingDataFirst ""O conhecimento vem em primeiro lugar. Elek certamente apreciará isso.""",,"gaDHO_endingDataFirst:""Transmitindo dados agora..."" ",
+gaDHOabyssEndStartOptsB2,gaDHOabyssEndStartOpts,$gaDHO_askedForPay,"SetTooltip gaDHO_endingDataFirst ""As evidências concretas certamente causarão uma boa impressão em Elek.""",,"gaDHO_endingDataFirst:""Transmitindo dados agora..."" ",
+gaDHOabyssEndStartOptsC,gaDHOabyssEndStartOpts,!$gaDHO_askedForPay,"SetTooltip gaDHO_abyssEndRewardFirst ""Certifique-se de receber o pagamento primeiro, por todo o seu trabalho.""",,"gaDHO_endingRewardFirst:""Vamos falar primeiro sobre pagamento. Depois, sobre os dados.""",
 #gaDHOabyssEndAlt,DialogOptionSelected,$option == gaDHO_visitElekAltIntro4,,"""Indeed it would,"" he says. ""For that's where it was looking when it picked up something unusual a little over 200 cycles ago.""
 
 ""Would you be so good as to transfer the data you collected? It is very valuable."" He picks up his datapad and taps at it, then looks at you pointedly. ""Um. Valuable to science, that is. Abstract knowledge, not much use to the likes of... to freelancers like yourself, I should say.""","gaDHO_visitElekAltTransferData:Transfer the data recovered from the sensor array
