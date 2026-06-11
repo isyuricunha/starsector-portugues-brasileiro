@@ -4,6 +4,11 @@ Traducao de **Starsector** para portugues brasileiro, empacotada como mod para e
 
 Este pacote traduz os arquivos textuais do jogo base dentro de `starsector-core/data` e entrega a traducao como um mod ativavel pelo launcher do Starsector.
 
+## Ajude à manter o projeto
+
+Se você quer que eu mantenha essa tradução atualizada e quer me ajuda à me manter vivo, faça uma doação para o Pix:
+Pix: <pix@yuricunha.com>
+
 ## Links
 
 - GitHub: <https://github.com/isyuricunha/starsector-portugues-brasileiro>
