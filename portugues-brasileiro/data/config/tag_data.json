@@ -1,0 +1,92 @@
+﻿{
+	# only applies to intel tags
+	
+	"New":{
+		"name":"Novo",
+		"color":"buttonShortcut",
+		"width":150,
+		"putFirst":true,
+		"sort":10,
+	},
+	"Important":{
+		"name":"Importante",
+		#"color":"buttonShortcut",
+		"width":150,
+		"putFirst":true,
+		"sort":20,
+	},
+	"Story":{
+		"name":"História",
+		"width":150,
+		"putFirst":true,
+		"sort":29,
+	},
+	"Major events":{
+		"name":"Eventos principais",
+		#"color":"buttonShortcut",
+		"width":150,
+		"putFirst":true,
+		"sort":30,
+	},
+	"Colony threats":{
+		"name":"Ameaças à colônia",
+		#"color":[200,0,0,255],
+		#"color":"textEnemyColor",
+		"width":150,
+		"putFirst":true,
+		"sort":34,
+	},
+	"Accepted":{
+		"name":"Aceito",
+		#"color":"textFriendColor",
+		"width":151,
+		"putFirst":true,
+		"sort":37.5,
+	},
+	"Exploration":{
+		"name":"Exploração",
+		"width":150,
+		"putFirst":true,
+		"sort":45,
+	},
+	"Fleet log":{
+		"name":"Registro da frota",
+		"width":150,
+		"putFirst":true,
+		"sort":45,
+	},	
+#	"Contacts":{
+#		"name":"Contatos",
+#		"width":118,
+#		#"putFirst":true,
+#		#"sort":32,
+#	},
+#	"Local":{
+#		"name":"Local",
+#		"width":118,
+#		#"putFirst":true,
+#		#"sort":33,
+#	},
+#	"Missions":{
+#		"name":"Missões",
+#		#"color":"textFriendColor",
+#		"width":119,
+#		#"putFirst":true,
+#		#"sort":40,
+#	},
+#	"Bounties":{
+#		"name":"Recompensas",
+#		#"color":[200,0,0,255],
+#		"width":119,
+#		#"putFirst":true,
+#		#"sort":50,
+#	},
+	"Luddic shrines":{
+		"name":"Santuários Luddicos",
+		"color":[75,200,0,255],
+	},
+
+}
+
+
+

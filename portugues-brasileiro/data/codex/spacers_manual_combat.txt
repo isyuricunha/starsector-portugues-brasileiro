@@ -1,0 +1,90 @@
+﻿CATEGORIA gm_cat_combat|manual_combat|Combate|game_mechanics
+
+CATEGORIA_ATUAL gm_cat_combat
+
+BEGIN gm_damage_types|Tipos de dano
+Todos os tipos de dano causam {{100%}} de dano no casco, sujeito ao valor residual de blindagem. Além disso:
+IMAGE ui|icon_high_explosive
+Dano {{Alto-Explosivo}} causa {{200%}} contra blindagem e {{50%}} contra escudos. Os projéteis tendem a ser amarelos.
+IMAGE ui|icon_kinetic
+Dano {{Cinético}} causa {{200%}} contra escudos e {{50%}} contra blindagem. Os projéteis tendem a ser brancos.
+IMAGE ui|icon_energy
+Dano {{Energia}} causa {{100%}} tanto contra escudos quanto contra blindagem. Armas com maior força de impacto tendem a ser ineficientes em fluxo.
+IMAGE ui|icon_fragmentation
+Dano {{Fragmentação}} causa {{25%}} contra escudos e blindagem. Armas que causam esse tipo de dano muitas vezes têm alto DPS e eficiência de fluxo. Os projéteis tendem a ser vermelhos.
+END
+
+BEGIN gm_armor|Blindagem
+ÍCONE manual_armor
+#==Redução de dano==
+A blindagem reduz o dano sofrido de todos os impactos e ataques de feixe, com base na blindagem restante na célula atingida e nas células de blindagem próximas, e na {{força de impacto}} do ataque. A redução máxima de dano pela blindagem é de {{85%}}.
+
+Uma nave pode ter sua blindagem destruída em um local, mas ainda manter a blindagem intacta em outro. Girar a nave para sofrer dano em áreas com blindagem intacta muitas vezes é eficaz.
+==Força de impacto==
+Armas com maior dano por disparo causam mais dano na blindagem. O modificador de dano {{rel:gm_damage_types|alto-explosivo}} é particularmente útil, mas armas de energia de alto dano também podem destruir facilmente a blindagem. A força de impacto de armas de feixe é baseada em seu DPS.
+==Blindagem residual==
+Mesmo após a blindagem ser completamente removida, {{5%}} dela ainda se aplica à redução de dano sofrido pelo casco. Isso torna naves com alta blindagem base menos vulneráveis a armas de baixo dano e disparo rápido, mesmo após a blindagem ser rompida.
+END
+
+Danos recebidos pelos escudos aumentam o nível de {{rel:gm_flux|fluxo rígido}} da nave, e causarão {{rel:gm_venting|sobrecarga}} se o nível de fluxo atingir o máximo. O nível de fluxo rígido é indicado por uma pequena marca na barra de fluxo da nave. O fluxo rígido não se dissipa enquanto os escudos estiverem ativados.
+
+Manter os escudos ativados tem um custo de fluxo igual a uma fração da taxa de dissipação de fluxo base da nave. O nível de fluxo não aumentará apenas por isso, mas reduz a capacidade da nave de dissipar o {{rel:gm_flux|fluxo dissipável}} gerado pelo disparo de armas. Baixar os escudos {{aumenta o poder de fogo da nave}} a longo prazo.
+FIM
+
+
+BEGIN gm_flux|Fluxo
+ICON manual_flux
+RELATED codex_weapon_harpoon
+Disparar armas ou receber danos nos escudos aumenta o nível de fluxo da nave. Se o fluxo atingir o máximo, a nave não poderá disparar suas armas e receber mais danos nos escudos causará {{rel:gm_venting|sobrecarga}} na nave. O fluxo se dissipa continuamente na taxa de dissipação de fluxo da nave, e uma nave pode ventilar fluxo ativamente para acelerar o processo.
+
+==Fluxo rígido==
+Danos recebidos pelos {{rel:gm_shields|escudos}} aumentam o nível de {{rel:gm_flux|fluxo rígido}} da nave. O nível de fluxo rígido é indicado por uma pequena marca na barra de fluxo da nave. O fluxo rígido não se dissipa enquanto os escudos estiverem ativados.
+
+O fluxo regular é às vezes chamado de {{fluxo dissipável}} para diferenciá-lo do fluxo rígido.
+FIM
+
+BEGIN gm_venting|Ventilação e sobrecarga
+ICON manual_venting
+==Ventilação==
+Uma nave em ventilação dissipa {{rel:gm_flux|fluxo}} a uma taxa duas vezes maior que o normal. A nave não poderá disparar armas nem usar seus escudos ou outras defesas, mas ainda poderá se mover normalmente.
+
+A ventilação torna a nave vulnerável, e as naves geralmente só ventilarão quando estiverem relativamente seguras, a menos que a situação seja desesperadora. Naves com blindagem pesada muitas vezes estão dispostas a sofrer algum dano na blindagem enquanto ventila.
+
+==Sobrecarga==
+Uma nave sobrecarregada não poderá disparar armas nem usar seus escudos ou outras defesas, mas ainda poderá se mover normalmente. O fluxo se dissipa a uma taxa metade do normal enquanto a nave estiver sobrecarregada.
+
+A duração de uma sobrecarga depende da quantidade de dano recebido pelos escudos que fez a nave exceder sua capacidade máxima de fluxo.
+
+Naves sobrecarregadas geralmente tentam recuar para um local seguro e são alvos comuns para salva de mísseis finalizadores como os Reaper.
+
+END
+
+BEGIN gm_ballistics|Armas balísticas
+ICON manual_ballistic_weapons
+Armas balísticas tendem a ter maior alcance que suas contrapartes energéticas e geralmente causam {{rel:gm_damage_types|dano cinético}} ou {{rel:gm_damage_types|dano alto-explosivo}}, permitindo especialização contra {{rel:gm_shields|escudos}} e {{rel:gm_armor|blindagem}}.
+FIM
+
+BEGIN gm_energies|Armas energéticas
+ICON manual_energy_weapons
+Armas {{color:text|energéticas}} tendem a ter menor alcance que suas contrapartes balísticas e geralmente causam {{rel:gm_damage_types|dano de energia}}, que é igualmente eficaz contra todas as defesas, mas não contraria nenhuma delas muito bem. Há alguma variedade nos tipos de dano, entretanto, e armas energéticas de maior poder de acerto ainda são altamente eficazes contra {{rel:gm_armor|blindagem}}.
+
+==Armas de feixe==
+Armas de feixe geralmente têm alcance muito longo - excedendo até mesmo os alcances típicos das {{rel:gm_ballistics|armas balísticas}} - mas só causam dano de {{rel:gm_flux|fluxo dissipável}} nos {{rel:gm_shields|escudos}}.
+
+Apesar disso, elas ainda são muito úteis; só não vão derrotar os escudos sozinhas, a menos que sejam empregadas em número esmagador.
+FIM
+
+BEGIN gm_missiles|Armas de mísseis
+ICON manual_missiles
+Mísseis tendem a ter munição limitada, mas há muitas opções que preenchem diferentes funções. Uma nave com mais slots de mísseis oferece mais versatilidade em suas configurações e tem mais liberdade para se especializar ou compensar suas fraquezas.
+
+Alguns mísseis, como o torpedo {{rel:codex_weapon_reaper|Ceifador}}, permitem que naves pequenas sejam uma grande ameaça a naves maiores - até que sua munição acabe!
+FIM
+
+
+
+
+
+
+
+

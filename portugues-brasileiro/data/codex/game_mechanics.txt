@@ -1,0 +1,116 @@
+﻿# arquivo não utilizado - comentado no text_codex_entries.csv
+# mantido como exemplo da marcação possível etc
+
+# Comandos/formatação:
+#COR g|bom|ruim|cinza|azul|texto
+#ICONE generico
+#RELACIONADO id1 id2 id3
+#==Título== para títulos, pode usar = (menor fonte), ==, ou === (maior fonte)
+#FONTE pequeno ou FONTE normal
+#RESET - redefine cor e fonte para o padrão (encerrar uma entrada também faz isso)
+#_ e - para listas com marcadores (_ = apenas indentado, sem marcador)
+
+CATEGORIA cat_flux|generico|Fluxo|mecanicas_de_jogo
+
+CATEGORIA_ATUAL cat_flux
+
+INICIO gm_flux|Fluxo
+Acionar armas ou sofrer dano nos escudos aumenta o nível de fluxo da nave. Se o fluxo atingir o máximo, a nave não poderá disparar suas armas, e sofrer mais dano nos escudos irá {{rel:gm_overload|sobrecarregar}} a nave. O fluxo dissipa-se continuamente na taxa de dissipação da nave, e uma nave pode ventilar ativamente o fluxo para acelerar o processo.
+TESTE
+- Testando uma lista com marcadores e um {{cor:h|destaque}}
+- Segundo item da lista, testando o comprimento máximo e quebra de linha adequada, vamos ver se funciona só preciso continuar digitando
+
+***
+
+E agora, uma lista com marcadores em fonte menor.
+ 
+FONTE pequena
+_ Testando uma lista sem marcadores
+_ E mais um pouco
+- Funciona misturar um item com marcador? Você não iria querer
+_ Mas vamos ver se funcionou
+
+Um parágrafo em fonte pequena.
+
+RESET
+
+E a fonte deve estar de volta ao normal.
+
+Testando 100% no texto e como {{color:h|200%}} destaque.
+
+END
+
+BEGIN gm_flux_types|Fluxo rígido e fluxo dissipável
+RELACIONADO gm_flux
+O fluxo gerado ao sofrer dano nos escudos é {{color:h|fluxo rígido}}, ou seja, não pode ser dissipado enquanto os escudos estiverem ativados. O fluxo gerado ao disparar armas é {{color:h|fluxo dissipável}} e pode ser dissipado enquanto os escudos estiverem ativados.
+
+Uma nave com dissipação de fluxo suficiente pode disparar suas armas indefinidamente, mas se seus escudos estiverem ativados e estiver sofrendo dano, eventualmente acumulará fluxo rígido suficiente para sobrecarregar, a menos que tenha uma forma de dissipar o fluxo rígido ou simplesmente abaixe seus escudos.
+
+O nível de fluxo rígido de uma nave é indicado por uma pequena marca na barra de fluxo.
+END
+
+BEGIN gm_overload|Sobrecarga
+Quando uma nave está sobrecarregada, ela não consegue disparar armas nem usar seus escudos ou outras defesas, mas ainda pode se mover normalmente. O fluxo é dissipado em uma taxa reduzida enquanto a nave estiver sobrecarregada.
+
+Naves sobrecarregadas geralmente tentam recuar para um local seguro e são alvos comuns para salva de mísseis finalizadores como os Harpoons.
+END
+
+BEGIN gm_vent|Ventilação de fluxo
+Quando uma nave está ventilando fluxo, ela dissipa o fluxo a uma taxa duas vezes maior que o normal. A nave não consegue disparar armas nem usar seus escudos ou outras defesas, mas ainda pode se mover normalmente.
+
+Ventilar torna a nave vulnerável, e as naves geralmente só ventilam quando estão relativamente seguras, a menos que a situação seja desesperadora. Naves com blindagem pesada muitas vezes estão dispostas a sofrer algum dano na blindagem enquanto ventilam.
+END
+
+CATEGORIA_ATUAL game_mechanics
+
+BEGIN gm_techs|Tipos de tecnologia
+Os níveis tecnológicos de certas naves — {{Low Tech}}, {{Midline}} e {{High Tech}} — não são uma progressão de qualidade. São apenas abordagens de projeto de combate diferentes, e nenhuma é melhor que a outra. Naves mais poderosas geralmente têm um custo maior em Pontos de Implantação.
+
+COR Low Tech
+==Baixa Tecnologia==
+RESET
+Blindagem pesada, lentas, usando uma mistura de armas balísticas e de mísseis. Escudos mais fracos. {{rel:codex_system_burndrive|Propulsor de Queima}}, um sistema comum de naves de baixa tecnologia, oferece mobilidade apenas para frente e permite que as naves perseguiam e punam inimigos mais rápidos, mas não ajuda muito a recuar de uma situação ruim. Naves maiores muitas vezes são vulneráveis a serem flanqueadas e precisam de suporte para serem eficazes.
+
+COR Midline
+==Tecnologia Média==
+RESET
+Blindagem, escudos e mobilidade geralmente médias. Usam uma mistura de armas balísticas, de energia e de mísseis. As armas de energia são majoritariamente limitadas a feixes — embora as naves possam montar outras armas de energia, geralmente lhes falta dissipação de fluxo necessária para usá-las bem. Muitas vezes dependem de naves especializadas trabalhando em conjunto para maximizar sua eficácia.
+
+COR High Tech
+==Alta Tecnologia==
+RESET
+Rápidas, com escudos fortes e blindagem mais fraca. Usam uma mistura de armas de energia e de mísseis, com dissipação de fluxo suficiente para suportar uma gama mais ampla de energias. As armas de energia tendem a ter alcance mais curto, o que é compensado pela maior velocidade máxima das naves. Muitas vezes recorrem a táticas de ataque e fuga e, em geral, prosperam em um ambiente de batalha mais caótico.
+
+Todas essas são generalizações, e exceções existem.
+END
+
+BEGIN gm_damage_types|Tipos de dano & força de impacto
+Todos os tipos de dano causam {{100%}} de dano no casco, sujeito ao valor residual de blindagem. Além disso:
+IMAGE ui|icon_high_explosive
+Dano {{Alto-Explosivo}} causa {{200%}} contra blindagem e {{50%}} contra escudos. Os projéteis tendem a ser amarelos.
+IMAGE ui|icon_kinetic
+Dano {{Cinético}} causa {{200%}} contra escudos e {{50%}} contra blindagem. Os projéteis tendem a ser brancos.
+IMAGE ui|icon_energy
+Dano {{Energia}} causa {{100%}} tanto contra escudos quanto contra blindagem. Armas com maior força de impacto tendem a ser ineficientes em fluxo.
+IMAGE ui|icon_fragmentation
+Dano {{Fragmentação}} causa {{25%}} contra escudos e blindagem. Armas que causam esse tipo de dano muitas vezes têm alto DPS e eficiência de fluxo. Os projéteis tendem a ser vermelhos.
+==Força de impacto==
+Armas com maior dano por disparo causam mais dano na blindagem. O modificador de dano {{alto-explosivo}} é particularmente útil, mas armas de energia de alto dano também podem destruir facilmente a blindagem. A força de impacto de armas de feixe é baseada em seu DPS.
+==Blindagem residual==
+
+END
+
+
+BEGIN gm_ballistics|Armas balísticas
+
+END
+
+
+
+
+
+
+
+
+
+

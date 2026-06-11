@@ -1,0 +1,148 @@
+﻿{
+	"codex":{
+		"damage_kinetic":{
+			"title":"Dano Cinético",
+			"body":"O dano cinético é muito eficaz contra escudos, mas pouco eficaz contra blindagem.",
+		},
+		"damage_highexplosive":{
+			"title":"Dano Alto-Explosivo",
+			"body":"O dano alto-explosivo é muito eficaz contra blindagem, mas pouco eficaz contra escudos.",
+		},
+		"damage_fragmentation":{
+			"title":"Dano de Fragmentação",
+			"body":"O dano de fragmentação é muito pouco eficaz contra blindagem e escudos. No entanto, armas que causam dano de fragmentação geralmente possuem um DPS muito alto, tornando-as devastadoras contra alvos levemente blindados e sem escudos, como caças leves e mísseis.\n\nTambém pode ser altamente eficaz contra uma nave cuja blindagem foi danificada em combate.",
+		}, 
+		"damage_energy":{
+			"title":"Dano de Energia",
+			"body":"O dano de energia é igualmente eficaz contra escudos e blindagem.",
+		},
+		"damage_other":{
+			"title":"Outros Danos",
+			"body":"Esta arma é especial. Na realidade, porém, se você está vendo isso, provavelmente é um bug.",
+		}, 
+	},
+	"warroom":{
+		#"fleetPoints":{
+		#	"title":"Pontos de Desdobramento",
+		#	"body":"Você precisa de pontos de desdobramento disponíveis para desdobrar suas reservas na batalha. Retroceder ou perder naves devolve os pontos usados para desdobrá-las.",
+		#},
+		#"commandPoints":{
+		#	"title":"Pontos de Comando",
+		#	"body":"Você precisa de pontos de comando para criar atribuições e dar ordens diretas à sua frota.\n\nQuando eles acabarem, você não poderá dar mais ordens, mas ainda poderá ordenar que sua frota enfrente o inimigo a qualquer momento, cancelando todas as atribuições existentes.\n\nVocê ganha alguns pontos de comando toda vez que suas forças capturam um objetivo.",
+		#},
+		"pause":{
+			"title":"Pausar",
+			"body":"Pausa o jogo.",
+		},
+		"play":{
+			"title":"Retomar",
+			"body":"Retoma o jogo.",
+		},
+		"combatTime":"Time elapsed with both fleets in contact with each other.\n\nThe peak performance time of reinforcements is reduced by half of the combat time.",
+	},
+	
+	"fleetScreen":{
+		"tooltipCaptain":{
+			"title":"Designar Capitão",
+			"body":"Designa um capitão (você ou um oficial) para esta nave. A nave se beneficiará das habilidades do capitão.",
+		},
+		"tooltipAdmin":{
+			"title":"Designar Administrador",
+			"body":"Designa um administrador (ou você mesmo) para governar esta colônia, que então se beneficiará das habilidades do administrador designado.",
+		},
+		"tooltipAdminNonPlayer":{
+			"title":"Administrador",
+			"body":"Esta colônia não é governada por um administrador de destaque.",
+		},
+		"tooltipBuy":{
+			"title":"Comprar",
+			"body":"Compre este %s por %d créditos.",
+		},
+		"tooltipSell":{
+			"title":"Vender",
+			"body":"Vender este %s por %d créditos.",
+		},
+		"tooltipTake":{
+			"title":"Pegar",
+			"body":"Pegar este %s.",
+		},
+		"tooltipGive":{
+			"title":"Armazenar",
+			"body":"Transfira este %s de sua frota. Sua prontidao de combate permanecera inalterada enquanto estiver em armazenamento.",
+		},
+		"tooltipMothball":{
+			"title":"Armazenar",
+			"body":"As %ss armazenadas nao podem ser usadas em combate ou reparadas, e nao fornecem capacidade de combustivel, carga ou pessoal.\n\nArmazenar uma nave reduzira sua prontidao de combate a zero; restaurá-la exigira tempo e suprimentos.",
+		},
+		"tooltipUnmothball":{
+			"title":"Armazenar",
+			"body":"As %ss armazenadas nao podem ser usadas em combate ou reparadas, e nao fornecem capacidade de combustivel, carga ou pessoal.\n\nRestaurar a prontidao de combate desta nave apos desarmazená-la consumira %s suprimentos ao longo de %s dia(s).",
+		},
+		"tooltipScuttle":{
+			"title":"Desmantelar",
+			"body":"Desmanche %s para obter %d suprimentos, %d combustível e %d maquinário pesado.",
+		},
+		"tooltipSuspendRepairs":{
+			"title":"Suspender Reparos e Recuperação",
+			"body":"Impede que esta %s realize reparos ou recupere prontidão de combate. Reparos completos e recuperação de PC consumirão aproximadamente %s suprimentos ao longo de %s dias, se permitidos.",
+		},
+		"tooltipSuspendRepairsNotNeeded":{
+			"title":"Suspender Reparos e Recuperação",
+			"body":"Impede que esta %s realize reparos ou recupere prontidão de combate. Esta %s não requer reparos ou recuperação de PC no momento.",
+		},
+		"tooltipRefit":{
+			"title":"Reequipar",
+			"body":"Altere as armas e modificações de casco equipadas nesta nave.",
+		},
+		"tooltipLogisticalPriority":{
+			"title":"Prioridade Logística",
+			"body":"%ss com prioridade logística têm prioridade na escolha de tripulação e suprimentos disponíveis para reparos.",
+		},
+		"tooltipCrewElite":{
+			"title":"Elite",
+			"body":"Tripule esta %s com os melhores tripulantes disponíveis.",
+		},
+		"tooltipCrewVeteran":{
+			"title":"Veterano",
+			"body":"Tripule esta %s apenas com tripulantes veteranos ou inferiores, se possível.", 
+		},
+		"tooltipCrewRegular":{
+			"title":"Regular",
+			"body":"Tripule esta %s apenas com tripulantes regulares ou inferiores, se possível.",
+		},
+		"tooltipCrewGreen":{
+			"title":"Recruta",
+			"body":"Tripule esta %s apenas com recrutas, se possível.",
+		},
+		"tooltipCrewBar":{
+			"title":"",
+			"body":"Frações de tripulação nesta %s.",
+		},
+	},
+	"logistics":{
+		"marines":"Number of marines in the fleet.",
+		"crew":"Number of crew in the fleet, and the number needed to meet the minimum requirements on all ships in the fleet.",
+		"supplies":"Available supplies and supply use per day.",
+		"credits":"Available credits.",
+	},
+	"misc":{
+		"jumpPointNormal":"Jump points can be used to transit between hyperspace and normal space. Some jump points also lead to other destinations.",
+		"jumpPointStar":"The gravity well of a star is deep enough to provide a one-way exit from hyperspace. Using one is, however, extremely difficult and dangerous.",
+		"jumpPointGasGiant":"The gravity well of a gas giant is often deep enough to provide a one-way exit from hyperspace.",
+	},
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

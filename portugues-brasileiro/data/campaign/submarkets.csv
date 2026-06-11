@@ -1,0 +1,23 @@
+﻿id,name,faction,desc,script,icon,order
+open_market,"Mercado
+Aberto",,"O mercado aberto. Apenas mercadorias legais podem ser comercializadas aqui, e as transações estão sujeitas a tarifas. Mais produtos estão disponíveis quando a estabilidade é alta.
+
+Vender uma quantidade suficiente de uma commodity resolverá temporariamente uma escassez.",com.fs.starfarer.api.impl.campaign.submarkets.OpenMarketPlugin,,0
+black_market,"Mercado
+Negro",pirates,"O mercado negro. Tudo pode ser comprado ou vendido, e não há tarifas. Mais produtos estão disponíveis quando a estabilidade é baixa.
+
+Vender uma quantidade suficiente de uma commodity resolverá temporariamente uma escassez.
+
+Transações no mercado negro podem chamar a atenção das autoridades, resultando em varreduras de carga e redução da reputação da facção, a menos que as negociações sejam feitas com o transponder desligado.
+
+Engajar-se em comércio legítimo como ""cobertura"" também reduz a probabilidade de chamar a atenção das autoridades.",com.fs.starfarer.api.impl.campaign.submarkets.BlackMarketPlugin,graphics/factions/black_market.png,999
+storage,Armazenamento,player,Espaço de armazenamento para naves e carga.,com.fs.starfarer.api.impl.campaign.submarkets.StoragePlugin,graphics/factions/storage.png,1000
+generic_military,,,"Comércio com a base militar da $theFaction.
+
+Armas e outros equipamentos militares podem ser comprados e vendidos aqui, mesmo que sejam ilegais no mercado aberto. Uma comissão e melhor reputação com a $theFaction resultam em equipamentos de maior qualidade disponíveis.
+
+Compra mercadorias localmente ilegais como parte de um programa de recompra sem perguntas.
+
+Vender uma quantidade suficiente de uma commodity resolverá temporariamente uma escassez.",com.fs.starfarer.api.impl.campaign.submarkets.MilitarySubmarketPlugin,,100
+local_resources,"Reservas de
+Recursos",,,com.fs.starfarer.api.impl.campaign.submarkets.LocalResourcesSubmarketPlugin,,200
