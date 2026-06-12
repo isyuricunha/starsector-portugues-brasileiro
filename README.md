@@ -47,8 +47,8 @@ As fontes em `graphics/fonts/` adicionam glifos usados pelo portugues brasileiro
 
 O pacote atual contem:
 
-- `18927` itens traduzidos
-- `606` arquivos de dados traduzidos
+- `19347` itens traduzidos
+- `609` arquivos de dados traduzidos
 - `16` arquivos de fonte para suporte a acentos
 - `0` itens pendentes
 - `0` itens manuais restantes
@@ -59,12 +59,6 @@ Arquivos que nao fazem parte da traducao textual, como imagens de missoes, mapas
 ## Onde instalar
 
 A traducao deve ser instalada na pasta `mods` do Starsector.
-
-No meu caso, o caminho base usado e:
-
-```text
-D:\Users\isy\Documents\GitHub\starsector-portugues-brasileiro\Fractal Softworks\Starsector
-```
 
 Em uma instalacao normal, o caminho pode ser algo como:
 
@@ -173,11 +167,11 @@ Evite compactar a pasta inteira do jogo ou qualquer conteudo de `Fractal Softwor
 
 Foram executadas checagens sobre a traducao gerada:
 
-- Todos os itens escaneaveis traduzidos: `18927 / 18927`
+- Todos os itens escaneaveis traduzidos: `19347 / 19347`
 - Itens manuais restantes: `0`
 - Falhas no checkpoint: `0`
-- Arquivos esperados no mod: `606`
-- Arquivos de dados no mod: `606`
+- Arquivos totais no mod: `627`
+- Arquivos de dados no mod: `609`
 - Arquivos de fonte no mod: `16`
 - Fontes empacotadas sem glifos PT-BR: `0`
 - Erros estruturais em CSV: `0`
@@ -187,6 +181,7 @@ Foram executadas checagens sobre a traducao gerada:
 - Separadores reservados de opcoes em `rules.csv` alterados: `0`
 - Colunas internas de CSV alteradas indevidamente: `0`
 - Arquivos originais em `starsector-core/data` modificados: `0`
+- Erros fatais, excecoes e erros de JSON no teste de carregamento: `0`
 
 ## Compatibilidade
 
@@ -221,7 +216,7 @@ Starsector\mods\Starsector Portugues Brasileiro\portugues-brasileiro\mod_info.js
 
 Confirme que o mod esta ativado no launcher. Tambem verifique se voce copiou a pasta para a instalacao correta do Starsector, caso tenha mais de uma copia do jogo.
 
-Alguns textos da tela inicial e do painel visual de criacao de personagem, como botoes principais do menu e certos rotulos da interface, ficam dentro de classes compiladas do jogo base e nao sao expostos nos arquivos de dados substituidos pelo mod. Os textos carregados de `data/`, incluindo dicas, dialogos, opcoes e tooltips, sao o escopo validado deste pacote.
+Alguns textos da tela inicial, da criacao de personagem, da tela de frota, do mapa e do painel de comando/colonia ficam dentro de classes compiladas do jogo base e nao sao expostos nos arquivos de dados substituidos pelo mod. Exemplos incluem botoes principais do menu, rotulos de abas, textos de reparo da frota, filtros do mapa e parte dos textos de doutrina/producao. Os textos carregados de `data/`, incluindo dicas, dialogos, opcoes, descricoes e tooltips expostas por arquivos de dados, sao o escopo validado deste pacote.
 
 ### Acentos aparecem como apostrofos ou caracteres quebrados
 

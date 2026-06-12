@@ -8448,7 +8448,7 @@ LKEbornanewShuttleDown,DialogOptionSelected,$option == lke_bornanewShuttle1,,"O 
 
 A descida de sua nave de transporte é suave; seu piloto se comunica com o desleixado controle de tráfego local e recebe apenas objeções simbólicas para pousar próximo a um assentamento de maioria luddita.
 
-—Próximo, é claro, é um termo relativo; você está bem além do horizonte de todos, exceto meia dúzia das unidades habitacionais pré-fabricadas arrastadas para cá e modificadas por seus habitantes. Metade delas parece abandonada, com os campos ao redor ondulando em poeira.",lke_bornanewShuttle2:Continue,
+—Próximo, é claro, é um termo relativo; você está bem além do horizonte de todos, exceto meia dúzia das unidades habitacionais pré-fabricadas arrastadas para cá e modificadas por seus habitantes. Metade delas parece abandonada, com os campos ao redor ondulando em poeira.",lke_bornanewShuttle2:Continuar,
 LKEbornanewShuttleDown2,DialogOptionSelected,$option == lke_bornanewShuttle2,"$option = lke_bornanewShuttle3 0
 FireBest DialogOptionSelected","Sua nave de transporte pousa, levantando uma nuvem que se dissipa em uma onda decrescente sobre um deserto de rochas irregulares e árvores com aspecto de cinzas.",,
 LKEbornanewShuttleDown2b,DialogOptionSelected,"$option == lke_bornanewShuttle2b
@@ -8460,11 +8460,11 @@ Durante o voo de aproximação, os sensores da nave identificaram uma figura human
 LKEbornanewShuttle4a,DialogOptionSelected,"$option == lke_bornanewShuttle4
 !$market.lke_didMarines",,"Você segue um caminho em direção à mata. Protegida dos ventos secos por uma pequena elevação, parece que as árvores plantadas aqui coletam quase umidade suficiente para sobreviver.
 
-Uma nova tubulação de ceramilito segue a trilha até a mata. Como se alguém quisesse regar as árvores.",lke_bornanewShuttle5:Continue,
+Uma nova tubulação de ceramilito segue a trilha até a mata. Como se alguém quisesse regar as árvores.",lke_bornanewShuttle5:Continuar,
 LKEbornanewShuttle4b,DialogOptionSelected,"$option == lke_bornanewShuttle4
 $market.lke_didMarines",,"Você segue um caminho em direção à mata. Abrigada dos ventos secos por uma pequena elevação, parece que as árvores plantadas aqui coletam quase umidade suficiente para sobreviver. Mas não exatamente.
 
-Seus fuzileiros sussurram táticas de chamada e resposta em seu ouvido. —$PlayerSirOrMadam — o líder do esquadrão se dirige a você pessoalmente. — Alvo identificado; correspondência visual com Bornanew. Parece desarmado.",lke_bornanewShuttle5:Continue,
+Seus fuzileiros sussurram táticas de chamada e resposta em seu ouvido. —$PlayerSirOrMadam — o líder do esquadrão se dirige a você pessoalmente. — Alvo identificado; correspondência visual com Bornanew. Parece desarmado.",lke_bornanewShuttle5:Continuar,
 LKEbornanewShuttle5,DialogOptionSelected,$option == lke_bornanewShuttle5,"Call $global.lke_ref playMusicJethro
 AddStoryPoints 1
 BeginConversation bornanew
@@ -9781,9 +9781,9 @@ bffi_talkHorusPartyEndA:""De novo?""
 bffi_talkHorusPartyEndB:""Você precisa ficar mais atento aos esquemas do seu primo, hein.""",
 BFFItalkHorusPartyEndA,DialogOptionSelected,$option == bffi_talkHorusPartyEndA,,"""As questões passadas da minha gens não me obrigam a discutir com estranhos, $playerSirOrMadam,"" ele diz com rigidez.
 
-""No entanto... Agradeço sua... consideração em trazer este assunto à minha atenção.""",bffi_talkHorusPartyEnd:Continue,
+""No entanto... Agradeço sua... consideração em trazer este assunto à minha atenção.""",bffi_talkHorusPartyEnd:Continuar,
 BFFItalkHorusPartyEndB,DialogOptionSelected,$option == bffi_talkHorusPartyEndB,"$player.ethosSarcastic++ 
-AdjustRepActivePerson HOSTILE -1","""Obrigado, capitão, esse é um conselho fabuloso,"" Horus diz em um tom que demonstra pouquíssima apreciação pela sua contribuição.",bffi_talkHorusPartyEnd:Continue,
+AdjustRepActivePerson HOSTILE -1","""Obrigado, capitão, esse é um conselho fabuloso,"" Horus diz em um tom que demonstra pouquíssima apreciação pela sua contribuição.",bffi_talkHorusPartyEnd:Continuar,
 BFFItalkHorusPartyAttendEnd,DialogOptionSelected,$option == bffi_talkHorusPartyEnd,"$global.bffi_horusToParty = true
 $global.bffi_gotPartyInvite = true
 Call $global.bffi_ref updateStage","""Vou seguir meu próprio caminho para Olinadu, obrigado. Coordene sua equipe com a minha.""
@@ -9811,12 +9811,12 @@ SetTooltip bffi_attendPartyIntro1 ""Você precisa de pelo menos 100 fuzileiros pa
 SetTooltipHighlights 100",,,
 BFFIattendPartyIntro1,DialogOptionSelected,$option == bffi_attendPartyIntro1,ShowLargePlanet,"O convite do Menes fornece uma rota de voo e códigos de sobreposição de controle de tráfego de nível Demarch.
 
-Provavelmente é uma violação das diretrizes éticas da Liga Perseana você usar isso para frequentar uma festa particular, mas, pelo que você ouve nas comunicações do piloto, os locais têm uma atitude casual em relação a isso.",bffi_attendPartyIntro2:Continue,
+Provavelmente é uma violação das diretrizes éticas da Liga Perseana você usar isso para frequentar uma festa particular, mas, pelo que você ouve nas comunicações do piloto, os locais têm uma atitude casual em relação a isso.",bffi_attendPartyIntro2:Continuar,
 BFFIattendPartyIntro1raid,DialogOptionSelected,$option == bffi_attendPartyIntro1,ShowLargePlanet,"Você e o Bornanew chegam ""não documentados"" a Olinadu e então transferem para um serviço de transporte particular para frequentar a festa do Menes.
 
 Sua piloto contratada dá de ombros ao mostrar uma rota de voo bloqueada com marcações de NEGADO — até você aplicar a chave anexada ao seu convite, que acaba sendo um código de sobreposição de nível Demarch.
 
-Provavelmente é uma violação das diretrizes éticas da Liga Perseana você usar isso para frequentar uma festa particular, mas a piloto simplesmente sorri e prossegue. Esse tipo de coisa não é incomum sob a administração do Menes, ao que parece.",bffi_attendPartyIntro2:Continue,
+Provavelmente é uma violação das diretrizes éticas da Liga Perseana você usar isso para frequentar uma festa particular, mas a piloto simplesmente sorri e prossegue. Esse tipo de coisa não é incomum sob a administração do Menes, ao que parece.",bffi_attendPartyIntro2:Continuar,
 BFFIattendPartyIntro2,DialogOptionSelected,$option == bffi_attendPartyIntro2,,"O complexo de Menes Yaribay é um bloco de arquitetura moderna e limpa, erguido em um penhasco com vista para o principal aglomerado habitacional de Olinadu.
 
 Um aglomerado de edifícios externos e hangares, conectados por grossos troncos de dutos e tubos de pedestres iluminados, se espalha pelas áreas menos favorecidas do complexo, em direção às refinarias e tanques de armazenamento do centro industrial do planeta.",bffi_attendPartyIntro3:Continuar,
@@ -10401,9 +10401,9 @@ Bornanew entrega a Pond uma bebida intocada, algo borbulhante e dourado, e então
 ""Acho que, talvez,"" diz baixinho, os olhos à frente, ""que você deveria ter guardado a luva em algum lugar fora de vista.""","bffi_apHorus23a:""Aqui, pegue.""
 bffi_apHorus23b:""Talvez você esteja certo.""
 bffi_apHorus23c:""Talvez. Mas você viu as caras deles, $global.jethroName?""",
-BFFIapHorus23a,DialogOptionSelected,$option == bffi_apHorus23a,$gaveGloveToBonranew = true 0,"Ele aceita a luva, um pouco surpreso, rapidamente guardando-a em algum bolso oculto de suas vestes.",bffi_partyOutro1:Continue,
-BFFIapHorus23b,DialogOptionSelected,$option == bffi_apHorus23b,,"Ele apenas acena, juntando as mãos. Não faz mais nada, mas você jura que ele está rezando.",bffi_partyOutro1:Continue,
-BFFIapHorus23c,DialogOptionSelected,$option == bffi_apHorus23c,$player.ethosCocky++,"""Vi,"" ele responde com um tom de pesar.",bffi_partyOutro1:Continue,
+BFFIapHorus23a,DialogOptionSelected,$option == bffi_apHorus23a,$gaveGloveToBonranew = true 0,"Ele aceita a luva, um pouco surpreso, rapidamente guardando-a em algum bolso oculto de suas vestes.",bffi_partyOutro1:Continuar,
+BFFIapHorus23b,DialogOptionSelected,$option == bffi_apHorus23b,,"Ele apenas acena, juntando as mãos. Não faz mais nada, mas você jura que ele está rezando.",bffi_partyOutro1:Continuar,
+BFFIapHorus23c,DialogOptionSelected,$option == bffi_apHorus23c,$player.ethosCocky++,"""Vi,"" ele responde com um tom de pesar.",bffi_partyOutro1:Continuar,
 BFFIapHorus23e,DialogOptionSelected,$option == bffi_apHorus23e,,"Ele aceita a luva, levando apenas uma fração de segundo para reprimir o choque em seu olhar. Bornanew guarda rapidamente a luva em algum bolso oculto de suas vestes.
 
 ""Acho, talvez,"" ele diz em um sussurro, ""que isso deveria ter permanecido escondido.""","bffi_apHorus23b:""Talvez você esteja certo.""
@@ -11612,7 +11612,7 @@ FireAll BFFIstationMedConsultOpts","O médico assistente lança um olhar severo pa
 
 O rosto de Bornanew está pálido e inchado. Seu abdômen está coberto de ataduras e tubos conectados a um conjunto de autodocs murmurantes.
 
-""$playerFirstName,"" ele diz. ""Parece que ainda estou vivo."" Ele respira fundo. ""E a você devo agradecer. Quero dizer, capitão. Desculpe.""",bffi_psApproachMedConsult1:TODO continue,
+""$playerFirstName,"" ele diz. ""Parece que ainda estou vivo."" Ele respira fundo. ""E a você devo agradecer. Quero dizer, capitão. Desculpe.""",bffi_psApproachMedConsult1:Continuar,
 BFFIstationMedConsultOptA,BFFIstationMedConsultOpts,!$saidPain,,,"bffi_stationMedConBrave:""$global.jethroName. Isso foi uma coisa corajosa que você fez em Chalcedon.""",
 BFFIstationMedConsultOptB,BFFIstationMedConsultOpts,!$saidPain,,,"bffi_stationMedConStupid:""$global.jethroName. Isso foi uma coisa estúpida que você fez em Chalcedon.""",
 BFFIstationMedConsultOptC,BFFIstationMedConsultOpts,!$saidThank,,,"bffi_stationMedConThank:""Você deveria agradecer à equipe médica; eles são os que o salvaram.""",
@@ -14834,7 +14834,7 @@ Call $global.gaTTB_ref updateStage","— Ah, Capitão $playerName. — A Provedora An
 
 — Estou satisfeita por ter vindo me encontrar. E por todo o trabalho que já realizou para o meu projeto.
 
-Ela abaixa a cabeça em um grau, — Você não achou que eu estaria desperdiçando seu tempo com tarefas sem importância, achou? — Ela considera isso por um momento, — Bem, houve um pouco. Foi necessário introduzir ruído no sistema para garantir que um observador externo não identificasse você imediatamente como meu agente.",bairdIntroC3:Continue,
+Ela abaixa a cabeça em um grau, — Você não achou que eu estaria desperdiçando seu tempo com tarefas sem importância, achou? — Ela considera isso por um momento, — Bem, houve um pouco. Foi necessário introduzir ruído no sistema para garantir que um observador externo não identificasse você imediatamente como meu agente.",bairdIntroC3:Continuar,
 bairdIntro3,DialogOptionSelected,$option == bairdIntroC3,,"— Isso nos traz ao assunto que desejo discutir. Por favor, acomode-se.
 
 Baird faz um gesto para um conjunto de assentos ao redor de uma mesa esculpida na estrutura de raiz de alguma grande árvore. Trabalho manual, ao que parece. Feito por artesãos luddicos.
@@ -14882,12 +14882,12 @@ bairdIntro_moralitySel,DialogOptionSelected,$option == bairdIntro_morality,$play
 
 Ela esboça um sorriso que não é totalmente amigável.
 
-— E nunca pediria isso. É exatamente por isso que quero dar a você tanta liberdade — para que possa fazer isso do seu jeito. Do jeito certo. Você mostrou que funciona; não posso negar as evidências diante dos meus olhos.",bairdIntro_continueToWhat:Continue,
+— E nunca pediria isso. É exatamente por isso que quero dar a você tanta liberdade — para que possa fazer isso do seu jeito. Do jeito certo. Você mostrou que funciona; não posso negar as evidências diante dos meus olhos.",bairdIntro_continueToWhat:Continuar,
 bairdIntro_safeguardSel,DialogOptionSelected,$option == bairdIntro_safeguard,$player.ethosRuthless,"— Claro que está. — 
 
 Ela sorri, e você quase acredita.
 
-— É por isso que pedi sua ajuda: a capacidade de deixar seus sentimentos de lado e ver a situação objetivamente. Você sabe o que é preciso para liderar e prevalecer. Eu vi isso.",bairdIntro_continueToWhat:Continue,
+— É por isso que pedi sua ajuda: a capacidade de deixar seus sentimentos de lado e ver a situação objetivamente. Você sabe o que é preciso para liderar e prevalecer. Eu vi isso.",bairdIntro_continueToWhat:Continuar,
 bairdIntro_whatIfSel,DialogOptionSelected,$option == bairdIntro_whatIf,,"""Ah, o cético; claro. Como intelectual, respeito que você não aceite minhas exigências apenas por minha autoridade. Eu não teria chamado você aqui se quisesse um serviçal bajulador que saltasse a cada um dos meus pedidos. Já tenho esses.""
 
 ""Para responder à sua pergunta: você perderia a oportunidade da sua vida.""
@@ -28996,7 +28996,7 @@ RaoPitchDiktatCom3c,DialogOptionSelected,$option == rao_pitchDiktatCom3c,,"""Voc
 
 ""Sou um Rao"", sua voz é plena e forte. ""Sou um oficial da Marinha da Hegemonia, apesar dos esforços de alguns entre nós que amam regras e uniformes mais do que amam o serviço e a causa.""
 
-Ele se senta novamente, com um olhar penetrante e agora sincero fixo em você.",rao_pitchDiktatCom3c2:Continue,
+Ele se senta novamente, com um olhar penetrante e agora sincero fixo em você.",rao_pitchDiktatCom3c2:Continuar,
 RaoPitchDiktatCom3c2,DialogOptionSelected,$option == rao_pitchDiktatCom3c2,"AdjustRepActivePerson -10
 $ignorePlayerCommRequests = true 180
 EndConversation
@@ -38188,7 +38188,7 @@ PKSentinelConfrontAIFleetHegCom,DialogOptionSelected,"$option == pk_sentinelFoun
 $showedHegCommission score:2","$confrontedAboutAIFleet = true
 $knowMoreIsGoingOn = true","— Capitão — Skiron diz, inclinando-se para frente, adotando um tom baixo e camarada. — Você é um líder e um auxiliar da Marinha da Hegemonia. Entende as necessidades do comando. Da iniciativa. Não conheço os Mundos Centrais, mas conheço viver aqui, na Periferia Galáctica.
 
-Ela respira, segura o ar e o solta. — Tudo o que foi feito por aqueles que vieram antes, confio que foram diligentes e cumpriram sua missão. Se eles, se nós, se eu tiver algo a responder, é meu dever me apresentar ao Comando e responder por isso.",pk_sentinelFoundYourFleetHegCom2:Continue,
+Ela respira, segura o ar e o solta. — Tudo o que foi feito por aqueles que vieram antes, confio que foram diligentes e cumpriram sua missão. Se eles, se nós, se eu tiver algo a responder, é meu dever me apresentar ao Comando e responder por isso.",pk_sentinelFoundYourFleetHegCom2:Continuar,
 PKSentinelConfrontAIFleetHegCom2,DialogOptionSelected,$option == pk_sentinelFoundYourFleetHegCom2,FireAll PKSentinelHubConfront,"Ela levanta a voz, dirigindo-se a todos presentes. — E assim o farei. Como comandante, assumo total responsabilidade pela execução de nossa Missão e prosseguirei até que o Comando diga o contrário — ou eu morra em serviço.
 
 (""Comando é salvação!"" eles dizem atrás dela, com força, reafirmando sua lealdade a Skiron e à missão. Seja qual for.)",,
@@ -40750,10 +40750,10 @@ gaDHOabyssEndAskRewardHazOptD,DialogOptionSelected,"$option == gaDHO_abyssEndAsk
 !$gaveSummary",$sus = true 0,,"gaDHO_endingDataTransfer:Transferir os dados
 gaDHO_endingTellFound:Conte a ele sobre o que você descobriu",
 gaDHOabyssEndAskRewardHazOptC,DialogOptionSelected,"$option == gaDHO_abyssEndAskRewardHazard2
-$gaveSummary",$sus = true 0,,gaDHO_endingWrapUp:Continue,
+$gaveSummary",$sus = true 0,,gaDHO_endingWrapUp:Continuar,
 gaDHOabyssEndAskRewardHazOptE,DialogOptionSelected,"$option == gaDHO_abyssEndAskRewardHazard2
 $gaveSummary
-$transmittedData",$sus = true 0,,gaDHO_endingWrapUp:Continue,
+$transmittedData",$sus = true 0,,gaDHO_endingWrapUp:Continuar,
 # gaDHO ARRAY_THEN_ELEK,,,,,,
 gaDHOvisitElekStartB,PopulateOptions,"$id == station_galatia_academy
 $global.gaDHO_inProgress
@@ -40786,10 +40786,10 @@ FireBest DialogOptionSelected","Ah, entendo — diz Elek, esfregando as mãos, dist
 Ele olha para o chão. Então, sem erguer os olhos, começa a falar novamente.",,
 gaDHOvisitElekAltIntroA2b,DialogOptionSelected,$option == gaDHO_visitElekAltIntro2b,$player.ethosHumanitarian++,"Elek tenta dizer algo, mas não consegue. Esfrega as mãos nervoso. — Eu... entendo. Sim, você provavelmente... é muito perigoso...
 
-Ele para de falar, encarando o vazio. Parece triste e um pouco confuso. Sem olhar para você, começa a falar novamente.",gaDHO_visitElekAltIntro3:Continue,
+Ele para de falar, encarando o vazio. Parece triste e um pouco confuso. Sem olhar para você, começa a falar novamente.",gaDHO_visitElekAltIntro3:Continuar,
 gaDHOvisitElekAltIntroA2c,DialogOptionSelected,$option == gaDHO_visitElekAltIntro2c,$player.ethosRuthless++,"Elek tenta dizer algo, mas não consegue. Esfrega as mãos nervoso. — Eu... entendo. Sim, você provavelmente... é muito perigoso...
 
-Ele para de falar, encarando o vazio. Parece triste e um pouco confuso. Sem olhar para você, começa a falar novamente.",gaDHO_visitElekAltIntro3:Continue,
+Ele para de falar, encarando o vazio. Parece triste e um pouco confuso. Sem olhar para você, começa a falar novamente.",gaDHO_visitElekAltIntro3:Continuar,
 gaDHOvisitElekAltIntro3,DialogOptionSelected,$option == gaDHO_visitElekAltIntro3,,"— A matriz... ela estava intacta? Você disse que estava modificada? Então eles a instalaram com sucesso.
 
 Ele olha para você agora, esperançoso.","gaDHO_visitElekAltIntro4:""Sim. E funcionou. Deu coordenadas para algo no Abismo.""

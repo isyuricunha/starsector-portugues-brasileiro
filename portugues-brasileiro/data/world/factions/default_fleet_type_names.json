@@ -1,0 +1,43 @@
+{
+	"trade":"Comboio Mercante",
+	"tradeLiner":"Comboio de Passageiros",
+	"tradeSmuggler":"Contrabandista",
+	"smallTrader":"Comerciante",
+
+	"patrolSmall":"Piquete Rápido",
+	"patrolMedium":"Patrulha",
+	"patrolLarge":"Destacamento",
+
+	"leagueEnforcer":"Executor",
+	"leagueArmada":"Grande Armada",
+	"supplyFleet":"Frota de Abastecimento",
+
+	"commerceRaiders":"Saqueadores Comerciais",
+	"raider":"Saqueador",
+
+	"sacredProtectors":"Protetores Sagrados",
+
+	"investigators":"Investigadores",
+
+	"inspectionFleet":"Frota de Inspeção",
+	"taskForce":"Força-Tarefa",
+
+	"scavengerSmall":"Prospectador",
+	"scavengerMedium":"Catador",
+	"scavengerLarge":"Frota de Salvamento",
+
+	"foodReliefFleet":"Comboio de Socorro",
+
+	"shrinePilgrims":"Peregrinos Lúddicos",
+	"academyFleet":"Serviço de Transporte da Academia",
+
+	"mercScout":"Batedor Mercenário",
+	"mercBountyHunter":"Caçador de Recompensas",
+	"mercPrivateer":"Corsário",
+	"mercPatrol":"Patrulha Mercenária",
+	"mercArmada":"Companhia Mercenária",
+
+	"battlestation":"Estação de Batalha",
+
+	#"":"",
+}

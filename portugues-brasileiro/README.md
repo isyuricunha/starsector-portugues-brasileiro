@@ -22,7 +22,7 @@ Nao misture arquivos de versoes diferentes. Esta pasta inclui fontes em `graphic
 
 ## Observacao
 
-Alguns textos da tela inicial e do painel visual de criacao de personagem ficam em classes compiladas do jogo base e nao sao expostos nos arquivos de dados substituidos pelo mod.
+Alguns textos da tela inicial, da criacao de personagem, da tela de frota, do mapa e do painel de comando/colonia ficam em classes compiladas do jogo base e nao sao expostos nos arquivos de dados substituidos pelo mod.
 
 ## Remover
 
