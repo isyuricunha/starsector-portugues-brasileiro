@@ -148,7 +148,7 @@ public class Zagan {
 			
 			SectorEntityToken nebula1 = system.addTerrain(Terrain.NEBULA, new BaseTiledTerrain.TileParams(
 					"   x  " +
-					"xx x" +
+					"  xx x" +
 					" xxxxx" +
 					"xxx xx" +
 					" xxx  " +
@@ -159,12 +159,12 @@ public class Zagan {
 			nebula1.setCircularOrbit(zagan_star, 60f, 7800, 500);
 			
 			SectorEntityToken nebula2 = system.addTerrain(Terrain.NEBULA, new BaseTiledTerrain.TileParams(
-					"x x" +
+					"  x x " +
 					" xxx  " +
 					"   xx " +
 					"xxxxxx" +
 					"  xx  " +
-					"x xx",
+					" x xx ",
 					6, 6, // size of the nebula grid, should match above string
 					"terrain", "nebula", 4, 4, null));
 			nebula2.getLocation().set(melikah.getLocation().x - 1000f, melikah.getLocation().y);

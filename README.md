@@ -47,7 +47,7 @@ As fontes em `graphics/fonts/` adicionam glifos usados pelo portugues brasileiro
 
 O pacote atual contem:
 
-- `18682` itens traduzidos
+- `18927` itens traduzidos
 - `606` arquivos de dados traduzidos
 - `16` arquivos de fonte para suporte a acentos
 - `0` itens pendentes
@@ -173,7 +173,7 @@ Evite compactar a pasta inteira do jogo ou qualquer conteudo de `Fractal Softwor
 
 Foram executadas checagens sobre a traducao gerada:
 
-- Todos os itens escaneaveis traduzidos: `18682 / 18682`
+- Todos os itens escaneaveis traduzidos: `18927 / 18927`
 - Itens manuais restantes: `0`
 - Falhas no checkpoint: `0`
 - Arquivos esperados no mod: `606`
